@@ -8,7 +8,7 @@ from datetime import datetime
 import os
 
 # Configuration
-BASE_URL = "https://public-holidays.github.io"  # CHANGE THIS to your actual domain
+BASE_URL = "https://public-holidays.github.io/holidays"  # CHANGE THIS to your actual domain
 HOLIDAYS_REPO_PATH = "../public-holidays-holidays"  # Path to the holidays repo (adjust as needed)
 
 

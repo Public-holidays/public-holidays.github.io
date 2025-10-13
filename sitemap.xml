@@ -4,222 +4,222 @@
 
   <!-- Landing Page -->
   <url>
-    <loc>https://public-holidays.github.io/</loc>
+    <loc>https://public-holidays.github.io/holidays/</loc>
     <lastmod>2025-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://public-holidays.github.io/"/>
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://public-holidays.github.io/de/"/>
-    <xhtml:link rel="alternate" hreflang="de-AT" href="https://public-holidays.github.io/at/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://public-holidays.github.io/holidays/"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://public-holidays.github.io/holidays/de/"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://public-holidays.github.io/holidays/at/"/>
   </url>
 
   <!-- German Holidays -->
   <url>
-    <loc>https://public-holidays.github.io/de/index.html</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/de/index.html</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://public-holidays.github.io/de/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://public-holidays.github.io/holidays/de/index.html"/>
   </url>
 
   <!-- Austrian Holidays -->
   <url>
-    <loc>https://public-holidays.github.io/at/index.html</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/at/index.html</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="de-AT" href="https://public-holidays.github.io/at/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://public-holidays.github.io/holidays/at/index.html"/>
   </url>
 
   <!-- Impressum -->
   <url>
-    <loc>https://public-holidays.github.io/at/impressum.html</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/at/impressum.html</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <!-- German Holidays ICS Files -->
   <url>
-    <loc>https://public-holidays.github.io/output/german_holidays_baden-wuerttemberg.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_baden-wuerttemberg.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/german_holidays_bayern.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_bayern.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/german_holidays_berlin.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_berlin.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/german_holidays_brandenburg.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_brandenburg.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/german_holidays_bremen.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_bremen.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/german_holidays_hamburg.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_hamburg.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/german_holidays_hessen.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_hessen.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/german_holidays_mecklenburg-vorpommern.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_mecklenburg-vorpommern.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/german_holidays_niedersachsen.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_niedersachsen.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/german_holidays_nordrhein-westfalen.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_nordrhein-westfalen.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/german_holidays_rheinland-pfalz.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_rheinland-pfalz.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/german_holidays_saarland.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_saarland.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/german_holidays_sachsen.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_sachsen.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/german_holidays_sachsen-anhalt.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_sachsen-anhalt.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/german_holidays_schleswig-holstein.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_schleswig-holstein.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/german_holidays_thueringen.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_thueringen.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Austrian Holidays ICS Files -->
   <url>
-    <loc>https://public-holidays.github.io/output/austrian_holidays.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/austrian_holidays.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Austrian School Holidays ICS Files -->
   <url>
-    <loc>https://public-holidays.github.io/output/school/school_holidays_wien.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/school/school_holidays_wien.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/school/school_holidays_niederoesterreich.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/school/school_holidays_niederoesterreich.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/school/school_holidays_burgenland.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/school/school_holidays_burgenland.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/school/school_holidays_oberoesterreich.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/school/school_holidays_oberoesterreich.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/school/school_holidays_steiermark.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/school/school_holidays_steiermark.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/school/school_holidays_kaernten.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/school/school_holidays_kaernten.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/school/school_holidays_salzburg.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/school/school_holidays_salzburg.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/school/school_holidays_tirol.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/school/school_holidays_tirol.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/output/school/school_holidays_vorarlberg.ics</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://public-holidays.github.io/holidays/output/school/school_holidays_vorarlberg.ics</loc>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
