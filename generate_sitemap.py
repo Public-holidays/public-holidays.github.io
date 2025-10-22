@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 """
-Main Sitemap Generator for Root GitHub Pages Repo
-Combines static pages with ICS calendar file entries
+Unified Sitemap Generator
+Generates complete sitemap.xml with static pages and ICS calendar files
 """
 
 from datetime import datetime
 import os
+from pathlib import Path
 
 # Configuration
-BASE_URL = "https://public-holidays.github.io/holidays"  # CHANGE THIS to your actual domain
-HOLIDAYS_REPO_PATH = "../public-holidays-holidays"  # Path to the holidays repo (adjust as needed)
+BASE_URL = "https://public-holidays.github.io/"  # CHANGE THIS to your actual domain
+HOLIDAYS_DIR = "holidays"
+OUTPUT_DIR = f"${HOLIDAYS_DIR}/output"
+SCHOOL_DIR = f"${HOLIDAYS_DIR}/output/school"
 
 
 def get_last_modified(filepath):
@@ -21,67 +24,26 @@ def get_last_modified(filepath):
         return datetime.now().strftime('%Y-%m-%d')
 
 
-def load_fragment_from_url():
+def get_ics_files(directory):
+    """Get all ICS files in a directory"""
+    path = Path(directory)
+    if not path.exists():
+        return []
+    return sorted([f.name for f in path.glob('*.ics')])
+
+
+def generate_ics_entries():
     """
-    Load sitemap fragment from published GitHub Pages site
-    Returns list of URL entries or None if not found
+    Generate ICS calendar file entries
+    Returns list of sitemap URL entries
     """
-    fragment_url = f'{BASE_URL}/holidays/sitemap_fragment.xml'
+    print()
+    print("Generating ICS calendar entries...")
+    
+    sitemap_lines = []
+    url_count = 0
 
-    try:
-        import urllib.request
-        print(f"Fetching fragment from: {fragment_url}")
-
-        with urllib.request.urlopen(fragment_url, timeout=10) as response:
-            content = response.read().decode('utf-8')
-
-        # Extract just the <url> entries (skip comments)
-        lines = content.split('\n')
-        url_lines = []
-        for line in lines:
-            if '<url>' in line or '</url>' in line or '<loc>' in line or '<lastmod>' in line or '<changefreq>' in line or '<priority>' in line:
-                url_lines.append(line)
-
-        return url_lines
-    except Exception as e:
-        print(f"⚠️  Could not fetch fragment: {e}")
-        return None
-
-
-def load_fragment_from_local_repo():
-    """
-    Fallback: Load sitemap fragment from local holidays repo
-    Returns list of URL entries or None if not found
-    """
-    fragment_path = os.path.join(HOLIDAYS_REPO_PATH, 'sitemap_fragment.xml')
-
-    if os.path.exists(fragment_path):
-        print(f"Loading fragment from local path: {fragment_path}")
-        with open(fragment_path, 'r', encoding='utf-8') as f:
-            content = f.read()
-
-        # Extract just the <url> entries (skip comments)
-        lines = content.split('\n')
-        url_lines = []
-        for line in lines:
-            if '<url>' in line or '</url>' in line or '<loc>' in line or '<lastmod>' in line or '<changefreq>' in line or '<priority>' in line:
-                url_lines.append(line)
-
-        return url_lines
-    return None
-
-
-def generate_manual_ics_entries():
-    """
-    Manual fallback: Generate ICS entries if fragment file not found
-    Use this if you don't have the holidays repo cloned locally
-    """
-    print("⚠️  Generating manual ICS entries (fragment not found)")
-
-    current_date = datetime.now().strftime('%Y-%m-%d')
-    entries = []
-
-    # German Bundesländer
+    # German holidays ICS files
     german_bundeslaender = [
         'baden-wuerttemberg', 'bayern', 'berlin', 'brandenburg', 'bremen',
         'hamburg', 'hessen', 'mecklenburg-vorpommern', 'niedersachsen',
@@ -89,49 +51,84 @@ def generate_manual_ics_entries():
         'sachsen-anhalt', 'schleswig-holstein', 'thueringen'
     ]
 
-    entries.append('  <!-- German Holidays ICS Files -->')
+    sitemap_lines.append('  <!-- German Holidays ICS Files -->')
     for bundesland in german_bundeslaender:
-        entries.extend([
-            '  <url>',
-            f'    <loc>{BASE_URL}/output/german_holidays_{bundesland}.ics</loc>',
-            f'    <lastmod>{current_date}</lastmod>',
-            '    <changefreq>yearly</changefreq>',
-            '    <priority>0.7</priority>',
-            '  </url>',
-            ''
-        ])
+        filename = f'german_holidays_{bundesland}.ics'
+        filepath = os.path.join(OUTPUT_DIR, filename)
 
-    # Austrian holidays
-    entries.append('  <!-- Austrian Holidays ICS Files -->')
-    entries.extend([
-        '  <url>',
-        f'    <loc>{BASE_URL}/output/austrian_holidays.ics</loc>',
-        f'    <lastmod>{current_date}</lastmod>',
-        '    <changefreq>yearly</changefreq>',
-        '    <priority>0.8</priority>',
-        '  </url>',
-        ''
-    ])
+        if os.path.exists(filepath):
+            lastmod = get_last_modified(filepath)
+            sitemap_lines.append('  <url>')
+            sitemap_lines.append(f'    <loc>{BASE_URL}/output/{filename}</loc>')
+            sitemap_lines.append(f'    <lastmod>{lastmod}</lastmod>')
+            sitemap_lines.append('    <changefreq>yearly</changefreq>')
+            sitemap_lines.append('    <priority>0.7</priority>')
+            sitemap_lines.append('  </url>')
+            sitemap_lines.append('')
+            url_count += 1
+            print(f"  ✓ {filename}")
 
-    # Austrian school holidays
-    entries.append('  <!-- Austrian School Holidays ICS Files -->')
+    # Austrian holidays ICS files
+    sitemap_lines.append('  <!-- Austrian Holidays ICS Files -->')
+
+    # Rolling calendar (main one)
+    rolling_file = 'austrian_holidays.ics'
+    rolling_path = os.path.join(OUTPUT_DIR, rolling_file)
+    if os.path.exists(rolling_path):
+        lastmod = get_last_modified(rolling_path)
+        sitemap_lines.append('  <url>')
+        sitemap_lines.append(f'    <loc>{BASE_URL}/output/{rolling_file}</loc>')
+        sitemap_lines.append(f'    <lastmod>{lastmod}</lastmod>')
+        sitemap_lines.append('    <changefreq>yearly</changefreq>')
+        sitemap_lines.append('    <priority>0.8</priority>')
+        sitemap_lines.append('  </url>')
+        sitemap_lines.append('')
+        url_count += 1
+        print(f"  ✓ {rolling_file}")
+
+    # Year-specific Austrian calendars
+    austrian_ics_files = get_ics_files(OUTPUT_DIR)
+    for filename in austrian_ics_files:
+        if filename.startswith('austrian_holidays_') and filename != 'austrian_holidays.ics':
+            filepath = os.path.join(OUTPUT_DIR, filename)
+            lastmod = get_last_modified(filepath)
+            sitemap_lines.append('  <url>')
+            sitemap_lines.append(f'    <loc>{BASE_URL}/output/{filename}</loc>')
+            sitemap_lines.append(f'    <lastmod>{lastmod}</lastmod>')
+            sitemap_lines.append('    <changefreq>never</changefreq>')
+            sitemap_lines.append('    <priority>0.5</priority>')
+            sitemap_lines.append('  </url>')
+            sitemap_lines.append('')
+            url_count += 1
+            print(f"  ✓ {filename}")
+
+    # Austrian school holidays ICS files
+    sitemap_lines.append('  <!-- Austrian School Holidays ICS Files -->')
+
     austrian_bundeslaender = [
         'wien', 'niederoesterreich', 'burgenland', 'oberoesterreich',
         'steiermark', 'kaernten', 'salzburg', 'tirol', 'vorarlberg'
     ]
 
     for bundesland in austrian_bundeslaender:
-        entries.extend([
-            '  <url>',
-            f'    <loc>{BASE_URL}/output/school/school_holidays_{bundesland}.ics</loc>',
-            f'    <lastmod>{current_date}</lastmod>',
-            '    <changefreq>yearly</changefreq>',
-            '    <priority>0.7</priority>',
-            '  </url>',
-            ''
-        ])
+        filename = f'school_holidays_{bundesland}.ics'
+        filepath = os.path.join(SCHOOL_DIR, filename)
 
-    return entries
+        if os.path.exists(filepath):
+            lastmod = get_last_modified(filepath)
+            sitemap_lines.append('  <url>')
+            sitemap_lines.append(f'    <loc>{BASE_URL}/output/school/{filename}</loc>')
+            sitemap_lines.append(f'    <lastmod>{lastmod}</lastmod>')
+            sitemap_lines.append('    <changefreq>yearly</changefreq>')
+            sitemap_lines.append('    <priority>0.7</priority>')
+            sitemap_lines.append('  </url>')
+            sitemap_lines.append('')
+            url_count += 1
+            print(f"  ✓ school/{filename}")
+
+    print(f"  Total ICS files: {url_count}")
+    
+    return sitemap_lines
 
 
 def generate_sitemap():
@@ -220,19 +217,9 @@ def generate_sitemap():
         sitemap_lines.append('')
         print(f"✓ Added page: {page['comment']}")
 
-    # Try to load ICS entries from fragment
-    print()
-    print("Loading ICS calendar entries...")
-    fragment_lines = load_fragment_from_url()
-
-    if fragment_lines:
-        print("✓ Loaded from sitemap_fragment.xml")
-        sitemap_lines.append('  <!-- ICS Calendar Files from holidays repo -->')
-        sitemap_lines.extend(fragment_lines)
-    else:
-        print("⚠️  Fragment not found, generating manual entries")
-        manual_entries = generate_manual_ics_entries()
-        sitemap_lines.extend(manual_entries)
+    # Load ICS entries directly
+    ics_entries = generate_ics_entries()
+    sitemap_lines.extend(ics_entries)
 
     # Close XML
     sitemap_lines.append('</urlset>')
@@ -317,6 +304,3 @@ if __name__ == "__main__":
     print()
     print("All done! 🎉")
     print()
-    print("💡 Tip: If you have the holidays repo cloned locally,")
-    print("   update HOLIDAYS_REPO_PATH to automatically include")
-    print("   the latest ICS file entries from sitemap_fragment.xml")
