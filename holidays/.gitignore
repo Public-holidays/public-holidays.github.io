@@ -1,1 +1,5 @@
-output/
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Note: output/ is tracked so ICS files are deployed to GitHub Pages
