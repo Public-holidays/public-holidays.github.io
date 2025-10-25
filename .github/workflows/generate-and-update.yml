@@ -30,6 +30,9 @@ jobs:
     - name: Install Node.js dependencies
       run: npm ci
     
+    - name: Build TypeScript and bundle frontend
+      run: npm run build
+    
     - name: Generate calendar files
       run: npm run generate
     

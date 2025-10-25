@@ -1,3 +1,5 @@
+import { HolidayDefinition } from '../types/Holiday.js';
+
 /**
  * Holiday date calculation utilities
  * Includes Easter calculation and moveable holiday dates
@@ -88,4 +90,14 @@ export function calculateRepentanceDay(year: number): Date {
   // Calculate days back to previous Wednesday (3)
   const daysBack = dayOfWeek >= 3 ? dayOfWeek - 3 : dayOfWeek + 4;
   return addDays(nov23, -daysBack);
+}
+
+export function calculateDate(year: number, holidayDef: HolidayDefinition): Date {
+    if (holidayDef.fixed) {
+        return new Date(year, holidayDef.fixed.month - 1, holidayDef.fixed.day);
+    }
+    if (holidayDef.calculator) {
+        return holidayDef.calculator(year);
+    }
+    throw new Error(`Cannot calculate date for holiday: ${holidayDef.nameDE}`);
 }

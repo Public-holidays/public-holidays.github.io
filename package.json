@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npm run bundle",
+    "bundle": "esbuild src/page-at.ts --bundle --outfile=dist/page-at.js && esbuild src/page-de.ts --bundle --outfile=dist/page-de.js",
     "generate": "npm run build && node dist/index.js",
     "dev": "tsx src/index.ts",
     "watch": "tsc --watch",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@types/glob": "^8.1.0",
     "@types/node": "^20.0.0",
+    "esbuild": "^0.25.11",
     "glob": "^11.0.3",
     "tsx": "^4.0.0",
     "typescript": "^5.3.0"

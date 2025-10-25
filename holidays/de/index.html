@@ -370,13 +370,13 @@
             <div class="control-group">
                 <div class="control-item">
                     <label>Jahr</label>
-                    <select id="yearSelect" onchange="updateCalendar()">
+                    <select id="yearSelect" onchange="window.updateCalendar()">
                         <!-- Populated by JS -->
                     </select>
                 </div>
                 <div class="control-item">
                     <label>Bundesland</label>
-                    <select id="bundeslandSelect" onchange="updateCalendar()">
+                    <select id="bundeslandSelect" onchange="window.updateCalendar()">
                         <option value="Baden-Württemberg">Baden-Württemberg</option>
                         <option value="Bayern">Bayern</option>
                         <option value="Berlin">Berlin</option>
@@ -400,8 +400,8 @@
 
         <div class="content">
             <div class="tabs">
-                <button class="tab active" onclick="switchTab('holidays')">Feiertage</button>
-                <button class="tab" onclick="switchTab('download')">Kalender herunterladen</button>
+                <button class="tab active" onclick="window.switchTab(event, 'holidays')">Feiertage</button>
+                <button class="tab" onclick="window.switchTab(event, 'download')">Kalender herunterladen</button>
             </div>
 
             <div id="holidays-tab" class="tab-content active">
@@ -464,191 +464,6 @@
         </footer>
     </div>
 
-    <script>
-        // Gauss Easter Algorithm
-        function calculateEaster(year) {
-            const a = year % 19;
-            const b = year % 4;
-            const c = year % 7;
-            const k = Math.floor(year / 100);
-            const p = Math.floor((13 + 8 * k) / 25);
-            const q = Math.floor(k / 4);
-            const M = (15 - p + k - q) % 30;
-            const N = (4 + k - q) % 7;
-            const d = (19 * a + M) % 30;
-            const e = (2 * b + 4 * c + 6 * d + N) % 7;
-
-            let day, month;
-            if (d + e < 10) {
-                day = d + e + 22;
-                month = 3;
-            } else {
-                day = d + e - 9;
-                month = 4;
-            }
-
-            if (day === 26 && month === 4) day = 19;
-            if (day === 25 && month === 4 && d === 28 && e === 6 && a > 10) day = 18;
-
-            return new Date(year, month - 1, day);
-        }
-
-        function addDays(date, days) {
-            const result = new Date(date);
-            result.setDate(result.getDate() + days);
-            return result;
-        }
-
-        function formatDate(date) {
-            const days = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
-            const months = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
-                          'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
-            return `${days[date.getDay()]}, ${date.getDate()}. ${months[date.getMonth()]} ${date.getFullYear()}`;
-        }
-
-        function getBussUndBettag(year) {
-            const dec25 = new Date(year, 11, 25);
-            const daysFromSunday = (dec25.getDay() + 1) % 7;
-            const fourthAdventSunday = new Date(dec25);
-            fourthAdventSunday.setDate(fourthAdventSunday.getDate() - daysFromSunday);
-            const firstAdventSunday = new Date(fourthAdventSunday);
-            firstAdventSunday.setDate(firstAdventSunday.getDate() - 21);
-            const bussUndBettag = new Date(firstAdventSunday);
-            bussUndBettag.setDate(bussUndBettag.getDate() - 11);
-            return bussUndBettag;
-        }
-
-        function getGermanHolidays(year, bundesland) {
-            const easter = calculateEaster(year);
-
-            const holidays = [
-                { date: new Date(year, 0, 1), name: 'Neujahr', nameEn: 'New Year\'s Day', scope: 'bundesweit', info: 'Fixdatum, 1. Januar' },
-                { date: addDays(easter, -2), name: 'Karfreitag', nameEn: 'Good Friday', scope: 'bundesweit', info: 'Beweglicher Feiertag, 2 Tage vor Ostersonntag' },
-                { date: addDays(easter, 1), name: 'Ostermontag', nameEn: 'Easter Monday', scope: 'bundesweit', info: 'Beweglicher Feiertag, 1 Tag nach Ostersonntag' },
-                { date: new Date(year, 4, 1), name: 'Tag der Arbeit', nameEn: 'Labour Day', scope: 'bundesweit', info: 'Fixdatum, 1. Mai' },
-                { date: addDays(easter, 39), name: 'Christi Himmelfahrt', nameEn: 'Ascension Day', scope: 'bundesweit', info: 'Beweglicher Feiertag, 39 Tage nach Ostersonntag' },
-                { date: addDays(easter, 50), name: 'Pfingstmontag', nameEn: 'Whit Monday', scope: 'bundesweit', info: 'Beweglicher Feiertag, 50 Tage nach Ostersonntag' },
-                { date: new Date(year, 9, 3), name: 'Tag der Deutschen Einheit', nameEn: 'German Unity Day', scope: 'bundesweit', info: 'Fixdatum, 3. Oktober - Nationalfeiertag' },
-                { date: new Date(year, 11, 25), name: '1. Weihnachtsfeiertag', nameEn: 'Christmas Day', scope: 'bundesweit', info: 'Fixdatum, 25. Dezember' },
-                { date: new Date(year, 11, 26), name: '2. Weihnachtsfeiertag', nameEn: 'St. Stephen\'s Day', scope: 'bundesweit', info: 'Fixdatum, 26. Dezember' }
-            ];
-
-            if (['Baden-Württemberg', 'Bayern', 'Sachsen-Anhalt'].includes(bundesland)) {
-                holidays.push({ date: new Date(year, 0, 6), name: 'Heilige Drei Könige', nameEn: 'Epiphany', scope: 'regional', info: 'Fixdatum, 6. Januar' });
-            }
-
-            if (['Berlin', 'Mecklenburg-Vorpommern'].includes(bundesland)) {
-                holidays.push({ date: new Date(year, 2, 8), name: 'Internationaler Frauentag', nameEn: 'International Women\'s Day', scope: 'regional', info: 'Fixdatum, 8. März (seit 2023 in Berlin und MV)' });
-            }
-
-            if (['Baden-Württemberg', 'Bayern', 'Hessen', 'Nordrhein-Westfalen', 'Rheinland-Pfalz', 'Saarland'].includes(bundesland)) {
-                holidays.push({ date: addDays(easter, 60), name: 'Fronleichnam', nameEn: 'Corpus Christi', scope: 'regional', info: 'Beweglicher Feiertag, 60 Tage nach Ostersonntag' });
-            }
-
-            if (bundesland === 'Bayern') {
-                holidays.push({ date: new Date(year, 7, 8), name: 'Augsburger Friedensfest', nameEn: 'Augsburg Peace Festival', scope: 'nur Stadt Augsburg', info: 'Fixdatum, 8. August - nur in der Stadt Augsburg' });
-            }
-
-            if (bundesland === 'Saarland') {
-                holidays.push({ date: new Date(year, 7, 15), name: 'Mariä Himmelfahrt', nameEn: 'Assumption of Mary', scope: 'regional', info: 'Fixdatum, 15. August' });
-            } else if (bundesland === 'Bayern') {
-                holidays.push({ date: new Date(year, 7, 15), name: 'Mariä Himmelfahrt', nameEn: 'Assumption of Mary', scope: 'nur in überwiegend katholischen Gemeinden', info: 'Fixdatum, 15. August - nur in überwiegend katholischen Gemeinden Bayerns' });
-            }
-
-            if (bundesland === 'Thüringen') {
-                holidays.push({ date: new Date(year, 8, 20), name: 'Weltkindertag', nameEn: 'World Children\'s Day', scope: 'regional', info: 'Fixdatum, 20. September (seit 2019 in Thüringen)' });
-            }
-
-            if (['Brandenburg', 'Mecklenburg-Vorpommern', 'Sachsen', 'Sachsen-Anhalt', 'Thüringen', 'Bremen', 'Hamburg', 'Niedersachsen', 'Schleswig-Holstein'].includes(bundesland)) {
-                holidays.push({ date: new Date(year, 9, 31), name: 'Reformationstag', nameEn: 'Reformation Day', scope: 'regional', info: 'Fixdatum, 31. Oktober' });
-            }
-
-            if (['Baden-Württemberg', 'Bayern', 'Nordrhein-Westfalen', 'Rheinland-Pfalz', 'Saarland'].includes(bundesland)) {
-                holidays.push({ date: new Date(year, 10, 1), name: 'Allerheiligen', nameEn: 'All Saints\' Day', scope: 'regional', info: 'Fixdatum, 1. November' });
-            }
-
-            if (bundesland === 'Sachsen') {
-                holidays.push({ date: getBussUndBettag(year), name: 'Buß- und Bettag', nameEn: 'Day of Repentance and Prayer', scope: 'regional', info: 'Beweglicher Feiertag, Mittwoch vor dem letzten Sonntag vor dem 1. Advent' });
-            }
-
-            return holidays.sort((a, b) => a.date - b.date);
-        }
-
-        function renderHolidays(year, bundesland) {
-            const holidays = getGermanHolidays(year, bundesland);
-            const container = document.getElementById('holidays');
-            document.getElementById('holiday-year').textContent = year;
-            document.getElementById('holiday-bundesland').textContent = bundesland;
-
-            container.innerHTML = holidays.map(h => `
-                <div class="holiday-card">
-                    <h3>
-                        ${h.name}
-                        <span class="info-icon" onmouseenter="showTooltip(event, '${h.info.replace(/'/g, "&#39;")}')" onmouseleave="hideTooltip()">i</span>
-                    </h3>
-                    <div class="date">${formatDate(h.date)}</div>
-                    <div class="subtitle">${h.nameEn}</div>
-                    <div class="scope-badge ${h.scope === 'bundesweit' ? 'bundesweit' : ''}">${h.scope}</div>
-                </div>
-            `).join('');
-        }
-
-        let tooltipElement = null;
-
-        function showTooltip(event, text) {
-            hideTooltip();
-
-            tooltipElement = document.createElement('div');
-            tooltipElement.className = 'tooltip';
-            tooltipElement.style.display = 'block';
-            tooltipElement.textContent = text;
-            document.body.appendChild(tooltipElement);
-
-            const iconRect = event.target.getBoundingClientRect();
-            tooltipElement.style.left = (iconRect.right + 10) + 'px';
-            tooltipElement.style.top = iconRect.top + 'px';
-        }
-
-        function hideTooltip() {
-            if (tooltipElement) {
-                tooltipElement.remove();
-                tooltipElement = null;
-            }
-        }
-
-        function switchTab(tabName) {
-            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-
-            event.target.classList.add('active');
-            document.getElementById(tabName + '-tab').classList.add('active');
-        }
-
-        function updateCalendar() {
-            const year = parseInt(document.getElementById('yearSelect').value);
-            const bundesland = document.getElementById('bundeslandSelect').value;
-
-            renderHolidays(year, bundesland);
-        }
-
-        function init() {
-            const currentYear = new Date().getFullYear();
-            const yearSelect = document.getElementById('yearSelect');
-
-            // Populate year dropdown (current year - 1 to + 5)
-            for (let year = currentYear - 1; year <= currentYear + 5; year++) {
-                const option = document.createElement('option');
-                option.value = year;
-                option.textContent = year;
-                if (year === currentYear) option.selected = true;
-                yearSelect.appendChild(option);
-            }
-
-            // Initial render
-            updateCalendar();
-        }
-
-        document.addEventListener('DOMContentLoaded', init);
-    </script>
+        <script src="../../dist/page-de.js" defer></script>
 </body>
 </html>

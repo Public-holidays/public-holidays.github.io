@@ -3,8 +3,8 @@
  * Based on Austrian school law (Schulzeitgesetz)
  */
 
-import { calculateEaster, addDays } from './HolidayCalculator.js';
-import { SchoolHolidayPeriod, PatronSaintDay, AustrianRegion } from '../types/SchoolHoliday.js';
+import { calculateEaster, addDays } from './HolidayCalculator';
+import { SchoolHolidayPeriod, PatronSaintDay, AustrianRegion } from '../types/SchoolHoliday';
 
 /**
  * Get the first Monday of a given month

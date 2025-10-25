@@ -4,12 +4,12 @@
  * Main entry point for holiday calendar generator
  */
 
-import { IcsGenerator } from './generators/IcsGenerator.js';
-import { austrianHolidays, austrianRegions } from './data/austrianHolidays.js';
-import { getGermanHolidaysForVariant, germanCalenderVariants } from './data/germanHolidays.js';
-import { getSchoolHolidays } from './calculators/SchoolHolidayCalculator.js';
-import { AustrianRegion } from './types/SchoolHoliday.js';
-import { stateToFilename } from './types/Holiday.js';
+import { IcsGenerator } from './generators/IcsGenerator';
+import { austrianHolidays, austrianRegions } from './data/austrianHolidays';
+import { getGermanHolidaysForVariant, germanCalenderVariants } from './data/germanHolidays';
+import { getSchoolHolidays } from './calculators/SchoolHolidayCalculator';
+import { AustrianRegion } from './types/SchoolHoliday';
+import { stateToFilename } from './types/Holiday';
 import { join } from 'path';
 
 const BASE_DOMAIN = 'public-holidays.github.io';
