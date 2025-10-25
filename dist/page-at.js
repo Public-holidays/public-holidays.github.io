@@ -421,13 +421,19 @@
     const publicYearSpan = document.getElementById("public-year");
     if (!container || !publicYearSpan) return;
     publicYearSpan.textContent = year.toString();
-    container.innerHTML = holidays.map((h) => `
-        <div class="holiday-card">
-            <h3>${h.nameDE}</h3>
-            <div class="date">${formatDate(h.date.toISOString())}</div>
-            <div class="subtitle">${h.nameEN}</div>
-        </div>
-    `).join("");
+    container.innerHTML = holidays.map((h) => {
+      const wikiLink = h.wikipediaDE ? `<a href="${h.wikipediaDE}" target="_blank" rel="noopener" class="info-link" title="Mehr erfahren (Wikipedia)">\u2139\uFE0F</a>` : "";
+      return `
+            <div class="holiday-card">
+                <h3>
+                    ${h.nameDE}
+                    ${wikiLink}
+                </h3>
+                <div class="date">${formatDate(h.date.toISOString())}</div>
+                <div class="subtitle">${h.nameEN}</div>
+            </div>
+        `;
+    }).join("");
   }
   function renderSchoolHolidays(year, bundesland) {
     const holidays = getSchoolHolidays(year, bundesland);

@@ -29,9 +29,16 @@ function renderHolidays(year: number, bundesland: string) {
 
     container.innerHTML = holidays.map(h => {
         const scope = (h as any).scope || 'regional';
+        const wikiLink = h.wikipediaDE 
+            ? `<a href="${h.wikipediaDE}" target="_blank" rel="noopener" class="info-link" title="Mehr erfahren (Wikipedia)">ℹ️</a>`
+            : '';
+        
         return `
             <div class="holiday-card">
-                <h3>${h.nameDE}</h3>
+                <h3>
+                    ${h.nameDE}
+                    ${wikiLink}
+                </h3>
                 <div class="date">${formatDate(h.date.toISOString(), 'de-DE')}</div>
                 <div class="subtitle">${h.nameEN}</div>
                 <div class="scope-badge ${scope === 'bundesweit' ? 'bundesweit' : ''}">${scope}</div>
