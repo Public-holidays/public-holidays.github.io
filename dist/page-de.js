@@ -174,6 +174,8 @@
     nameEN: "German Unity Day",
     wikipediaDE: "https://de.wikipedia.org/wiki/Tag_der_Deutschen_Einheit",
     wikipediaEN: "https://en.wikipedia.org/wiki/German_Unity_Day",
+    scope: "bundesweit",
+    // Nationwide holiday
     fixed: { month: 10, day: 3 }
   };
   var REFORMATION_DAY = {
@@ -235,7 +237,7 @@
     GERMAN_UNITY_DAY,
     CHRISTMAS_DAY,
     BOXING_DAY
-  ];
+  ].map((holiday) => ({ ...holiday, scope: "bundesweit" }));
   var stateSpecificHolidays = {
     "Baden-W\xFCrttemberg": [
       EPIPHANY,

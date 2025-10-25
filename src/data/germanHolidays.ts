@@ -29,6 +29,7 @@ const GERMAN_UNITY_DAY: HolidayDefinition = {
     nameEN: 'German Unity Day',
     wikipediaDE: 'https://de.wikipedia.org/wiki/Tag_der_Deutschen_Einheit',
     wikipediaEN: 'https://en.wikipedia.org/wiki/German_Unity_Day',
+    scope: 'bundesweit',  // Nationwide holiday
     fixed: {month: 10, day: 3},
 };
 
@@ -88,7 +89,7 @@ const WORLD_CHILDRENS_DAY: HolidayDefinition = {
     fixed: {month: 9, day: 20},
 };
 
-// Common holidays for all German states
+// Common holidays for all German states (marked as bundesweit/nationwide)
 const commonGermanHolidays: HolidayDefinition[] = [
     NEW_YEARS_DAY,
     GOOD_FRIDAY,
@@ -99,7 +100,7 @@ const commonGermanHolidays: HolidayDefinition[] = [
     GERMAN_UNITY_DAY,
     CHRISTMAS_DAY,
     BOXING_DAY,
-];
+].map(holiday => ({ ...holiday, scope: 'bundesweit' }));
 
 // State-specific holidays
 const stateSpecificHolidays: Record<string, HolidayDefinition[]> = {
