@@ -1,9 +1,10 @@
 BEGIN:VCALENDAR
 VERSION:2.0
 CALSCALE:GREGORIAN
-PRODID:-//public-holidays.github.io//German Holidays Sachsen//DE
+PRODID:-//public-holidays.github.io//German Holidays Thüringen (katholisch)
+	//DE
 METHOD:PUBLISH
-X-WR-CALNAME:Deutsche Feiertage - Sachsen
+X-WR-CALNAME:Deutsche Feiertage - Thüringen (katholisch)
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
 UID:20250101-neujahr-de@public-holidays.github.io
@@ -78,6 +79,30 @@ TRANSP:TRANSPARENT
 DURATION:P1DT
 END:VEVENT
 BEGIN:VEVENT
+UID:20250619-fronleichnam-de@public-holidays.github.io
+SUMMARY:Fronleichnam
+DTSTAMP:20251025T065811Z
+DTSTART;VALUE=DATE:20250619
+DESCRIPTION:Corpus Christi - Gesetzlicher Feiertag in Deutschland\\n\\nLear
+	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Fronleichnam\\n🇬🇧 https://en.wiki
+	pedia.org/wiki/Corpus_Christi_(feast)
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
+UID:20250920-weltkindertag-de@public-holidays.github.io
+SUMMARY:Weltkindertag
+DTSTAMP:20251025T065811Z
+DTSTART;VALUE=DATE:20250920
+DESCRIPTION:World Children's Day - Gesetzlicher Feiertag in Deutschland\\n\
+	\nLearn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Weltkindertag\\n🇬🇧 https://
+	en.wikipedia.org/wiki/Children%27s_Day
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
 UID:20251003-tag-der-deutschen-einheit-de@public-holidays.github.io
 SUMMARY:Tag der Deutschen Einheit
 DTSTAMP:20251025T065811Z
@@ -97,18 +122,6 @@ DTSTART;VALUE=DATE:20251031
 DESCRIPTION:Reformation Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
 	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Reformationstag\\n🇬🇧 https://en.
 	wikipedia.org/wiki/Reformation_Day
-X-MICROSOFT-CDO-BUSYSTATUS:FREE
-TRANSP:TRANSPARENT
-DURATION:P1DT
-END:VEVENT
-BEGIN:VEVENT
-UID:20251119-buss-und-bettag-de@public-holidays.github.io
-SUMMARY:Buß- und Bettag
-DTSTAMP:20251025T065811Z
-DTSTART;VALUE=DATE:20251119
-DESCRIPTION:Day of Repentance and Prayer - Gesetzlicher Feiertag in Deutsch
-	land\\n\\nLearn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Bu%C3%9F-_und_Bett
-	ag\\n🇬🇧 https://en.wikipedia.org/wiki/Repentance_and_Prayer_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -210,6 +223,30 @@ TRANSP:TRANSPARENT
 DURATION:P1DT
 END:VEVENT
 BEGIN:VEVENT
+UID:20260604-fronleichnam-de@public-holidays.github.io
+SUMMARY:Fronleichnam
+DTSTAMP:20251025T065811Z
+DTSTART;VALUE=DATE:20260604
+DESCRIPTION:Corpus Christi - Gesetzlicher Feiertag in Deutschland\\n\\nLear
+	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Fronleichnam\\n🇬🇧 https://en.wiki
+	pedia.org/wiki/Corpus_Christi_(feast)
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
+UID:20260920-weltkindertag-de@public-holidays.github.io
+SUMMARY:Weltkindertag
+DTSTAMP:20251025T065811Z
+DTSTART;VALUE=DATE:20260920
+DESCRIPTION:World Children's Day - Gesetzlicher Feiertag in Deutschland\\n\
+	\nLearn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Weltkindertag\\n🇬🇧 https://
+	en.wikipedia.org/wiki/Children%27s_Day
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
 UID:20261003-tag-der-deutschen-einheit-de@public-holidays.github.io
 SUMMARY:Tag der Deutschen Einheit
 DTSTAMP:20251025T065811Z
@@ -229,18 +266,6 @@ DTSTART;VALUE=DATE:20261031
 DESCRIPTION:Reformation Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
 	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Reformationstag\\n🇬🇧 https://en.
 	wikipedia.org/wiki/Reformation_Day
-X-MICROSOFT-CDO-BUSYSTATUS:FREE
-TRANSP:TRANSPARENT
-DURATION:P1DT
-END:VEVENT
-BEGIN:VEVENT
-UID:20261118-buss-und-bettag-de@public-holidays.github.io
-SUMMARY:Buß- und Bettag
-DTSTAMP:20251025T065811Z
-DTSTART;VALUE=DATE:20261118
-DESCRIPTION:Day of Repentance and Prayer - Gesetzlicher Feiertag in Deutsch
-	land\\n\\nLearn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Bu%C3%9F-_und_Bett
-	ag\\n🇬🇧 https://en.wikipedia.org/wiki/Repentance_and_Prayer_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -342,6 +367,30 @@ TRANSP:TRANSPARENT
 DURATION:P1DT
 END:VEVENT
 BEGIN:VEVENT
+UID:20270527-fronleichnam-de@public-holidays.github.io
+SUMMARY:Fronleichnam
+DTSTAMP:20251025T065811Z
+DTSTART;VALUE=DATE:20270527
+DESCRIPTION:Corpus Christi - Gesetzlicher Feiertag in Deutschland\\n\\nLear
+	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Fronleichnam\\n🇬🇧 https://en.wiki
+	pedia.org/wiki/Corpus_Christi_(feast)
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
+UID:20270920-weltkindertag-de@public-holidays.github.io
+SUMMARY:Weltkindertag
+DTSTAMP:20251025T065811Z
+DTSTART;VALUE=DATE:20270920
+DESCRIPTION:World Children's Day - Gesetzlicher Feiertag in Deutschland\\n\
+	\nLearn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Weltkindertag\\n🇬🇧 https://
+	en.wikipedia.org/wiki/Children%27s_Day
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
 UID:20271003-tag-der-deutschen-einheit-de@public-holidays.github.io
 SUMMARY:Tag der Deutschen Einheit
 DTSTAMP:20251025T065811Z
@@ -361,18 +410,6 @@ DTSTART;VALUE=DATE:20271031
 DESCRIPTION:Reformation Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
 	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Reformationstag\\n🇬🇧 https://en.
 	wikipedia.org/wiki/Reformation_Day
-X-MICROSOFT-CDO-BUSYSTATUS:FREE
-TRANSP:TRANSPARENT
-DURATION:P1DT
-END:VEVENT
-BEGIN:VEVENT
-UID:20271117-buss-und-bettag-de@public-holidays.github.io
-SUMMARY:Buß- und Bettag
-DTSTAMP:20251025T065811Z
-DTSTART;VALUE=DATE:20271117
-DESCRIPTION:Day of Repentance and Prayer - Gesetzlicher Feiertag in Deutsch
-	land\\n\\nLearn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Bu%C3%9F-_und_Bett
-	ag\\n🇬🇧 https://en.wikipedia.org/wiki/Repentance_and_Prayer_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -474,6 +511,30 @@ TRANSP:TRANSPARENT
 DURATION:P1DT
 END:VEVENT
 BEGIN:VEVENT
+UID:20280615-fronleichnam-de@public-holidays.github.io
+SUMMARY:Fronleichnam
+DTSTAMP:20251025T065811Z
+DTSTART;VALUE=DATE:20280615
+DESCRIPTION:Corpus Christi - Gesetzlicher Feiertag in Deutschland\\n\\nLear
+	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Fronleichnam\\n🇬🇧 https://en.wiki
+	pedia.org/wiki/Corpus_Christi_(feast)
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
+UID:20280920-weltkindertag-de@public-holidays.github.io
+SUMMARY:Weltkindertag
+DTSTAMP:20251025T065811Z
+DTSTART;VALUE=DATE:20280920
+DESCRIPTION:World Children's Day - Gesetzlicher Feiertag in Deutschland\\n\
+	\nLearn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Weltkindertag\\n🇬🇧 https://
+	en.wikipedia.org/wiki/Children%27s_Day
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
 UID:20281003-tag-der-deutschen-einheit-de@public-holidays.github.io
 SUMMARY:Tag der Deutschen Einheit
 DTSTAMP:20251025T065811Z
@@ -493,18 +554,6 @@ DTSTART;VALUE=DATE:20281031
 DESCRIPTION:Reformation Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
 	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Reformationstag\\n🇬🇧 https://en.
 	wikipedia.org/wiki/Reformation_Day
-X-MICROSOFT-CDO-BUSYSTATUS:FREE
-TRANSP:TRANSPARENT
-DURATION:P1DT
-END:VEVENT
-BEGIN:VEVENT
-UID:20281122-buss-und-bettag-de@public-holidays.github.io
-SUMMARY:Buß- und Bettag
-DTSTAMP:20251025T065811Z
-DTSTART;VALUE=DATE:20281122
-DESCRIPTION:Day of Repentance and Prayer - Gesetzlicher Feiertag in Deutsch
-	land\\n\\nLearn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Bu%C3%9F-_und_Bett
-	ag\\n🇬🇧 https://en.wikipedia.org/wiki/Repentance_and_Prayer_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -606,6 +655,30 @@ TRANSP:TRANSPARENT
 DURATION:P1DT
 END:VEVENT
 BEGIN:VEVENT
+UID:20290531-fronleichnam-de@public-holidays.github.io
+SUMMARY:Fronleichnam
+DTSTAMP:20251025T065811Z
+DTSTART;VALUE=DATE:20290531
+DESCRIPTION:Corpus Christi - Gesetzlicher Feiertag in Deutschland\\n\\nLear
+	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Fronleichnam\\n🇬🇧 https://en.wiki
+	pedia.org/wiki/Corpus_Christi_(feast)
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
+UID:20290920-weltkindertag-de@public-holidays.github.io
+SUMMARY:Weltkindertag
+DTSTAMP:20251025T065811Z
+DTSTART;VALUE=DATE:20290920
+DESCRIPTION:World Children's Day - Gesetzlicher Feiertag in Deutschland\\n\
+	\nLearn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Weltkindertag\\n🇬🇧 https://
+	en.wikipedia.org/wiki/Children%27s_Day
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
 UID:20291003-tag-der-deutschen-einheit-de@public-holidays.github.io
 SUMMARY:Tag der Deutschen Einheit
 DTSTAMP:20251025T065811Z
@@ -625,18 +698,6 @@ DTSTART;VALUE=DATE:20291031
 DESCRIPTION:Reformation Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
 	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Reformationstag\\n🇬🇧 https://en.
 	wikipedia.org/wiki/Reformation_Day
-X-MICROSOFT-CDO-BUSYSTATUS:FREE
-TRANSP:TRANSPARENT
-DURATION:P1DT
-END:VEVENT
-BEGIN:VEVENT
-UID:20291121-buss-und-bettag-de@public-holidays.github.io
-SUMMARY:Buß- und Bettag
-DTSTAMP:20251025T065811Z
-DTSTART;VALUE=DATE:20291121
-DESCRIPTION:Day of Repentance and Prayer - Gesetzlicher Feiertag in Deutsch
-	land\\n\\nLearn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Bu%C3%9F-_und_Bett
-	ag\\n🇬🇧 https://en.wikipedia.org/wiki/Repentance_and_Prayer_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT

@@ -1,9 +1,10 @@
 BEGIN:VCALENDAR
 VERSION:2.0
 CALSCALE:GREGORIAN
-PRODID:-//public-holidays.github.io//German Holidays Sachsen//DE
+PRODID:-//public-holidays.github.io//German Holidays Sachsen (katholisch)//
+	DE
 METHOD:PUBLISH
-X-WR-CALNAME:Deutsche Feiertage - Sachsen
+X-WR-CALNAME:Deutsche Feiertage - Sachsen (katholisch)
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
 UID:20250101-neujahr-de@public-holidays.github.io
@@ -73,6 +74,18 @@ DTSTART;VALUE=DATE:20250609
 DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
 	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Pfingstmontag\\n🇬🇧 https://en.wikipe
 	dia.org/wiki/Whit_Monday
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
+UID:20250619-fronleichnam-de@public-holidays.github.io
+SUMMARY:Fronleichnam
+DTSTAMP:20251025T065811Z
+DTSTART;VALUE=DATE:20250619
+DESCRIPTION:Corpus Christi - Gesetzlicher Feiertag in Deutschland\\n\\nLear
+	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Fronleichnam\\n🇬🇧 https://en.wiki
+	pedia.org/wiki/Corpus_Christi_(feast)
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -210,6 +223,18 @@ TRANSP:TRANSPARENT
 DURATION:P1DT
 END:VEVENT
 BEGIN:VEVENT
+UID:20260604-fronleichnam-de@public-holidays.github.io
+SUMMARY:Fronleichnam
+DTSTAMP:20251025T065811Z
+DTSTART;VALUE=DATE:20260604
+DESCRIPTION:Corpus Christi - Gesetzlicher Feiertag in Deutschland\\n\\nLear
+	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Fronleichnam\\n🇬🇧 https://en.wiki
+	pedia.org/wiki/Corpus_Christi_(feast)
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
 UID:20261003-tag-der-deutschen-einheit-de@public-holidays.github.io
 SUMMARY:Tag der Deutschen Einheit
 DTSTAMP:20251025T065811Z
@@ -337,6 +362,18 @@ DTSTART;VALUE=DATE:20270517
 DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
 	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Pfingstmontag\\n🇬🇧 https://en.wikipe
 	dia.org/wiki/Whit_Monday
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
+UID:20270527-fronleichnam-de@public-holidays.github.io
+SUMMARY:Fronleichnam
+DTSTAMP:20251025T065811Z
+DTSTART;VALUE=DATE:20270527
+DESCRIPTION:Corpus Christi - Gesetzlicher Feiertag in Deutschland\\n\\nLear
+	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Fronleichnam\\n🇬🇧 https://en.wiki
+	pedia.org/wiki/Corpus_Christi_(feast)
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -474,6 +511,18 @@ TRANSP:TRANSPARENT
 DURATION:P1DT
 END:VEVENT
 BEGIN:VEVENT
+UID:20280615-fronleichnam-de@public-holidays.github.io
+SUMMARY:Fronleichnam
+DTSTAMP:20251025T065811Z
+DTSTART;VALUE=DATE:20280615
+DESCRIPTION:Corpus Christi - Gesetzlicher Feiertag in Deutschland\\n\\nLear
+	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Fronleichnam\\n🇬🇧 https://en.wiki
+	pedia.org/wiki/Corpus_Christi_(feast)
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
 UID:20281003-tag-der-deutschen-einheit-de@public-holidays.github.io
 SUMMARY:Tag der Deutschen Einheit
 DTSTAMP:20251025T065811Z
@@ -601,6 +650,18 @@ DTSTART;VALUE=DATE:20290521
 DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
 	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Pfingstmontag\\n🇬🇧 https://en.wikipe
 	dia.org/wiki/Whit_Monday
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
+UID:20290531-fronleichnam-de@public-holidays.github.io
+SUMMARY:Fronleichnam
+DTSTAMP:20251025T065811Z
+DTSTART;VALUE=DATE:20290531
+DESCRIPTION:Corpus Christi - Gesetzlicher Feiertag in Deutschland\\n\\nLear
+	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Fronleichnam\\n🇬🇧 https://en.wiki
+	pedia.org/wiki/Corpus_Christi_(feast)
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT

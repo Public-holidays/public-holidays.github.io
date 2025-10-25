@@ -167,6 +167,11 @@ const stateSpecificHolidays: Record<string, HolidayDefinition[]> = {
         REFORMATION_DAY,
         REPENTANCE_DAY,
     ],
+    'Sachsen (katholisch)': [
+        CORPUS_CHRISTI,
+        REFORMATION_DAY,
+        REPENTANCE_DAY,
+    ],
     'Sachsen-Anhalt': [
         EPIPHANY,
         REFORMATION_DAY,
@@ -175,6 +180,11 @@ const stateSpecificHolidays: Record<string, HolidayDefinition[]> = {
         REFORMATION_DAY,
     ],
     'Thüringen': [
+        WORLD_CHILDRENS_DAY,
+        REFORMATION_DAY,
+    ],
+    'Thüringen (katholisch)': [
+        CORPUS_CHRISTI,
         WORLD_CHILDRENS_DAY,
         REFORMATION_DAY,
     ],
@@ -201,7 +211,9 @@ export const germanCalenderVariants: string[] = [
     'Rheinland-Pfalz',
     'Saarland',
     'Sachsen',
+    'Sachsen (katholisch)',
     'Sachsen-Anhalt',
     'Schleswig-Holstein',
     'Thüringen',
+    'Thüringen (katholisch)',
 ];

@@ -45,9 +45,11 @@ export type GermanState =
   | 'Rheinland-Pfalz'
   | 'Saarland'
   | 'Sachsen'
+  | 'Sachsen (katholisch)' // Saxony - Catholic municipalities with Corpus Christi
   | 'Sachsen-Anhalt'
   | 'Schleswig-Holstein'
-  | 'Thüringen';
+  | 'Thüringen'
+  | 'Thüringen (katholisch)'; // Thuringia - Catholic municipalities with Corpus Christi
 
 /**
  * Convert German state name to filename-safe format (lowercase, no umlauts, hyphens)
