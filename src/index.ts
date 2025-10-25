@@ -231,7 +231,7 @@ async function generateGermanSchoolHolidays() {
     const allPeriods: Array<{ startDate: Date; endDate: Date; title: string; description: string }> = [];
 
     // Iterate through all years in the data
-    for (const yearRange of Object.keys(germanSchoolHolidays)) {
+    for (const yearRange of Object.keys(germanSchoolHolidays) as Array<keyof typeof germanSchoolHolidays>) {
       const yearData = germanSchoolHolidays[yearRange][state];
       if (!yearData) continue;
 
@@ -239,7 +239,7 @@ async function generateGermanSchoolHolidays() {
       const periods: Array<keyof typeof yearData> = ['herbst', 'weihnachten', 'winter', 'ostern', 'pfingsten', 'sommer'];
       for (const periodName of periods) {
         const period = yearData[periodName];
-        const events = convertPeriodToEvents(period, periodName, state);
+        const events = convertPeriodToEvents(period, periodName as string, state);
         allPeriods.push(...events);
       }
     }

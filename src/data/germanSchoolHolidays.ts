@@ -15,11 +15,14 @@ export interface SchoolHolidaysYear {
     sommer: SchoolHolidayPeriod | null;
 }
 
+// Type for year range keys in the format "YYYY/YYYY" (e.g., "2025/2026")
+export type SchoolYearRange = `${number}/${number}`;
+
 // extracted from https://www.kmk.org/service/ferien.html
 // as of now I don't think there is a better source for this data, the legal situation doesn't
 // allow for an automated logic like in austrian law.
 
-export const germanSchoolHolidays: Record<string, Record<GermanState, SchoolHolidaysYear>> = {
+export const germanSchoolHolidays: Record<SchoolYearRange, Record<GermanState, SchoolHolidaysYear>> = {
     "2025/2026": {
         "Baden-Württemberg": {
             herbst: {start: "27.10.2025", end: "30.10.2025", extra: "31.10.2025"},
