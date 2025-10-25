@@ -29,53 +29,32 @@ export function calculateEaster(year: number): Date {
   return new Date(year, month - 1, day);
 }
 
-/**
- * Add days to a date
- */
 export function addDays(date: Date, days: number): Date {
   const result = new Date(date);
   result.setDate(result.getDate() + days);
   return result;
 }
 
-/**
- * Calculate Easter Monday
- */
 export function calculateEasterMonday(year: number): Date {
   return addDays(calculateEaster(year), 1);
 }
 
-/**
- * Calculate Ascension Day (39 days after Easter)
- */
 export function calculateAscensionDay(year: number): Date {
   return addDays(calculateEaster(year), 39);
 }
 
-/**
- * Calculate Whit Sunday / Pentecost Sunday (49 days after Easter)
- */
 export function calculateWhitSunday(year: number): Date {
   return addDays(calculateEaster(year), 49);
 }
 
-/**
- * Calculate Whit Monday / Pentecost Monday (50 days after Easter)
- */
 export function calculateWhitMonday(year: number): Date {
   return addDays(calculateEaster(year), 50);
 }
 
-/**
- * Calculate Corpus Christi (60 days after Easter)
- */
 export function calculateCorpusChristi(year: number): Date {
   return addDays(calculateEaster(year), 60);
 }
 
-/**
- * Calculate Good Friday (2 days before Easter)
- */
 export function calculateGoodFriday(year: number): Date {
   return addDays(calculateEaster(year), -2);
 }
