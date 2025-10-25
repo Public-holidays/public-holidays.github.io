@@ -9,7 +9,8 @@ import { austrianHolidays, austrianRegions } from './data/austrianHolidays.js';
 import { getGermanHolidaysForVariant, germanCalenderVariants } from './data/germanHolidays.js';
 import { getSchoolHolidays } from './calculators/SchoolHolidayCalculator.js';
 import { AustrianRegion } from './types/SchoolHoliday.js';
-import { stateToFilename } from './types/Holiday.js';
+import {GermanState, stateToFilename} from './types/Holiday.js';
+import { germanSchoolHolidays, SchoolHolidayPeriod } from './data/germanSchoolHolidays.js';
 import { join } from 'path';
 
 const BASE_DOMAIN = 'public-holidays.github.io';
@@ -138,6 +139,144 @@ async function generateSchoolHolidays() {
   console.log(`\n✓ School calendars generated for ${austrianRegions.length} regions`);
 }
 
+/**
+ * Parse date string in DD.MM.YYYY format to Date object
+ */
+function parseGermanDate(dateStr: string): Date {
+  const [day, month, year] = dateStr.split('.').map(Number);
+  return new Date(year, month - 1, day);
+}
+
+/**
+ * Parse extra dates string and return array of date ranges
+ */
+function parseExtraDates(extra: string): Array<{ start: Date; end: Date }> {
+  const ranges: Array<{ start: Date; end: Date }> = [];
+
+  // Split by common separators
+  const parts = extra.split(/\s+(?:und|,)\s+/).filter(p => p.trim());
+
+  for (const part of parts) {
+    const trimmed = part.trim();
+    if (trimmed.includes('-')) {
+      // Date range like "01.06.2028-02.06.2028"
+      const [startStr, endStr] = trimmed.split('-');
+      ranges.push({
+        start: parseGermanDate(startStr.trim()),
+        end: parseGermanDate(endStr.trim())
+      });
+    } else if (/^\d{2}\.\d{2}\.\d{4}$/.test(trimmed)) {
+      // Single date like "26.05.2028"
+      const date = parseGermanDate(trimmed);
+      ranges.push({ start: date, end: date });
+    }
+  }
+
+  return ranges;
+}
+
+/**
+ * Convert German school holiday period to calendar events
+ */
+function convertPeriodToEvents(
+  period: SchoolHolidayPeriod | null,
+  periodName: string,
+  state: string
+): Array<{ startDate: Date; endDate: Date; title: string; description: string }> {
+  if (!period) return [];
+
+  const events = [];
+  const periodNameMap: Record<string, string> = {
+    'herbst': 'Herbstferien',
+    'weihnachten': 'Weihnachtsferien',
+    'winter': 'Winterferien',
+    'ostern': 'Osterferien',
+    'pfingsten': 'Pfingstferien',
+    'sommer': 'Sommerferien'
+  };
+
+  const title = periodNameMap[periodName] || periodName;
+
+  // Main period
+  events.push({
+    startDate: parseGermanDate(period.start),
+    endDate: parseGermanDate(period.end),
+    title,
+    description: `${title} in ${state}`
+  });
+
+  // Extra dates
+  if (period.extra) {
+    const extraRanges = parseExtraDates(period.extra);
+    for (const range of extraRanges) {
+      events.push({
+        startDate: range.start,
+        endDate: range.end,
+        title: `${title} (zusätzlich)`,
+        description: `${title} in ${state} (zusätzliche Ferientage)`
+      });
+    }
+  }
+
+  return events;
+}
+
+async function generateGermanSchoolHolidays() {
+  console.log('\n📅 Generating German School Holiday Calendars...');
+  console.log('='.repeat(60));
+
+  const germanStates: GermanState[] = [
+    'Baden-Württemberg', 'Bayern', 'Berlin', 'Brandenburg', 'Bremen',
+    'Hamburg', 'Hessen', 'Mecklenburg-Vorpommern', 'Niedersachsen',
+    'Nordrhein-Westfalen', 'Rheinland-Pfalz', 'Saarland', 'Sachsen',
+    'Sachsen-Anhalt', 'Schleswig-Holstein', 'Thüringen'
+  ];
+
+  for (const state of germanStates) {
+    const allPeriods: Array<{ startDate: Date; endDate: Date; title: string; description: string }> = [];
+
+    // Iterate through all years in the data
+    for (const yearRange of Object.keys(germanSchoolHolidays)) {
+      const yearData = germanSchoolHolidays[yearRange][state];
+      if (!yearData) continue;
+
+      // Convert each holiday period to events
+      const periods: Array<keyof typeof yearData> = ['herbst', 'weihnachten', 'winter', 'ostern', 'pfingsten', 'sommer'];
+      for (const periodName of periods) {
+        const period = yearData[periodName];
+        const events = convertPeriodToEvents(period, periodName, state);
+        allPeriods.push(...events);
+      }
+    }
+
+    // Sort by start date
+    allPeriods.sort((a, b) => a.startDate.getTime() - b.startDate.getTime());
+
+    // Generate and save ICS
+    const icsContent = await IcsGenerator.generateSchoolHolidayIcsContent(
+      allPeriods,
+      {
+        name: `School Holidays - ${state}`,
+        productId: COMMON_APPLICATION_PRODID,
+        calendarName: `Schulferien - ${state}`,
+        country: GERMANY_COUNTRY_CODE
+      }
+    );
+
+    const outputPath = join(OUTPUT_DIR, 'school', `school_holidays_${stateToFilename(state)}.ics`);
+
+    // Ensure directory exists
+    const { mkdir, writeFile } = await import('fs/promises');
+    const { dirname } = await import('path');
+    await mkdir(dirname(outputPath), { recursive: true });
+    await writeFile(outputPath, icsContent, 'utf-8');
+
+    console.log(`✓ Generated: ${outputPath}`);
+  }
+
+  console.log(`\n✓ German school calendars generated for ${germanStates.length} states`);
+}
+
 async function main() {
   const command = process.argv[2] || 'all';
 
@@ -159,6 +298,15 @@ async function main() {
       
       case 'school':
         await generateSchoolHolidays();
+        await generateGermanSchoolHolidays();
+        break;
+
+      case 'school-at':
+        await generateSchoolHolidays();
+        break;
+
+      case 'school-de':
+        await generateGermanSchoolHolidays();
         break;
       
       case 'all':
@@ -166,6 +314,7 @@ async function main() {
         await generateAustrianCalendars();
         await generateGermanCalendars();
         await generateSchoolHolidays();
+        await generateGermanSchoolHolidays();
         break;
     }
 
