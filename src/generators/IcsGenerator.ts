@@ -25,7 +25,7 @@ export class IcsGenerator {
     static generateHolidaysForYear(
         definitions: HolidayDefinition[],
         year: number,
-        country: string = 'Österreich'
+        country: string
     ): Holiday[] {
         return definitions.map((def) => {
             let date = this.getDateFromDefinition(def, year);
@@ -64,7 +64,8 @@ export class IcsGenerator {
     }
 
     /**
-     * Format date as YYYYMMDD
+     * Format date as YYYYMMDD using local date components (not UTC)
+     * This ensures the UID date matches the actual event date (toISOString messes up dates sometimes)
      */
     private static formatDateCompact(date: Date): string {
         const year = date.getFullYear();
@@ -180,12 +181,11 @@ export class IcsGenerator {
         definitions: HolidayDefinition[],
         config: CalendarConfig,
         outputPath: string,
-        startYear: number,
-        endYear: number
+        startYear: number
     ): Promise<void> {
         const allHolidays: Holiday[] = [];
 
-        for (let year = startYear; year <= endYear; year++) {
+        for (let year = startYear; year <= (startYear + 4); year++) {
             const yearHolidays = this.generateHolidaysForYear(definitions, year, 'Deutschland');
             allHolidays.push(...yearHolidays);
         }

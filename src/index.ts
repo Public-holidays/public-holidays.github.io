@@ -41,8 +41,7 @@ async function generateAustrianCalendars() {
       country: AUSTRIA_COUNTRY_CODE
     },
     join(OUTPUT_DIR, 'austrian_holidays.ics'),
-    currentYear,
-    currentYear + 4
+    currentYear
   );
 
   // Generate individual year calendars
@@ -81,8 +80,7 @@ async function generateGermanCalendars() {
         calendarName: `Deutsche Feiertage - ${calenderVariant}`, country: GERMANY_COUNTRY_CODE
       },
       join(OUTPUT_DIR, `german_holidays_${stateToFilename(calenderVariant)}.ics`),
-      currentYear,
-      currentYear + 4
+      currentYear
     );
   }
 
