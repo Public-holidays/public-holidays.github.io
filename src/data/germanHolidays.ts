@@ -232,28 +232,13 @@ export const germanCalenderVariants = [
     ...germanStatesSpecialPublicHolidayVariants
 ] as const;
 
+/**
+ * Parse date string in DD.MM.YYYY format to Date object
+ */
+export function parseGermanDate(dateStr: string): Date {
+    const [day, month, year] = dateStr.split('.').map(Number);
+    return new Date(year, month - 1, day);
+}
+
 // Type for all German state public holiday variants
 export type GermanStatePublicHolidayVariant = typeof germanCalenderVariants[number];
-
-// export const germanCalenderVariants: GermanStatePublicHolidayVariant[] = [
-//     'Baden-Württemberg',
-//     'Bayern',
-//     'Bayern (katholisch)',
-//     'Augsburg',
-//     'Berlin',
-//     'Brandenburg',
-//     'Bremen',
-//     'Hamburg',
-//     'Hessen',
-//     'Mecklenburg-Vorpommern',
-//     'Niedersachsen',
-//     'Nordrhein-Westfalen',
-//     'Rheinland-Pfalz',
-//     'Saarland',
-//     'Sachsen',
-//     'Sachsen (katholisch)',
-//     'Sachsen-Anhalt',
-//     'Schleswig-Holstein',
-//     'Thüringen',
-//     'Thüringen (katholisch)',
-// ];

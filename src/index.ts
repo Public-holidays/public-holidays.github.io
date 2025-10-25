@@ -6,7 +6,7 @@
 
 import { IcsGenerator } from './generators/IcsGenerator.js';
 import { austrianHolidays, austrianRegions } from './data/austrianHolidays.js';
-import { getGermanHolidaysForVariant, germanCalenderVariants } from './data/germanHolidays.js';
+import {getGermanHolidaysForVariant, germanCalenderVariants, parseGermanDate} from './data/germanHolidays.js';
 import { getSchoolHolidays } from './calculators/SchoolHolidayCalculator.js';
 import { AustrianRegion } from './types/SchoolHoliday.js';
 import {stateToFilename} from './types/Holiday.js';
@@ -138,14 +138,6 @@ async function generateSchoolHolidays() {
   }
 
   console.log(`\n✓ School calendars generated for ${austrianRegions.length} regions`);
-}
-
-/**
- * Parse date string in DD.MM.YYYY format to Date object
- */
-function parseGermanDate(dateStr: string): Date {
-  const [day, month, year] = dateStr.split('.').map(Number);
-  return new Date(year, month - 1, day);
 }
 
 /**

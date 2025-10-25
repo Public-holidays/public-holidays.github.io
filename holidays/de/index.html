@@ -400,6 +400,7 @@
         <div class="content">
             <div class="tabs">
                 <button class="tab active" onclick="window.switchTab(event, 'holidays')">Feiertage</button>
+                <button class="tab" onclick="window.switchTab(event, 'school-holidays')">Schulferien</button>
                 <button class="tab" onclick="window.switchTab(event, 'download')">Kalender herunterladen</button>
             </div>
 
@@ -413,6 +414,16 @@
                 </div>
             </div>
 
+            <div id="school-holidays-tab" class="tab-content">
+                <h2>🎒 Schulferien <span id="school-year"></span> - <span id="school-bundesland"></span></h2>
+                <div class="info-box">
+                    <p>Schulferien werden von den Kultusministerien der Bundesländer festgelegt. Quelle: <a href="https://www.kmk.org/service/ferien.html" target="_blank" rel="noopener">KMK</a></p>
+                </div>
+                <div id="school-holidays" class="holiday-grid">
+                    <div class="loading">Lade Schulferien...</div>
+                </div>
+            </div>
+
             <div id="download-tab" class="tab-content">
                 <h2>📥 ICS-Kalender herunterladen</h2>
 
@@ -420,6 +431,14 @@
                     <h3>Gesetzliche Feiertage nach Bundesland</h3>
                     <p>Abonnieren Sie diese Kalender, um automatisch alle Feiertage zu erhalten (fortlaufend aktualisiert)</p>
                     <div id="german-holidays-downloads" class="download-grid">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="download-section">
+                    <h3>Schulferien nach Bundesland</h3>
+                    <p>Abonnieren Sie diese Kalender, um automatisch alle Schulferien zu erhalten</p>
+                    <div id="german-school-holidays-downloads" class="download-grid">
                         <!-- Populated by JS -->
                     </div>
                 </div>
