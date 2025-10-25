@@ -55,20 +55,6 @@
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/holidays/output/german_holidays_bayern-katholisch.ics</loc>
-    <lastmod>2025-10-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://public-holidays.github.io/holidays/output/german_holidays_augsburg.ics</loc>
-    <lastmod>2025-10-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
     <loc>https://public-holidays.github.io/holidays/output/german_holidays_berlin.ics</loc>
     <lastmod>2025-10-25</lastmod>
     <changefreq>yearly</changefreq>
@@ -146,13 +132,6 @@
   </url>
 
   <url>
-    <loc>https://public-holidays.github.io/holidays/output/german_holidays_sachsen-katholisch.ics</loc>
-    <lastmod>2025-10-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
     <loc>https://public-holidays.github.io/holidays/output/german_holidays_sachsen-anhalt.ics</loc>
     <lastmod>2025-10-25</lastmod>
     <changefreq>yearly</changefreq>
@@ -168,6 +147,27 @@
 
   <url>
     <loc>https://public-holidays.github.io/holidays/output/german_holidays_thueringen.ics</loc>
+    <lastmod>2025-10-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_bayern-katholisch.ics</loc>
+    <lastmod>2025-10-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_augsburg.ics</loc>
+    <lastmod>2025-10-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://public-holidays.github.io/holidays/output/german_holidays_sachsen-katholisch.ics</loc>
     <lastmod>2025-10-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
