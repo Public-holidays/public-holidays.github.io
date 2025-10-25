@@ -7,7 +7,6 @@
   "scripts": {
     "build": "tsc",
     "generate": "npm run build && node dist/index.js",
-    "generate:all": "npm run build && node dist/index.js all",
     "dev": "tsx src/index.ts",
     "watch": "tsc --watch"
   },

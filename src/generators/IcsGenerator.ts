@@ -28,29 +28,8 @@ export class IcsGenerator {
         country: string = 'Österreich'
     ): Holiday[] {
         return definitions.map((def) => {
-            let date: Date;
-
-            if (def.fixed) {
-                date = new Date(year, def.fixed.month - 1, def.fixed.day);
-            } else if (def.calculator) {
-                date = def.calculator(year);
-            } else {
-                throw new Error(`Holiday ${def.nameDE} has neither fixed date nor calculator`);
-            }
-
-            // Build description with Wikipedia links
-            let description = `${def.nameEN} - Gesetzlicher Feiertag in ${country}`;
-            
-            if (def.wikipediaDE || def.wikipediaEN) {
-                description += '\\n\\nLearn more:';
-                if (def.wikipediaDE) {
-                    description += `\\n🇩🇪 ${def.wikipediaDE}`;
-                }
-                if (def.wikipediaEN) {
-                    description += `\\n🇬🇧 ${def.wikipediaEN}`;
-                }
-            }
-
+            let date = this.getDateFromDefinition(def, year);
+            let description = this.buildHolidayDescription(def, country);
             return {
                 date,
                 title: def.nameDE,
@@ -59,12 +38,29 @@ export class IcsGenerator {
         });
     }
 
+    private static buildHolidayDescription(def: HolidayDefinition, country: string) {
+        let description = `${def.nameEN} - Gesetzlicher Feiertag in ${country}`;
 
-    /**
-     * Format date as ISO 8601 timestamp
-     */
-    private static formatTimestamp(date: Date): string {
-        return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+        if (def.wikipediaDE || def.wikipediaEN) {
+            description += '\\n\\nLearn more:';
+            if (def.wikipediaDE) {
+                description += `\\n🇩🇪 ${def.wikipediaDE}`;
+            }
+            if (def.wikipediaEN) {
+                description += `\\n🇬🇧 ${def.wikipediaEN}`;
+            }
+        }
+        return description;
+    }
+
+    private static getDateFromDefinition(def: HolidayDefinition, year: number) {
+        if (def.fixed) {
+            return new Date(year, def.fixed.month - 1, def.fixed.day);
+        } else if (def.calculator) {
+            return def.calculator(year);
+        } else {
+            throw new Error(`Holiday ${def.nameDE} has neither fixed date nor calculator`);
+        }
     }
 
     /**
@@ -131,7 +127,6 @@ export class IcsGenerator {
             .sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
             .map((period) => {
                 const start = this.dateToDateArray(period.startDate);
-                const end = this.dateToDateArray(period.endDate);
 
                 // For multi-day events, add 1 day to end date (ICS format)
                 const endWithOffset = new Date(period.endDate);
