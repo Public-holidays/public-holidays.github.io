@@ -3,6 +3,7 @@
  */
 
 import { HolidayDefinition } from '../types/Holiday.js';
+import { AustrianRegion } from '../types/SchoolHoliday.js';
 import {
   calculateEasterMonday,
   calculateAscensionDay,
@@ -78,14 +79,14 @@ export const austrianHolidays: HolidayDefinition[] = [
   },
 ];
 
-export const austrianRegions = [
-  'wien',
-  'niederoesterreich',
-  'burgenland',
-  'oberoesterreich',
-  'steiermark',
-  'kaernten',
-  'salzburg',
-  'tirol',
-  'vorarlberg',
+export const austrianRegions: AustrianRegion[] = [
+  'Wien',
+  'Niederösterreich',
+  'Burgenland',
+  'Oberösterreich',
+  'Steiermark',
+  'Kärnten',
+  'Salzburg',
+  'Tirol',
+  'Vorarlberg',
 ];

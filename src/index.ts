@@ -8,7 +8,8 @@ import { IcsGenerator } from './generators/IcsGenerator.js';
 import { austrianHolidays, austrianRegions } from './data/austrianHolidays.js';
 import { getGermanHolidaysForState, germanStates } from './data/germanHolidays.js';
 import { getSchoolHolidays } from './calculators/SchoolHolidayCalculator.js';
-import { AustrianRegion } from './types/SchoolHoliday.js';
+import { AustrianRegion, regionToFilename } from './types/SchoolHoliday.js';
+import { stateToFilename } from './types/Holiday.js';
 import { join } from 'path';
 
 const BASE_URL = 'https://public-holidays.github.io/holidays';
@@ -28,6 +29,7 @@ async function generateAustrianCalendars() {
       productId: '-//public-holidays.github.io//Austrian Holidays//DE',
       calendarName: 'Österreichische Feiertage',
       description: 'All Austrian public holidays',
+      country: 'AT'
     },
     join(OUTPUT_DIR, 'austrian_holidays.ics'),
     currentYear,
@@ -44,6 +46,7 @@ async function generateAustrianCalendars() {
         name: `Austrian Public Holidays ${year}`,
         productId: '-//public-holidays.github.io//Austrian Holidays//DE',
         calendarName: `Österreichische Feiertage ${year}`,
+        country: 'AT'
       },
       join(OUTPUT_DIR, `austrian_holidays_${year}.ics`)
     );
@@ -66,9 +69,9 @@ async function generateGermanCalendars() {
       {
         name: `German Public Holidays - ${state}`,
         productId: `-//public-holidays.github.io//German Holidays ${state}//DE`,
-        calendarName: `Deutsche Feiertage - ${state}`,
+        calendarName: `Deutsche Feiertage - ${state}`, country: 'DE'
       },
-      join(OUTPUT_DIR, `german_holidays_${state}.ics`),
+      join(OUTPUT_DIR, `german_holidays_${stateToFilename(state)}.ics`),
       currentYear,
       currentYear + 4
     );
@@ -108,12 +111,13 @@ async function generateSchoolHolidays() {
       periods,
       {
         name: `School Holidays - ${region}`,
-        productId: `-//public-holidays.github.io//School Holidays ${region}//DE`,
+        productId: `-//public-holidays.github.io//School Holidays ${region}//AT`,
         calendarName: `Schulferien - ${region}`,
+          country: 'AT'
       }
     );
 
-    const outputPath = join(OUTPUT_DIR, 'school', `school_holidays_${region}.ics`);
+    const outputPath = join(OUTPUT_DIR, 'school', `school_holidays_${regionToFilename(region)}.ics`);
 
     // Ensure directory exists
     const { mkdir, writeFile } = await import('fs/promises');

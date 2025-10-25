@@ -8,10 +8,10 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'holidays/scripts/generate_holidays_at.py'
-      - 'holidays/scripts/generate_holidays_de.py'
-      - 'holidays/scripts/generate_school_holidays.py'
+      - 'src/**'
       - 'generate_sitemap.py'
+      - 'package.json'
+      - 'tsconfig.json'
       - '.github/workflows/generate-and-update.yml'
 
 jobs:
@@ -22,28 +22,28 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+    
+    - name: Install Node.js dependencies
+      run: npm ci
+    
+    - name: Build TypeScript
+      run: npm run build
+    
+    - name: Generate calendar files
+      run: npm run generate
+    
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
     
-    - name: Install Python dependencies
-      run: |
-        if [ -f holidays/scripts/requirements.txt ]; then
-          pip install -r holidays/scripts/requirements.txt
-        fi
-    
-    - name: Generate calendar files
-      run: |
-        cd holidays
-        python scripts/generate_holidays_at.py
-        python scripts/generate_school_holidays.py
-        python scripts/generate_holidays_de.py
-        cd ..
-    
-    - name: Generate main sitemap
-      run: |
-        python generate_sitemap.py
+    - name: Generate sitemap
+      run: python generate_sitemap.py
         
     - name: Check for changes
       id: check_changes

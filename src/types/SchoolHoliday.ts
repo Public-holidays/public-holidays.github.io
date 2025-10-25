@@ -16,12 +16,22 @@ export interface PatronSaintDay {
 }
 
 export type AustrianRegion =
-  | 'burgenland'
-  | 'kaernten'
-  | 'niederoesterreich'
-  | 'oberoesterreich'
-  | 'salzburg'
-  | 'steiermark'
-  | 'tirol'
-  | 'vorarlberg'
-  | 'wien';
+  | 'Burgenland'
+  | 'Kärnten'
+  | 'Niederösterreich'
+  | 'Oberösterreich'
+  | 'Salzburg'
+  | 'Steiermark'
+  | 'Tirol'
+  | 'Vorarlberg'
+  | 'Wien';
+
+/**
+ * Convert region name to filename-safe format (lowercase, no umlauts)
+ */
+export function regionToFilename(region: AustrianRegion): string {
+  return region.toLowerCase()
+    .replace(/ä/g, 'ae')
+    .replace(/ö/g, 'oe')
+    .replace(/ü/g, 'ue');
+}

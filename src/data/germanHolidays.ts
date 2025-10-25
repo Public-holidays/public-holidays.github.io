@@ -2,7 +2,7 @@
  * German public holiday definitions by Bundesland
  */
 
-import { HolidayDefinition } from '../types/Holiday.js';
+import { HolidayDefinition, GermanState } from '../types/Holiday.js';
 import {
   calculateGoodFriday,
   calculateEasterMonday,
@@ -64,8 +64,8 @@ const commonGermanHolidays: HolidayDefinition[] = [
 ];
 
 // State-specific holidays
-const stateSpecificHolidays: Record<string, HolidayDefinition[]> = {
-  'baden-wuerttemberg': [
+const stateSpecificHolidays: Record<GermanState, HolidayDefinition[]> = {
+  'Baden-Württemberg': [
     {
       nameDE: 'Heilige Drei Könige',
       nameEN: 'Epiphany',
@@ -82,7 +82,7 @@ const stateSpecificHolidays: Record<string, HolidayDefinition[]> = {
       fixed: { month: 11, day: 1 },
     },
   ],
-  bayern: [
+  'Bayern': [
     {
       nameDE: 'Heilige Drei Könige',
       nameEN: 'Epiphany',
@@ -109,14 +109,14 @@ const stateSpecificHolidays: Record<string, HolidayDefinition[]> = {
       fixed: { month: 11, day: 1 },
     },
   ],
-  berlin: [
+  'Berlin': [
     {
       nameDE: 'Internationaler Frauentag',
       nameEN: "International Women's Day",
       fixed: { month: 3, day: 8 },
     },
   ],
-  brandenburg: [
+  'Brandenburg': [
     {
       nameDE: 'Ostersonntag',
       nameEN: 'Easter Sunday',
@@ -133,28 +133,28 @@ const stateSpecificHolidays: Record<string, HolidayDefinition[]> = {
       fixed: { month: 10, day: 31 },
     },
   ],
-  bremen: [
+  'Bremen': [
     {
       nameDE: 'Reformationstag',
       nameEN: 'Reformation Day',
       fixed: { month: 10, day: 31 },
     },
   ],
-  hamburg: [
+  'Hamburg': [
     {
       nameDE: 'Reformationstag',
       nameEN: 'Reformation Day',
       fixed: { month: 10, day: 31 },
     },
   ],
-  hessen: [
+  'Hessen': [
     {
       nameDE: 'Fronleichnam',
       nameEN: 'Corpus Christi',
       calculator: calculateCorpusChristi,
     },
   ],
-  'mecklenburg-vorpommern': [
+  'Mecklenburg-Vorpommern': [
     {
       nameDE: 'Internationaler Frauentag',
       nameEN: "International Women's Day",
@@ -166,14 +166,14 @@ const stateSpecificHolidays: Record<string, HolidayDefinition[]> = {
       fixed: { month: 10, day: 31 },
     },
   ],
-  niedersachsen: [
+  'Niedersachsen': [
     {
       nameDE: 'Reformationstag',
       nameEN: 'Reformation Day',
       fixed: { month: 10, day: 31 },
     },
   ],
-  'nordrhein-westfalen': [
+  'Nordrhein-Westfalen': [
     {
       nameDE: 'Fronleichnam',
       nameEN: 'Corpus Christi',
@@ -185,7 +185,7 @@ const stateSpecificHolidays: Record<string, HolidayDefinition[]> = {
       fixed: { month: 11, day: 1 },
     },
   ],
-  'rheinland-pfalz': [
+  'Rheinland-Pfalz': [
     {
       nameDE: 'Fronleichnam',
       nameEN: 'Corpus Christi',
@@ -197,7 +197,7 @@ const stateSpecificHolidays: Record<string, HolidayDefinition[]> = {
       fixed: { month: 11, day: 1 },
     },
   ],
-  saarland: [
+  'Saarland': [
     {
       nameDE: 'Fronleichnam',
       nameEN: 'Corpus Christi',
@@ -214,7 +214,7 @@ const stateSpecificHolidays: Record<string, HolidayDefinition[]> = {
       fixed: { month: 11, day: 1 },
     },
   ],
-  sachsen: [
+  'Sachsen': [
     {
       nameDE: 'Reformationstag',
       nameEN: 'Reformation Day',
@@ -226,7 +226,7 @@ const stateSpecificHolidays: Record<string, HolidayDefinition[]> = {
       calculator: calculateRepentanceDay,
     },
   ],
-  'sachsen-anhalt': [
+  'Sachsen-Anhalt': [
     {
       nameDE: 'Heilige Drei Könige',
       nameEN: 'Epiphany',
@@ -238,14 +238,14 @@ const stateSpecificHolidays: Record<string, HolidayDefinition[]> = {
       fixed: { month: 10, day: 31 },
     },
   ],
-  'schleswig-holstein': [
+  'Schleswig-Holstein': [
     {
       nameDE: 'Reformationstag',
       nameEN: 'Reformation Day',
       fixed: { month: 10, day: 31 },
     },
   ],
-  thueringen: [
+  'Thüringen': [
     {
       nameDE: 'Weltkindertag',
       nameEN: "World Children's Day",
@@ -259,26 +259,26 @@ const stateSpecificHolidays: Record<string, HolidayDefinition[]> = {
   ],
 };
 
-export function getGermanHolidaysForState(state: string): HolidayDefinition[] {
+export function getGermanHolidaysForState(state: GermanState): HolidayDefinition[] {
   const specificHolidays = stateSpecificHolidays[state] || [];
   return [...commonGermanHolidays, ...specificHolidays];
 }
 
-export const germanStates = [
-  'baden-wuerttemberg',
-  'bayern',
-  'berlin',
-  'brandenburg',
-  'bremen',
-  'hamburg',
-  'hessen',
-  'mecklenburg-vorpommern',
-  'niedersachsen',
-  'nordrhein-westfalen',
-  'rheinland-pfalz',
-  'saarland',
-  'sachsen',
-  'sachsen-anhalt',
-  'schleswig-holstein',
-  'thueringen',
+export const germanStates: GermanState[] = [
+  'Baden-Württemberg',
+  'Bayern',
+  'Berlin',
+  'Brandenburg',
+  'Bremen',
+  'Hamburg',
+  'Hessen',
+  'Mecklenburg-Vorpommern',
+  'Niedersachsen',
+  'Nordrhein-Westfalen',
+  'Rheinland-Pfalz',
+  'Saarland',
+  'Sachsen',
+  'Sachsen-Anhalt',
+  'Schleswig-Holstein',
+  'Thüringen',
 ];

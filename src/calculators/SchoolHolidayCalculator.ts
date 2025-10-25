@@ -54,7 +54,7 @@ function getFirstSaturdayInRange(year: number, month: number, startDay: number):
  *         Others: second Monday in September
  */
 export function calculateSchoolYearStart(year: number, region: AustrianRegion): Date {
-  const group1: AustrianRegion[] = ['burgenland', 'niederoesterreich', 'wien'];
+  const group1: AustrianRegion[] = ['Burgenland', 'Niederösterreich', 'Wien'];
   
   if (group1.includes(region)) {
     return getNthMondayOfMonth(year, 9, 1);
@@ -85,9 +85,9 @@ export function calculateChristmasBreak(year: number): SchoolHolidayPeriod {
  * Duration: Monday to Saturday (one week)
  */
 export function calculateSemesterBreak(year: number, region: AustrianRegion): SchoolHolidayPeriod {
-  const group1: AustrianRegion[] = ['niederoesterreich', 'wien'];
-  const group2: AustrianRegion[] = ['burgenland', 'kaernten', 'salzburg', 'tirol', 'vorarlberg'];
-  const group3: AustrianRegion[] = ['oberoesterreich', 'steiermark'];
+  const group1: AustrianRegion[] = ['Niederösterreich', 'Wien'];
+  const group2: AustrianRegion[] = ['Burgenland', 'Kärnten', 'Salzburg', 'Tirol', 'Vorarlberg'];
+  const group3: AustrianRegion[] = ['Oberösterreich', 'Steiermark'];
   
   let startDate: Date;
   
@@ -171,7 +171,7 @@ export function calculateAutumnBreak(year: number): SchoolHolidayPeriod {
  * Ends the day before the school year starts (in September of the SAME year)
  */
 export function calculateSummerHolidays(year: number, region: AustrianRegion): SchoolHolidayPeriod {
-  const group1: AustrianRegion[] = ['burgenland', 'niederoesterreich', 'wien'];
+  const group1: AustrianRegion[] = ['Burgenland', 'Niederösterreich', 'Wien'];
   
   let startDate: Date;
   
@@ -199,47 +199,47 @@ export function calculateSummerHolidays(year: number, region: AustrianRegion): S
  */
 export function getPatronSaintDay(year: number, region: AustrianRegion): PatronSaintDay | null {
   const patronDays: Record<AustrianRegion, PatronSaintDay | null> = {
-    kaernten: {
+    Kärnten: {
       date: new Date(year, 2, 19), // March 19
       nameDE: 'Hl. Josef',
       nameEN: 'St. Joseph',
     },
-    steiermark: {
+    Steiermark: {
       date: new Date(year, 2, 19), // March 19
       nameDE: 'Hl. Josef',
       nameEN: 'St. Joseph',
     },
-    tirol: {
+    Tirol: {
       date: new Date(year, 2, 19), // March 19
       nameDE: 'Hl. Josef',
       nameEN: 'St. Joseph',
     },
-    vorarlberg: {
+    Vorarlberg: {
       date: new Date(year, 2, 19), // March 19
       nameDE: 'Hl. Josef',
       nameEN: 'St. Joseph',
     },
-    oberoesterreich: {
+    Oberösterreich: {
       date: new Date(year, 4, 4), // May 4
       nameDE: 'Hl. Florian',
       nameEN: 'St. Florian',
     },
-    salzburg: {
+    Salzburg: {
       date: new Date(year, 8, 24), // September 24
       nameDE: 'Hl. Rupert',
       nameEN: 'St. Rupert',
     },
-    burgenland: {
+    Burgenland: {
       date: new Date(year, 10, 11), // November 11
       nameDE: 'Hl. Martin',
       nameEN: 'St. Martin',
     },
-    wien: {
+    Wien: {
       date: new Date(year, 10, 15), // November 15
       nameDE: 'Hl. Leopold',
       nameEN: 'St. Leopold',
     },
-    niederoesterreich: {
+    Niederösterreich: {
       date: new Date(year, 10, 15), // November 15
       nameDE: 'Hl. Leopold',
       nameEN: 'St. Leopold',
@@ -253,7 +253,7 @@ export function getPatronSaintDay(year: number, region: AustrianRegion): PatronS
  * Get additional state holiday (Carinthia only)
  */
 export function getStateHoliday(year: number, region: AustrianRegion): PatronSaintDay | null {
-  if (region === 'kaernten') {
+  if (region === 'Kärnten') {
     return {
       date: new Date(year, 9, 10), // October 10
       nameDE: 'Tag der Volksabstimmung',
