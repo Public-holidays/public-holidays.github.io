@@ -1,4 +1,4 @@
-import { formatDate, getDaysBetween, switchTab } from './page-common.js';
+import {formatDate, getDaysBetween, populateBundeslandSelect, populateYearSelect, switchTab} from './page-common.js';
 import { austrianHolidays, austrianRegions } from './data/austrianHolidays.js';
 import { getSchoolHolidays } from './calculators/SchoolHolidayCalculator.js';
 import {
@@ -114,27 +114,9 @@ async function init() {
     const bundeslandSelect = document.getElementById('bundeslandSelect') as HTMLSelectElement;
     if (!yearSelect || !bundeslandSelect) return;
 
-    // Populate year dropdown
-    const currentYear = new Date().getFullYear();
-    const startYear = currentYear - 1;
-    const endYear = currentYear + 5;
+    populateYearSelect(yearSelect)
 
-    for (let year = startYear; year <= endYear; year++) {
-        const option = document.createElement('option');
-        option.value = year.toString();
-        option.textContent = year.toString();
-        if (year === currentYear) option.selected = true;
-        yearSelect.appendChild(option);
-    }
-
-    // Populate Bundesland dropdown from austrianRegions
-    bundeslandSelect.innerHTML = ''; // Clear existing options
-    for (const region of austrianRegions) {
-        const option = document.createElement('option');
-        option.value = region;
-        option.textContent = region;
-        bundeslandSelect.appendChild(option);
-    }
+    populateBundeslandSelect(austrianRegions, bundeslandSelect);
 
     // Populate download links
     renderDownloadLinks();

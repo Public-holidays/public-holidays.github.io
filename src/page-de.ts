@@ -1,9 +1,7 @@
-import { formatDate, switchTab } from './page-common.js';
-import { getGermanHolidaysForVariant, germanCalenderVariants } from './data/germanHolidays.js';
-import { stateToFilename } from './types/Holiday.js';
-import {
-    calculateDate
-} from './calculators/HolidayCalculator.js';
+import {formatDate, populateBundeslandSelect, populateYearSelect, switchTab} from './page-common.js';
+import {germanCalenderVariants, getGermanHolidaysForVariant} from './data/germanHolidays.js';
+import {stateToFilename} from './types/Holiday.js';
+import {calculateDate} from './calculators/HolidayCalculator.js';
 
 declare global {
     interface Window {
@@ -30,10 +28,10 @@ function renderHolidays(year: number, bundesland: string) {
 
     container.innerHTML = holidays.map(h => {
         const scope = (h as any).scope || 'regional';
-        const wikiLink = h.wikipediaDE 
+        const wikiLink = h.wikipediaDE
             ? `<a href="${h.wikipediaDE}" target="_blank" rel="noopener" class="info-link" title="Mehr erfahren (Wikipedia)">ℹ️</a>`
             : '';
-        
+
         return `
             <div class="holiday-card">
                 <h3>
@@ -62,7 +60,7 @@ function updateCalendar() {
 function renderDownloadLinks() {
     const germanHolidaysContainer = document.getElementById('german-holidays-downloads');
     if (germanHolidaysContainer) {
-        germanHolidaysContainer.innerHTML = germanCalenderVariants.map(variant => 
+        germanHolidaysContainer.innerHTML = germanCalenderVariants.map(variant =>
             `<a href="../output/german_holidays_${stateToFilename(variant as any)}.ics" class="download-btn">${variant}</a>`
         ).join('');
     }
@@ -73,27 +71,10 @@ async function init() {
     const bundeslandSelect = document.getElementById('bundeslandSelect') as HTMLSelectElement;
     if (!yearSelect || !bundeslandSelect) return;
 
-    // Populate year dropdown
-    const currentYear = new Date().getFullYear();
-    const startYear = currentYear - 1;
-    const endYear = currentYear + 5;
-
-    for (let year = startYear; year <= endYear; year++) {
-        const option = document.createElement('option');
-        option.value = year.toString();
-        option.textContent = year.toString();
-        if (year === currentYear) option.selected = true;
-        yearSelect.appendChild(option);
-    }
+    populateYearSelect(yearSelect);
 
     // Populate Bundesland dropdown from germanCalenderVariants
-    bundeslandSelect.innerHTML = ''; // Clear existing options
-    for (const variant of germanCalenderVariants) {
-        const option = document.createElement('option');
-        option.value = variant;
-        option.textContent = variant;
-        bundeslandSelect.appendChild(option);
-    }
+    populateBundeslandSelect(germanCalenderVariants, bundeslandSelect);
 
     // Populate download links
     renderDownloadLinks();

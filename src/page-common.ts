@@ -33,3 +33,28 @@ export function switchTab(event: MouseEvent, tabName: string): void {
         tabContent.classList.add('active');
     }
 }
+
+export function populateYearSelect(yearSelect: HTMLSelectElement) {
+    const currentYear = new Date().getFullYear();
+    const startYear = currentYear - 1;
+    const endYear = currentYear + 5;
+
+    for (let year = startYear; year <= endYear; year++) {
+        const option = document.createElement('option');
+        option.value = year.toString();
+        option.textContent = year.toString();
+        if (year === currentYear) option.selected = true;
+        yearSelect.appendChild(option);
+    }
+}
+
+export function populateBundeslandSelect(bundeslandStrings: string[], bundeslandSelect: HTMLSelectElement) {
+    bundeslandSelect.innerHTML = ''; // Clear existing options
+    for (const variant of bundeslandStrings) {
+        const option = document.createElement('option');
+        option.value = variant;
+        option.textContent = variant;
+        bundeslandSelect.appendChild(option);
+    }
+}
+
