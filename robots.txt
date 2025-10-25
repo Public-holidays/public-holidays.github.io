@@ -1,12 +1,12 @@
 # robots.txt for Feiertage & Schulferien Calendar
-# https://public-holidays.github.io//robots.txt
+# https://public-holidays.github.io/robots.txt
 
 # Allow all crawlers to access everything
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://public-holidays.github.io//sitemap.xml
+Sitemap: https://public-holidays.github.io/sitemap.xml
 
 # Specific rules for major search engines
 User-agent: Googlebot

@@ -8,12 +8,22 @@
     "build": "tsc",
     "generate": "npm run build && node dist/index.js",
     "dev": "tsx src/index.ts",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "sitemap": "npm run build && node dist/generate_sitemap.js",
+    "sitemap:dev": "tsx src/generate_sitemap.ts"
   },
-  "keywords": ["holidays", "calendar", "ics", "austria", "germany"],
+  "keywords": [
+    "holidays",
+    "calendar",
+    "ics",
+    "austria",
+    "germany"
+  ],
   "license": "MIT",
   "devDependencies": {
+    "@types/glob": "^8.1.0",
     "@types/node": "^20.0.0",
+    "glob": "^11.0.3",
     "tsx": "^4.0.0",
     "typescript": "^5.3.0"
   },

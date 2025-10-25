@@ -13,7 +13,7 @@ import { stateToFilename } from './types/Holiday.js';
 import { join } from 'path';
 
 const BASE_DOMAIN = 'public-holidays.github.io';
-const BASE_URL = 'https://public-holidays.github.io/holidays';
+export const BASE_URL = 'https://public-holidays.github.io/';
 const OUTPUT_DIR = 'holidays/output';
 
 const AUSTRIA_COUNTRY_CODE = 'AT';
