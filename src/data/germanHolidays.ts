@@ -190,7 +190,7 @@ const stateSpecificHolidays: Record<string, HolidayDefinition[]> = {
     ],
 };
 
-export function getGermanHolidaysForState(state: string): HolidayDefinition[] {
+export function getGermanHolidaysForVariant(state: string): HolidayDefinition[] {
     const specificHolidays = stateSpecificHolidays[state] || [];
     return [...commonGermanHolidays, ...specificHolidays];
 }

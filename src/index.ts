@@ -6,14 +6,21 @@
 
 import { IcsGenerator } from './generators/IcsGenerator.js';
 import { austrianHolidays, austrianRegions } from './data/austrianHolidays.js';
-import { getGermanHolidaysForState, germanCalenderVariants } from './data/germanHolidays.js';
+import { getGermanHolidaysForVariant, germanCalenderVariants } from './data/germanHolidays.js';
 import { getSchoolHolidays } from './calculators/SchoolHolidayCalculator.js';
-import { AustrianRegion, regionToFilename } from './types/SchoolHoliday.js';
+import { AustrianRegion } from './types/SchoolHoliday.js';
 import { stateToFilename } from './types/Holiday.js';
 import { join } from 'path';
 
+const BASE_DOMAIN = 'public-holidays.github.io';
 const BASE_URL = 'https://public-holidays.github.io/holidays';
 const OUTPUT_DIR = 'holidays/output';
+
+const AUSTRIA_COUNTRY_CODE = 'AT';
+const GERMANY_COUNTRY_CODE = 'DE';
+
+
+const COMMON_APPLICATION_PRODID = `-//${BASE_DOMAIN}//public Holidays//${GERMANY_COUNTRY_CODE}`;
 
 async function generateAustrianCalendars() {
   console.log('\n📅 Generating Austrian Holiday Calendars...');
@@ -26,10 +33,10 @@ async function generateAustrianCalendars() {
     austrianHolidays,
     {
       name: 'Austrian Public Holidays',
-      productId: '-//public-holidays.github.io//Austrian Holidays//DE',
+      productId: COMMON_APPLICATION_PRODID,
       calendarName: 'Österreichische Feiertage',
       description: 'All Austrian public holidays',
-      country: 'AT'
+      country: AUSTRIA_COUNTRY_CODE
     },
     join(OUTPUT_DIR, 'austrian_holidays.ics'),
     currentYear,
@@ -44,9 +51,9 @@ async function generateAustrianCalendars() {
       holidays,
       {
         name: `Austrian Public Holidays ${year}`,
-        productId: '-//public-holidays.github.io//Austrian Holidays//DE',
+        productId: COMMON_APPLICATION_PRODID,
         calendarName: `Österreichische Feiertage ${year}`,
-        country: 'AT'
+        country: AUSTRIA_COUNTRY_CODE
       },
       join(OUTPUT_DIR, `austrian_holidays_${year}.ics`)
     );
@@ -61,17 +68,17 @@ async function generateGermanCalendars() {
 
   const currentYear = new Date().getFullYear();
 
-  for (const state of germanCalenderVariants) {
-    const holidays = getGermanHolidaysForState(state);
+  for (const calenderVariant of germanCalenderVariants) {
+    const holidays = getGermanHolidaysForVariant(calenderVariant);
     
     await IcsGenerator.generateRollingCalendar(
       holidays,
       {
-        name: `German Public Holidays - ${state}`,
-        productId: `-//public-holidays.github.io//German Holidays ${state}//DE`,
-        calendarName: `Deutsche Feiertage - ${state}`, country: 'DE'
+        name: `German Public Holidays - ${calenderVariant}`,
+        productId: COMMON_APPLICATION_PRODID,
+        calendarName: `Deutsche Feiertage - ${calenderVariant}`, country: GERMANY_COUNTRY_CODE
       },
-      join(OUTPUT_DIR, `german_holidays_${stateToFilename(state)}.ics`),
+      join(OUTPUT_DIR, `german_holidays_${stateToFilename(calenderVariant)}.ics`),
       currentYear,
       currentYear + 4
     );
@@ -111,13 +118,13 @@ async function generateSchoolHolidays() {
       periods,
       {
         name: `School Holidays - ${region}`,
-        productId: `-//public-holidays.github.io//School Holidays ${region}//AT`,
+        productId: COMMON_APPLICATION_PRODID,
         calendarName: `Schulferien - ${region}`,
-          country: 'AT'
+          country: AUSTRIA_COUNTRY_CODE
       }
     );
 
-    const outputPath = join(OUTPUT_DIR, 'school', `school_holidays_${regionToFilename(region)}.ics`);
+    const outputPath = join(OUTPUT_DIR, 'school', `school_holidays_${stateToFilename(region)}.ics`);
 
     // Ensure directory exists
     const { mkdir, writeFile } = await import('fs/promises');
