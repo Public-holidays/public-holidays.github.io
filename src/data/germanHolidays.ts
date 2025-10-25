@@ -103,7 +103,7 @@ const commonGermanHolidays: HolidayDefinition[] = [
 ].map(holiday => ({ ...holiday, scope: 'bundesweit' }));
 
 // State-specific holidays
-const stateSpecificHolidays: Record<string, HolidayDefinition[]> = {
+const stateSpecificHolidays: Record<GermanStatePublicHolidayVariant, HolidayDefinition[]> = {
     'Baden-Württemberg': [
         EPIPHANY,
         CORPUS_CHRISTI,
@@ -191,16 +191,15 @@ const stateSpecificHolidays: Record<string, HolidayDefinition[]> = {
     ],
 };
 
-export function getGermanHolidaysForVariant(state: string): HolidayDefinition[] {
+export function getGermanHolidaysForVariant(state: GermanStatePublicHolidayVariant): HolidayDefinition[] {
     const specificHolidays = stateSpecificHolidays[state] || [];
     return [...commonGermanHolidays, ...specificHolidays];
 }
 
-export const germanCalenderVariants: string[] = [
+// List of all German federal states (Bundesländer)
+export const germanStates = [
     'Baden-Württemberg',
     'Bayern',
-    'Bayern (katholisch)',
-    'Augsburg',
     'Berlin',
     'Brandenburg',
     'Bremen',
@@ -212,9 +211,49 @@ export const germanCalenderVariants: string[] = [
     'Rheinland-Pfalz',
     'Saarland',
     'Sachsen',
-    'Sachsen (katholisch)',
     'Sachsen-Anhalt',
     'Schleswig-Holstein',
-    'Thüringen',
-    'Thüringen (katholisch)',
-];
+    'Thüringen'
+] as const;
+
+export type GermanState = typeof germanStates[number];
+
+// Special variants for German public holidays (Catholic regions, Augsburg)
+export const germanStatesSpecialPublicHolidayVariants = [
+    'Bayern (katholisch)', // Bavaria - Catholic regions with Assumption of Mary
+    'Augsburg' , // Augsburg city - includes Augsburg Peace Festival
+    'Sachsen (katholisch)', // Saxony - Catholic municipalities with Corpus Christi
+    'Thüringen (katholisch)' // Thuringia - Catholic municipalities with Corpus Christi
+] as const;
+
+// Union array of all German state public holiday variants (base states + special variants)
+export const germanCalenderVariants = [
+    ...germanStates,
+    ...germanStatesSpecialPublicHolidayVariants
+] as const;
+
+// Type for all German state public holiday variants
+export type GermanStatePublicHolidayVariant = typeof germanCalenderVariants[number];
+
+// export const germanCalenderVariants: GermanStatePublicHolidayVariant[] = [
+//     'Baden-Württemberg',
+//     'Bayern',
+//     'Bayern (katholisch)',
+//     'Augsburg',
+//     'Berlin',
+//     'Brandenburg',
+//     'Bremen',
+//     'Hamburg',
+//     'Hessen',
+//     'Mecklenburg-Vorpommern',
+//     'Niedersachsen',
+//     'Nordrhein-Westfalen',
+//     'Rheinland-Pfalz',
+//     'Saarland',
+//     'Sachsen',
+//     'Sachsen (katholisch)',
+//     'Sachsen-Anhalt',
+//     'Schleswig-Holstein',
+//     'Thüringen',
+//     'Thüringen (katholisch)',
+// ];

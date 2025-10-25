@@ -350,11 +350,9 @@
     const specificHolidays = stateSpecificHolidays[state] || [];
     return [...commonGermanHolidays, ...specificHolidays];
   }
-  var germanCalenderVariants = [
+  var germanStates = [
     "Baden-W\xFCrttemberg",
     "Bayern",
-    "Bayern (katholisch)",
-    "Augsburg",
     "Berlin",
     "Brandenburg",
     "Bremen",
@@ -366,11 +364,23 @@
     "Rheinland-Pfalz",
     "Saarland",
     "Sachsen",
-    "Sachsen (katholisch)",
     "Sachsen-Anhalt",
     "Schleswig-Holstein",
-    "Th\xFCringen",
+    "Th\xFCringen"
+  ];
+  var germanStatesSpecialPublicHolidayVariants = [
+    "Bayern (katholisch)",
+    // Bavaria - Catholic regions with Assumption of Mary
+    "Augsburg",
+    // Augsburg city - includes Augsburg Peace Festival
+    "Sachsen (katholisch)",
+    // Saxony - Catholic municipalities with Corpus Christi
     "Th\xFCringen (katholisch)"
+    // Thuringia - Catholic municipalities with Corpus Christi
+  ];
+  var germanCalenderVariants = [
+    ...germanStates,
+    ...germanStatesSpecialPublicHolidayVariants
   ];
 
   // src/types/Holiday.ts

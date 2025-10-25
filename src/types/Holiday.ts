@@ -30,28 +30,6 @@ export interface CalendarConfig {
   country: string;
 }
 
-export type GermanState =
-  | 'Baden-Württemberg'
-  | 'Bayern'
-  | 'Bayern (katholisch)' // Bavaria - Catholic regions with Assumption of Mary
-  | 'Augsburg'  // Augsburg city - includes Augsburg Peace Festival
-  | 'Berlin'
-  | 'Brandenburg'
-  | 'Bremen'
-  | 'Hamburg'
-  | 'Hessen'
-  | 'Mecklenburg-Vorpommern'
-  | 'Niedersachsen'
-  | 'Nordrhein-Westfalen'
-  | 'Rheinland-Pfalz'
-  | 'Saarland'
-  | 'Sachsen'
-  | 'Sachsen (katholisch)' // Saxony - Catholic municipalities with Corpus Christi
-  | 'Sachsen-Anhalt'
-  | 'Schleswig-Holstein'
-  | 'Thüringen'
-  | 'Thüringen (katholisch)'; // Thuringia - Catholic municipalities with Corpus Christi
-
 /**
  * Convert German state name to filename-safe format (lowercase, no umlauts, hyphens)
  */

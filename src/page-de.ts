@@ -1,5 +1,9 @@
 import {formatDate, populateBundeslandSelect, populateYearSelect, switchTab} from './page-common.js';
-import {germanCalenderVariants, getGermanHolidaysForVariant} from './data/germanHolidays.js';
+import {
+    germanCalenderVariants,
+    GermanStatePublicHolidayVariant,
+    getGermanHolidaysForVariant
+} from './data/germanHolidays.js';
 import {stateToFilename} from './types/Holiday.js';
 import {calculateDate} from './calculators/HolidayCalculator.js';
 
@@ -10,7 +14,7 @@ declare global {
     }
 }
 
-function renderHolidays(year: number, bundesland: string) {
+function renderHolidays(year: number, bundesland: GermanStatePublicHolidayVariant) {
     const holidays = getGermanHolidaysForVariant(bundesland).map(holidayDef => {
         return {
             ...holidayDef,
@@ -52,7 +56,7 @@ function updateCalendar() {
     if (!yearSelect || !bundeslandSelect) return;
 
     const year = parseInt(yearSelect.value);
-    const bundesland = bundeslandSelect.value;
+    const bundesland = bundeslandSelect.value as GermanStatePublicHolidayVariant;
 
     renderHolidays(year, bundesland);
 }

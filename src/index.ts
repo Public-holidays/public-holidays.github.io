@@ -9,8 +9,9 @@ import { austrianHolidays, austrianRegions } from './data/austrianHolidays.js';
 import { getGermanHolidaysForVariant, germanCalenderVariants } from './data/germanHolidays.js';
 import { getSchoolHolidays } from './calculators/SchoolHolidayCalculator.js';
 import { AustrianRegion } from './types/SchoolHoliday.js';
-import {GermanState, stateToFilename} from './types/Holiday.js';
+import {stateToFilename} from './types/Holiday.js';
 import { germanSchoolHolidays, SchoolHolidayPeriod } from './data/germanSchoolHolidays.js';
+import { germanStates} from './data/germanHolidays.js';
 import { join } from 'path';
 
 const BASE_DOMAIN = 'public-holidays.github.io';
@@ -47,7 +48,7 @@ async function generateAustrianCalendars() {
   // Generate individual year calendars
   for (let year = currentYear; year <= currentYear + 2; year++) {
     const holidays = IcsGenerator.generateHolidaysForYear(austrianHolidays, year, 'Österreich');
-    
+
     await IcsGenerator.generateAndSaveIcs(
       holidays,
       {
@@ -71,7 +72,7 @@ async function generateGermanCalendars() {
 
   for (const calenderVariant of germanCalenderVariants) {
     const holidays = getGermanHolidaysForVariant(calenderVariant);
-    
+
     await IcsGenerator.generateRollingCalendar(
       holidays,
       {
@@ -225,12 +226,6 @@ async function generateGermanSchoolHolidays() {
   console.log('\n📅 Generating German School Holiday Calendars...');
   console.log('='.repeat(60));
 
-  const germanStates: GermanState[] = [
-    'Baden-Württemberg', 'Bayern', 'Berlin', 'Brandenburg', 'Bremen',
-    'Hamburg', 'Hessen', 'Mecklenburg-Vorpommern', 'Niedersachsen',
-    'Nordrhein-Westfalen', 'Rheinland-Pfalz', 'Saarland', 'Sachsen',
-    'Sachsen-Anhalt', 'Schleswig-Holstein', 'Thüringen'
-  ];
 
   for (const state of germanStates) {
     const allPeriods: Array<{ startDate: Date; endDate: Date; title: string; description: string }> = [];
@@ -290,12 +285,12 @@ async function main() {
       case 'at':
         await generateAustrianCalendars();
         break;
-      
+
       case 'german':
       case 'de':
         await generateGermanCalendars();
         break;
-      
+
       case 'school':
         await generateSchoolHolidays();
         await generateGermanSchoolHolidays();
@@ -308,7 +303,7 @@ async function main() {
       case 'school-de':
         await generateGermanSchoolHolidays();
         break;
-      
+
       case 'all':
       default:
         await generateAustrianCalendars();

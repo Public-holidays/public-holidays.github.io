@@ -1,3 +1,5 @@
+import {GermanState} from "./germanHolidays.js";
+
 export interface SchoolHolidayPeriod {
     start: string; // Format: DD.MM.YYYY
     end: string;
@@ -17,7 +19,7 @@ export interface SchoolHolidaysYear {
 // as of now I don't think there is a better source for this data, the legal situation doesn't
 // allow for an automated logic like in austrian law.
 
-export const germanSchoolHolidays: Record<string, Record<string, SchoolHolidaysYear>> = {
+export const germanSchoolHolidays: Record<string, Record<GermanState, SchoolHolidaysYear>> = {
     "2025/2026": {
         "Baden-Württemberg": {
             herbst: {start: "27.10.2025", end: "30.10.2025", extra: "31.10.2025"},

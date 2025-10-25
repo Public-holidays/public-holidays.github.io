@@ -48,7 +48,7 @@ export function populateYearSelect(yearSelect: HTMLSelectElement) {
     }
 }
 
-export function populateBundeslandSelect(bundeslandStrings: string[], bundeslandSelect: HTMLSelectElement) {
+export function populateBundeslandSelect(bundeslandStrings: readonly string[], bundeslandSelect: HTMLSelectElement) {
     bundeslandSelect.innerHTML = ''; // Clear existing options
     for (const variant of bundeslandStrings) {
         const option = document.createElement('option');
