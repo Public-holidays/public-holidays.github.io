@@ -29,6 +29,27 @@
       tabContent.classList.add("active");
     }
   }
+  function populateYearSelect(yearSelect) {
+    const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
+    const startYear = currentYear - 1;
+    const endYear = currentYear + 5;
+    for (let year = startYear; year <= endYear; year++) {
+      const option = document.createElement("option");
+      option.value = year.toString();
+      option.textContent = year.toString();
+      if (year === currentYear) option.selected = true;
+      yearSelect.appendChild(option);
+    }
+  }
+  function populateBundeslandSelect(bundeslandStrings, bundeslandSelect) {
+    bundeslandSelect.innerHTML = "";
+    for (const variant of bundeslandStrings) {
+      const option = document.createElement("option");
+      option.value = variant;
+      option.textContent = variant;
+      bundeslandSelect.appendChild(option);
+    }
+  }
 
   // src/calculators/HolidayCalculator.ts
   function calculateEaster(year) {
@@ -495,23 +516,8 @@
     const yearSelect = document.getElementById("yearSelect");
     const bundeslandSelect = document.getElementById("bundeslandSelect");
     if (!yearSelect || !bundeslandSelect) return;
-    const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
-    const startYear = currentYear - 1;
-    const endYear = currentYear + 5;
-    for (let year = startYear; year <= endYear; year++) {
-      const option = document.createElement("option");
-      option.value = year.toString();
-      option.textContent = year.toString();
-      if (year === currentYear) option.selected = true;
-      yearSelect.appendChild(option);
-    }
-    bundeslandSelect.innerHTML = "";
-    for (const region of austrianRegions) {
-      const option = document.createElement("option");
-      option.value = region;
-      option.textContent = region;
-      bundeslandSelect.appendChild(option);
-    }
+    populateYearSelect(yearSelect);
+    populateBundeslandSelect(austrianRegions, bundeslandSelect);
     renderDownloadLinks();
     updateCalendar();
   }
