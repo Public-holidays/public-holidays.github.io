@@ -50,7 +50,11 @@ export function populateYearSelect(yearSelect: HTMLSelectElement) {
 
 export function populateBundeslandSelect(bundeslandStrings: readonly string[], bundeslandSelect: HTMLSelectElement) {
     bundeslandSelect.innerHTML = ''; // Clear existing options
-    for (const variant of bundeslandStrings) {
+
+    // Sort the strings alphabetically for better UX
+    const sortedStrings = [...bundeslandStrings].sort((a, b) => a.localeCompare(b, 'de'));
+
+    for (const variant of sortedStrings) {
         const option = document.createElement('option');
         option.value = variant;
         option.textContent = variant;

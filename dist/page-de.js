@@ -38,7 +38,8 @@
   }
   function populateBundeslandSelect(bundeslandStrings, bundeslandSelect) {
     bundeslandSelect.innerHTML = "";
-    for (const variant of bundeslandStrings) {
+    const sortedStrings = [...bundeslandStrings].sort((a, b) => a.localeCompare(b, "de"));
+    for (const variant of sortedStrings) {
       const option = document.createElement("option");
       option.value = variant;
       option.textContent = variant;
