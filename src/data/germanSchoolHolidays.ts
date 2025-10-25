@@ -1,18 +1,18 @@
 import {GermanState} from "./germanHolidays.js";
 
-export interface SchoolHolidayPeriod {
+export interface GermanSchoolHolidayPeriod {
     start: string; // Format: DD.MM.YYYY
     end: string;
     extra?: string; // Für einzelne Zusatztage
 }
 
 export interface SchoolHolidaysYear {
-    herbst: SchoolHolidayPeriod | null;
-    weihnachten: SchoolHolidayPeriod | null;
-    winter: SchoolHolidayPeriod | null;
-    ostern: SchoolHolidayPeriod | null;
-    pfingsten: SchoolHolidayPeriod | null;
-    sommer: SchoolHolidayPeriod | null;
+    herbst: GermanSchoolHolidayPeriod | null;
+    weihnachten: GermanSchoolHolidayPeriod | null;
+    winter: GermanSchoolHolidayPeriod | null;
+    ostern: GermanSchoolHolidayPeriod | null;
+    pfingsten: GermanSchoolHolidayPeriod | null;
+    sommer: GermanSchoolHolidayPeriod | null;
 }
 
 // Type for year range keys in the format "YYYY/YYYY" (e.g., "2025/2026")

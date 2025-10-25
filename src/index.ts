@@ -10,7 +10,7 @@ import {getGermanHolidaysForVariant, germanCalenderVariants, parseGermanDate} fr
 import { getSchoolHolidays } from './calculators/SchoolHolidayCalculator.js';
 import { AustrianRegion } from './types/SchoolHoliday.js';
 import {stateToFilename} from './types/Holiday.js';
-import { germanSchoolHolidays, SchoolHolidayPeriod } from './data/germanSchoolHolidays.js';
+import { germanSchoolHolidays, GermanSchoolHolidayPeriod } from './data/germanSchoolHolidays.js';
 import { germanStates} from './data/germanHolidays.js';
 import { join } from 'path';
 
@@ -172,7 +172,7 @@ function parseExtraDates(extra: string): Array<{ start: Date; end: Date }> {
  * Convert German school holiday period to calendar events
  */
 function convertPeriodToEvents(
-  period: SchoolHolidayPeriod | null,
+  period: GermanSchoolHolidayPeriod | null,
   periodName: string,
   state: string
 ): Array<{ startDate: Date; endDate: Date; title: string; description: string }> {
