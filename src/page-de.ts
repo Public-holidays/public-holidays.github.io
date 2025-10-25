@@ -1,5 +1,5 @@
 import { formatDate, switchTab } from './page-common.js';
-import { getGermanHolidaysForVariant, germanCalenderVariants } from './data/germanHolidays.js';
+import { getGermanHolidaysForVariant } from './data/germanHolidays.js';
 import {
     calculateDate
 } from './calculators/HolidayCalculator.js';

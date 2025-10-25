@@ -9,7 +9,6 @@ import {germanCalenderVariants} from "./data/germanHolidays.js";
 // Configuration
 const HOLIDAYS_DIR = "holidays";
 const OUTPUT_DIR = `${HOLIDAYS_DIR}/output`;
-const SCHOOL_DIR = `${HOLIDAYS_DIR}/output/school`;
 const HOLIDAYS_URL = `${BASE_URL}holidays/`;
 
 function getLastModified(filepath: string): string {

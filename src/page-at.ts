@@ -1,7 +1,6 @@
 import { formatDate, getDaysBetween, switchTab } from './page-common.js';
 import { austrianHolidays, austrianRegions } from './data/austrianHolidays.js';
 import { getSchoolHolidays } from './calculators/SchoolHolidayCalculator.js';
-import { Holiday, HolidayDefinition } from './types/Holiday.js';
 import {
     calculateDate
 } from './calculators/HolidayCalculator.js';
