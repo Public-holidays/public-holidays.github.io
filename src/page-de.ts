@@ -3,7 +3,7 @@ import {
     germanCalenderVariants,
     GermanStatePublicHolidayVariant,
     getGermanHolidaysForVariant,
-    germanStates, parseGermanDate
+    germanStates
 } from './data/germanHolidays.js';
 import {stateToFilename} from './types/Holiday.js';
 import {calculateDate} from './calculators/HolidayCalculator.js';
@@ -14,6 +14,14 @@ declare global {
         switchTab: (event: MouseEvent, tabName: string) => void;
         updateCalendar: () => void;
     }
+}
+
+/**
+ * Parse date string in DD.MM.YYYY format to Date object
+ */
+function parseGermanDate(dateStr: string): Date {
+    const [day, month, year] = dateStr.split('.').map(Number);
+    return new Date(year, month - 1, day);
 }
 
 function renderHolidays(year: number, bundesland: GermanStatePublicHolidayVariant) {
@@ -73,8 +81,14 @@ function renderSchoolHolidays(year: number, bundesland: string) {
     schoolBundeslandSpan.textContent = bundesland;
 
     const yearRange = getSchoolYearRange(year);
-    if (!yearRange || !(bundesland in germanSchoolHolidays[yearRange])) {
-        container.innerHTML = '<div class="info-box"><p>Keine Schulferien-Daten für dieses Jahr/Bundesland verfügbar.</p></div>';
+    if (!yearRange) {
+        container.innerHTML = '<div class="info-box"><p>Keine Schulferien-Daten für dieses Jahr verfügbar.</p></div>';
+        return;
+    }
+
+    // Check if the state exists in the school holidays data
+    if (!(bundesland in germanSchoolHolidays[yearRange])) {
+        container.innerHTML = '<div class="info-box"><p>Keine Schulferien-Daten für dieses Bundesland verfügbar.</p></div>';
         return;
     }
 
@@ -129,17 +143,15 @@ function renderSchoolHolidays(year: number, bundesland: string) {
 function updateCalendar() {
     const yearSelect = document.getElementById('yearSelect') as HTMLSelectElement;
     const bundeslandSelect = document.getElementById('bundeslandSelect') as HTMLSelectElement;
-    if (!yearSelect || !bundeslandSelect) return;
+    const schoolBundeslandSelect = document.getElementById('schoolBundeslandSelect') as HTMLSelectElement;
+    if (!yearSelect || !bundeslandSelect || !schoolBundeslandSelect) return;
 
     const year = parseInt(yearSelect.value);
     const bundesland = bundeslandSelect.value as GermanStatePublicHolidayVariant;
+    const schoolBundesland = schoolBundeslandSelect.value;
 
     renderHolidays(year, bundesland);
-
-    // Also update school holidays if the state is valid for school holidays
-    if (germanStates.includes(bundesland as any)) {
-        renderSchoolHolidays(year, bundesland);
-    }
+    renderSchoolHolidays(year, schoolBundesland);
 }
 
 function renderDownloadLinks() {
@@ -161,12 +173,16 @@ function renderDownloadLinks() {
 async function init() {
     const yearSelect = document.getElementById('yearSelect') as HTMLSelectElement;
     const bundeslandSelect = document.getElementById('bundeslandSelect') as HTMLSelectElement;
-    if (!yearSelect || !bundeslandSelect) return;
+    const schoolBundeslandSelect = document.getElementById('schoolBundeslandSelect') as HTMLSelectElement;
+    if (!yearSelect || !bundeslandSelect || !schoolBundeslandSelect) return;
 
     populateYearSelect(yearSelect);
 
-    // Populate Bundesland dropdown from germanCalenderVariants
+    // Populate Bundesland dropdown for public holidays (includes variants)
     populateBundeslandSelect(germanCalenderVariants, bundeslandSelect);
+
+    // Populate Bundesland dropdown for school holidays (only base states)
+    populateBundeslandSelect(germanStates, schoolBundeslandSelect);
 
     // Populate download links
     renderDownloadLinks();

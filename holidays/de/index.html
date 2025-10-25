@@ -43,9 +43,15 @@
                     </select>
                 </div>
                 <div class="control-item">
-                    <label>Bundesland</label>
+                    <label>Bundesland (für Feiertage)</label>
                     <select id="bundeslandSelect" onchange="window.updateCalendar()">
                         <!-- Populated by JS from germanCalenderVariants -->
+                    </select>
+                </div>
+                <div class="control-item">
+                    <label>Bundesland (für Schulferien)</label>
+                    <select id="schoolBundeslandSelect" onchange="window.updateCalendar()">
+                        <!-- Populated by JS from germanStates -->
                     </select>
                 </div>
             </div>
