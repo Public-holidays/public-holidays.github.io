@@ -184,6 +184,17 @@
     CHRISTMAS_DAY_AT,
     ST_STEPHENS_DAY
   ];
+  var austrianRegions = [
+    "Wien",
+    "Nieder\xF6sterreich",
+    "Burgenland",
+    "Ober\xF6sterreich",
+    "Steiermark",
+    "K\xE4rnten",
+    "Salzburg",
+    "Tirol",
+    "Vorarlberg"
+  ];
 
   // src/calculators/SchoolHolidayCalculator.ts
   function getFirstMondayOfMonth(year, month) {
@@ -451,7 +462,8 @@
   }
   async function init() {
     const yearSelect = document.getElementById("yearSelect");
-    if (!yearSelect) return;
+    const bundeslandSelect = document.getElementById("bundeslandSelect");
+    if (!yearSelect || !bundeslandSelect) return;
     const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
     const startYear = currentYear - 1;
     const endYear = currentYear + 5;
@@ -461,6 +473,13 @@
       option.textContent = year.toString();
       if (year === currentYear) option.selected = true;
       yearSelect.appendChild(option);
+    }
+    bundeslandSelect.innerHTML = "";
+    for (const region of austrianRegions) {
+      const option = document.createElement("option");
+      option.value = region;
+      option.textContent = region;
+      bundeslandSelect.appendChild(option);
     }
     updateCalendar();
   }

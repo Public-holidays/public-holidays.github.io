@@ -327,6 +327,28 @@
     const specificHolidays = stateSpecificHolidays[state] || [];
     return [...commonGermanHolidays, ...specificHolidays];
   }
+  var germanCalenderVariants = [
+    "Baden-W\xFCrttemberg",
+    "Bayern",
+    "Bayern (katholisch)",
+    "Augsburg",
+    "Berlin",
+    "Brandenburg",
+    "Bremen",
+    "Hamburg",
+    "Hessen",
+    "Mecklenburg-Vorpommern",
+    "Niedersachsen",
+    "Nordrhein-Westfalen",
+    "Rheinland-Pfalz",
+    "Saarland",
+    "Sachsen",
+    "Sachsen (katholisch)",
+    "Sachsen-Anhalt",
+    "Schleswig-Holstein",
+    "Th\xFCringen",
+    "Th\xFCringen (katholisch)"
+  ];
 
   // src/page-de.ts
   function renderHolidays(year, bundesland) {
@@ -364,7 +386,8 @@
   }
   async function init() {
     const yearSelect = document.getElementById("yearSelect");
-    if (!yearSelect) return;
+    const bundeslandSelect = document.getElementById("bundeslandSelect");
+    if (!yearSelect || !bundeslandSelect) return;
     const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
     const startYear = currentYear - 1;
     const endYear = currentYear + 5;
@@ -374,6 +397,13 @@
       option.textContent = year.toString();
       if (year === currentYear) option.selected = true;
       yearSelect.appendChild(option);
+    }
+    bundeslandSelect.innerHTML = "";
+    for (const variant of germanCalenderVariants) {
+      const option = document.createElement("option");
+      option.value = variant;
+      option.textContent = variant;
+      bundeslandSelect.appendChild(option);
     }
     updateCalendar();
   }

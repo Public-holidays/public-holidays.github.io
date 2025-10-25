@@ -75,8 +75,10 @@ function updateCalendar() {
 
 async function init() {
     const yearSelect = document.getElementById('yearSelect') as HTMLSelectElement;
-    if (!yearSelect) return;
+    const bundeslandSelect = document.getElementById('bundeslandSelect') as HTMLSelectElement;
+    if (!yearSelect || !bundeslandSelect) return;
 
+    // Populate year dropdown
     const currentYear = new Date().getFullYear();
     const startYear = currentYear - 1;
     const endYear = currentYear + 5;
@@ -87,6 +89,15 @@ async function init() {
         option.textContent = year.toString();
         if (year === currentYear) option.selected = true;
         yearSelect.appendChild(option);
+    }
+
+    // Populate Bundesland dropdown from austrianRegions
+    bundeslandSelect.innerHTML = ''; // Clear existing options
+    for (const region of austrianRegions) {
+        const option = document.createElement('option');
+        option.value = region;
+        option.textContent = region;
+        bundeslandSelect.appendChild(option);
     }
 
     updateCalendar();

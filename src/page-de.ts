@@ -1,5 +1,5 @@
 import { formatDate, switchTab } from './page-common.js';
-import { getGermanHolidaysForVariant } from './data/germanHolidays.js';
+import { getGermanHolidaysForVariant, germanCalenderVariants } from './data/germanHolidays.js';
 import {
     calculateDate
 } from './calculators/HolidayCalculator.js';
@@ -53,8 +53,10 @@ function updateCalendar() {
 
 async function init() {
     const yearSelect = document.getElementById('yearSelect') as HTMLSelectElement;
-    if (!yearSelect) return;
+    const bundeslandSelect = document.getElementById('bundeslandSelect') as HTMLSelectElement;
+    if (!yearSelect || !bundeslandSelect) return;
 
+    // Populate year dropdown
     const currentYear = new Date().getFullYear();
     const startYear = currentYear - 1;
     const endYear = currentYear + 5;
@@ -65,6 +67,15 @@ async function init() {
         option.textContent = year.toString();
         if (year === currentYear) option.selected = true;
         yearSelect.appendChild(option);
+    }
+
+    // Populate Bundesland dropdown from germanCalenderVariants
+    bundeslandSelect.innerHTML = ''; // Clear existing options
+    for (const variant of germanCalenderVariants) {
+        const option = document.createElement('option');
+        option.value = variant;
+        option.textContent = variant;
+        bundeslandSelect.appendChild(option);
     }
 
     updateCalendar();
