@@ -12,8 +12,8 @@ export interface Holiday {
 export interface HolidayDefinition {
   nameDE: string;
   nameEN: string;
-  wikipediaDE?: string;  // German Wikipedia link
-  wikipediaEN?: string;  // English Wikipedia link
+  wikipediaDE: string;  // German Wikipedia link
+  wikipediaEN: string;  // English Wikipedia link
   fixed?: {
     month: number;
     day: number;

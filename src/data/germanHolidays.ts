@@ -4,248 +4,168 @@
 
 import {HolidayDefinition, GermanState} from '../types/Holiday.js';
 import {
-    calculateGoodFriday,
-    calculateEasterMonday,
-    calculateAscensionDay,
-    calculateWhitMonday,
-    calculateWhitSunday,
-    calculateCorpusChristi,
     calculateRepentanceDay,
+    calculateWhitSunday,
     calculateEaster,
 } from '../calculators/HolidayCalculator.js';
+import {
+    NEW_YEARS_DAY,
+    GOOD_FRIDAY,
+    EASTER_MONDAY,
+    LABOUR_DAY,
+    ASCENSION_DAY,
+    WHIT_MONDAY,
+    CORPUS_CHRISTI,
+    ASSUMPTION_OF_MARY,
+    EPIPHANY,
+    ALL_SAINTS_DAY,
+    CHRISTMAS_DAY,
+    BOXING_DAY,
+} from './commonHolidays.js';
+
+// Germany-specific holidays (constants)
+const GERMAN_UNITY_DAY: HolidayDefinition = {
+    nameDE: 'Tag der Deutschen Einheit',
+    nameEN: 'German Unity Day',
+    wikipediaDE: 'https://de.wikipedia.org/wiki/Tag_der_Deutschen_Einheit',
+    wikipediaEN: 'https://en.wikipedia.org/wiki/German_Unity_Day',
+    fixed: {month: 10, day: 3},
+};
+
+const REFORMATION_DAY: HolidayDefinition = {
+    nameDE: 'Reformationstag',
+    nameEN: 'Reformation Day',
+    wikipediaDE: 'https://de.wikipedia.org/wiki/Reformationstag',
+    wikipediaEN: 'https://en.wikipedia.org/wiki/Reformation_Day',
+    fixed: {month: 10, day: 31},
+};
+
+const REPENTANCE_DAY: HolidayDefinition = {
+    nameDE: 'Buß- und Bettag',
+    nameEN: 'Day of Repentance and Prayer',
+    wikipediaDE: 'https://de.wikipedia.org/wiki/Bu%C3%9F-_und_Bettag',
+    wikipediaEN: 'https://en.wikipedia.org/wiki/Repentance_and_Prayer_Day',
+    calculator: calculateRepentanceDay,
+};
+
+const WOMENS_DAY: HolidayDefinition = {
+    nameDE: 'Internationaler Frauentag',
+    nameEN: "International Women's Day",
+    wikipediaDE: 'https://de.wikipedia.org/wiki/Internationaler_Frauentag',
+    wikipediaEN: 'https://en.wikipedia.org/wiki/International_Women%27s_Day',
+    fixed: {month: 3, day: 8},
+};
+
+const WHIT_SUNDAY: HolidayDefinition = {
+    nameDE: 'Pfingstsonntag',
+    nameEN: 'Whit Sunday',
+    wikipediaDE: 'https://de.wikipedia.org/wiki/Pfingsten',
+    wikipediaEN: 'https://en.wikipedia.org/wiki/Pentecost',
+    calculator: calculateWhitSunday,
+};
+
+const EASTER_SUNDAY: HolidayDefinition = {
+    nameDE: 'Ostersonntag',
+    nameEN: 'Easter Sunday',
+    wikipediaDE: 'https://de.wikipedia.org/wiki/Ostern',
+    wikipediaEN: 'https://en.wikipedia.org/wiki/Easter',
+    calculator: calculateEaster,
+};
+
+const AUGSBURG_PEACE_FESTIVAL: HolidayDefinition = {
+    nameDE: 'Augsburger Friedensfest',
+    nameEN: 'Augsburg Peace Festival',
+    wikipediaDE: 'https://de.wikipedia.org/wiki/Augsburger_Hohes_Friedensfest',
+    wikipediaEN: 'https://en.wikipedia.org/wiki/Augsburger_Hohes_Friedensfest',
+    fixed: {month: 8, day: 8},
+};
+
+const WORLD_CHILDRENS_DAY: HolidayDefinition = {
+    nameDE: 'Weltkindertag',
+    nameEN: "World Children's Day",
+    wikipediaDE: 'https://de.wikipedia.org/wiki/Weltkindertag',
+    wikipediaEN: 'https://en.wikipedia.org/wiki/Children%27s_Day',
+    fixed: {month: 9, day: 20},
+};
 
 // Common holidays for all German states
 const commonGermanHolidays: HolidayDefinition[] = [
-    {
-        nameDE: 'Neujahr',
-        nameEN: "New Year's Day",
-        wikipediaDE: 'https://de.wikipedia.org/wiki/Neujahr',
-        wikipediaEN: 'https://en.wikipedia.org/wiki/New_Year%27s_Day',
-        fixed: {month: 1, day: 1},
-    },
-    {
-        nameDE: 'Karfreitag',
-        nameEN: 'Good Friday',
-        wikipediaDE: 'https://de.wikipedia.org/wiki/Karfreitag',
-        wikipediaEN: 'https://en.wikipedia.org/wiki/Good_Friday',
-        calculator: calculateGoodFriday,
-    },
-    {
-        nameDE: 'Ostermontag',
-        nameEN: 'Easter Monday',
-        wikipediaDE: 'https://de.wikipedia.org/wiki/Ostermontag',
-        wikipediaEN: 'https://en.wikipedia.org/wiki/Easter_Monday',
-        calculator: calculateEasterMonday,
-    },
-    {
-        nameDE: 'Tag der Arbeit',
-        nameEN: 'Labour Day',
-        wikipediaDE: 'https://de.wikipedia.org/wiki/Tag_der_Arbeit',
-        wikipediaEN: 'https://en.wikipedia.org/wiki/International_Workers%27_Day',
-        fixed: {month: 5, day: 1},
-    },
-    {
-        nameDE: 'Christi Himmelfahrt',
-        nameEN: 'Ascension Day',
-        wikipediaDE: 'https://de.wikipedia.org/wiki/Christi_Himmelfahrt',
-        wikipediaEN: 'https://en.wikipedia.org/wiki/Feast_of_the_Ascension',
-        calculator: calculateAscensionDay,
-    },
-    {
-        nameDE: 'Pfingstmontag',
-        nameEN: 'Whit Monday',
-        wikipediaDE: 'https://de.wikipedia.org/wiki/Pfingstmontag',
-        wikipediaEN: 'https://en.wikipedia.org/wiki/Whit_Monday',
-        calculator: calculateWhitMonday,
-    },
-    {
-        nameDE: 'Tag der Deutschen Einheit',
-        nameEN: 'German Unity Day',
-        wikipediaDE: 'https://de.wikipedia.org/wiki/Tag_der_Deutschen_Einheit',
-        wikipediaEN: 'https://en.wikipedia.org/wiki/German_Unity_Day',
-        fixed: {month: 10, day: 3},
-    },
-    {
-        nameDE: 'Erster Weihnachtstag',
-        nameEN: 'Christmas Day',
-        wikipediaDE: 'https://de.wikipedia.org/wiki/Weihnachten',
-        wikipediaEN: 'https://en.wikipedia.org/wiki/Christmas',
-        fixed: {month: 12, day: 25},
-    },
-    {
-        nameDE: 'Zweiter Weihnachtstag',
-        nameEN: 'Boxing Day',
-        wikipediaDE: 'https://de.wikipedia.org/wiki/Zweiter_Weihnachtsfeiertag',
-        wikipediaEN: 'https://en.wikipedia.org/wiki/Boxing_Day',
-        fixed: {month: 12, day: 26},
-    },
+    NEW_YEARS_DAY,
+    GOOD_FRIDAY,
+    EASTER_MONDAY,
+    LABOUR_DAY,
+    ASCENSION_DAY,
+    WHIT_MONDAY,
+    GERMAN_UNITY_DAY,
+    CHRISTMAS_DAY,
+    BOXING_DAY,
 ];
-
-const dreiKoenige: HolidayDefinition = {
-    nameDE: 'Heilige Drei Könige',
-    nameEN: 'Epiphany',
-    wikipediaDE: 'https://de.wikipedia.org/wiki/Erscheinung_des_Herrn',
-    wikipediaEN: 'https://en.wikipedia.org/wiki/Epiphany_(holiday)',
-    fixed: {month: 1, day: 6},
-}
-
-const fronleichnam: HolidayDefinition = {
-    nameDE: 'Fronleichnam',
-    nameEN: 'Corpus Christi',
-    wikipediaDE: 'https://de.wikipedia.org/wiki/Fronleichnam',
-    wikipediaEN: 'https://en.wikipedia.org/wiki/Corpus_Christi_(feast)',
-    calculator: calculateCorpusChristi,
-}
-
-const allerheiligen: HolidayDefinition = {
-    nameDE: 'Allerheiligen',
-    nameEN: "All Saints' Day",
-    wikipediaDE: 'https://de.wikipedia.org/wiki/Allerheiligen',
-    wikipediaEN: 'https://en.wikipedia.org/wiki/All_Saints%27_Day',
-    fixed: {month: 11, day: 1},
-}
-
-const mariaHimmelfahrt : HolidayDefinition = {
-    nameDE: 'Mariä Himmelfahrt',
-    nameEN: 'Assumption of Mary',
-    wikipediaDE: 'https://de.wikipedia.org/wiki/Mari%C3%A4_Aufnahme_in_den_Himmel',
-    wikipediaEN: 'https://en.wikipedia.org/wiki/Assumption_of_Mary',
-    fixed: {month: 8, day: 15},
-}
 
 // State-specific holidays
 const stateSpecificHolidays: Record<GermanState, HolidayDefinition[]> = {
     'Baden-Württemberg': [
-        dreiKoenige,
-        fronleichnam,
-        allerheiligen,
+        EPIPHANY,
+        CORPUS_CHRISTI,
+        ALL_SAINTS_DAY,
     ],
     'Bayern': [
-        dreiKoenige,
-        fronleichnam,
-        {
-            nameDE: 'Augsburger Friedensfest',
-            nameEN: 'Augsburg Peace Festival',
-            fixed: {month: 8, day: 8},
-        },
-        mariaHimmelfahrt,
-        allerheiligen,
+        EPIPHANY,
+        CORPUS_CHRISTI,
+        AUGSBURG_PEACE_FESTIVAL,
+        ASSUMPTION_OF_MARY,
+        ALL_SAINTS_DAY,
     ],
     'Berlin': [
-        {
-            nameDE: 'Internationaler Frauentag',
-            nameEN: "International Women's Day",
-            fixed: {month: 3, day: 8},
-        },
+        WOMENS_DAY,
     ],
     'Brandenburg': [
-        {
-            nameDE: 'Ostersonntag',
-            nameEN: 'Easter Sunday',
-            calculator: calculateEaster,
-        },
-        {
-            nameDE: 'Pfingstsonntag',
-            nameEN: 'Whit Sunday',
-            calculator: calculateWhitSunday,
-        },
-        {
-            nameDE: 'Reformationstag',
-            nameEN: 'Reformation Day',
-            fixed: {month: 10, day: 31},
-        },
+        EASTER_SUNDAY,
+        WHIT_SUNDAY,
+        REFORMATION_DAY,
     ],
     'Bremen': [
-        {
-            nameDE: 'Reformationstag',
-            nameEN: 'Reformation Day',
-            fixed: {month: 10, day: 31},
-        },
+        REFORMATION_DAY,
     ],
     'Hamburg': [
-        {
-            nameDE: 'Reformationstag',
-            nameEN: 'Reformation Day',
-            fixed: {month: 10, day: 31},
-        },
+        REFORMATION_DAY,
     ],
     'Hessen': [
-        fronleichnam,
+        CORPUS_CHRISTI,
     ],
     'Mecklenburg-Vorpommern': [
-        {
-            nameDE: 'Internationaler Frauentag',
-            nameEN: "International Women's Day",
-            fixed: {month: 3, day: 8},
-        },
-        {
-            nameDE: 'Reformationstag',
-            nameEN: 'Reformation Day',
-            fixed: {month: 10, day: 31},
-        },
+        WOMENS_DAY,
+        REFORMATION_DAY,
     ],
     'Niedersachsen': [
-        {
-            nameDE: 'Reformationstag',
-            nameEN: 'Reformation Day',
-            fixed: {month: 10, day: 31},
-        },
+        REFORMATION_DAY,
     ],
     'Nordrhein-Westfalen': [
-        fronleichnam,
-        allerheiligen,
+        CORPUS_CHRISTI,
+        ALL_SAINTS_DAY,
     ],
     'Rheinland-Pfalz': [
-        fronleichnam,
-        allerheiligen,
+        CORPUS_CHRISTI,
+        ALL_SAINTS_DAY,
     ],
     'Saarland': [
-        fronleichnam,
-        {
-            nameDE: 'Mariä Himmelfahrt',
-            nameEN: 'Assumption of Mary',
-            fixed: {month: 8, day: 15},
-        },
-        allerheiligen,
+        CORPUS_CHRISTI,
+        ASSUMPTION_OF_MARY,
+        ALL_SAINTS_DAY,
     ],
     'Sachsen': [
-        {
-            nameDE: 'Reformationstag',
-            nameEN: 'Reformation Day',
-            fixed: {month: 10, day: 31},
-        },
-        {
-            nameDE: 'Buß- und Bettag',
-            nameEN: 'Day of Repentance and Prayer',
-            calculator: calculateRepentanceDay,
-        },
+        REFORMATION_DAY,
+        REPENTANCE_DAY,
     ],
     'Sachsen-Anhalt': [
-        dreiKoenige,
-        {
-            nameDE: 'Reformationstag',
-            nameEN: 'Reformation Day',
-            fixed: {month: 10, day: 31},
-        },
+        EPIPHANY,
+        REFORMATION_DAY,
     ],
     'Schleswig-Holstein': [
-        {
-            nameDE: 'Reformationstag',
-            nameEN: 'Reformation Day',
-            fixed: {month: 10, day: 31},
-        },
+        REFORMATION_DAY,
     ],
     'Thüringen': [
-        {
-            nameDE: 'Weltkindertag',
-            nameEN: "World Children's Day",
-            fixed: {month: 9, day: 20},
-        },
-        {
-            nameDE: 'Reformationstag',
-            nameEN: 'Reformation Day',
-            fixed: {month: 10, day: 31},
-        },
+        WORLD_CHILDRENS_DAY,
+        REFORMATION_DAY,
     ],
 };
 
