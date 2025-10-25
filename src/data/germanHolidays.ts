@@ -2,7 +2,7 @@
  * German public holiday definitions by Bundesland
  */
 
-import {HolidayDefinition, GermanState} from '../types/Holiday.js';
+import {HolidayDefinition} from '../types/Holiday.js';
 import {
     calculateRepentanceDay,
     calculateWhitSunday,
@@ -102,13 +102,24 @@ const commonGermanHolidays: HolidayDefinition[] = [
 ];
 
 // State-specific holidays
-const stateSpecificHolidays: Record<GermanState, HolidayDefinition[]> = {
+const stateSpecificHolidays: Record<string, HolidayDefinition[]> = {
     'Baden-Württemberg': [
         EPIPHANY,
         CORPUS_CHRISTI,
         ALL_SAINTS_DAY,
     ],
     'Bayern': [
+        EPIPHANY,
+        CORPUS_CHRISTI,
+        ALL_SAINTS_DAY,
+    ],
+    'Bayern (katholisch)': [
+        EPIPHANY,
+        CORPUS_CHRISTI,
+        ASSUMPTION_OF_MARY,
+        ALL_SAINTS_DAY,
+    ],
+    'Augsburg': [
         EPIPHANY,
         CORPUS_CHRISTI,
         AUGSBURG_PEACE_FESTIVAL,
@@ -169,14 +180,16 @@ const stateSpecificHolidays: Record<GermanState, HolidayDefinition[]> = {
     ],
 };
 
-export function getGermanHolidaysForState(state: GermanState): HolidayDefinition[] {
+export function getGermanHolidaysForState(state: string): HolidayDefinition[] {
     const specificHolidays = stateSpecificHolidays[state] || [];
     return [...commonGermanHolidays, ...specificHolidays];
 }
 
-export const germanStates: GermanState[] = [
+export const germanCalenderVariants: string[] = [
     'Baden-Württemberg',
     'Bayern',
+    'Bayern (katholisch)',
+    'Augsburg',
     'Berlin',
     'Brandenburg',
     'Bremen',

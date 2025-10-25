@@ -1,9 +1,10 @@
 BEGIN:VCALENDAR
 VERSION:2.0
 CALSCALE:GREGORIAN
-PRODID:-//public-holidays.github.io//German Holidays Hessen//DE
+PRODID:-//public-holidays.github.io//German Holidays Bayern (katholisch)//D
+	E
 METHOD:PUBLISH
-X-WR-CALNAME:Deutsche Feiertage - Hessen
+X-WR-CALNAME:Deutsche Feiertage - Bayern (katholisch)
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
 UID:20250101-neujahr-de@public-holidays.github.io
@@ -13,6 +14,18 @@ DTSTART;VALUE=DATE:20250101
 DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLear
 	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Neujahr\\n🇬🇧 https://en.wikipedia
 	.org/wiki/New_Year%27s_Day
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
+UID:20250106-heilige-drei-konige-de@public-holidays.github.io
+SUMMARY:Heilige Drei Könige
+DTSTAMP:20251025T064514Z
+DTSTART;VALUE=DATE:20250106
+DESCRIPTION:Epiphany - Gesetzlicher Feiertag in Deutschland\\n\\nLearn more
+	:\\n🇩🇪 https://de.wikipedia.org/wiki/Erscheinung_des_Herrn\\n🇬🇧 https://en.w
+	ikipedia.org/wiki/Epiphany_(holiday)
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -90,6 +103,18 @@ TRANSP:TRANSPARENT
 DURATION:P1DT
 END:VEVENT
 BEGIN:VEVENT
+UID:20250815-maria-himmelfahrt-de@public-holidays.github.io
+SUMMARY:Mariä Himmelfahrt
+DTSTAMP:20251025T064514Z
+DTSTART;VALUE=DATE:20250815
+DESCRIPTION:Assumption of Mary - Gesetzlicher Feiertag in Deutschland\\n\\n
+	Learn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Mari%C3%A4_Aufnahme_in_den_H
+	immel\\n🇬🇧 https://en.wikipedia.org/wiki/Assumption_of_Mary
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
 UID:20251003-tag-der-deutschen-einheit-de@public-holidays.github.io
 SUMMARY:Tag der Deutschen Einheit
 DTSTAMP:20251025T064514Z
@@ -97,6 +122,18 @@ DTSTART;VALUE=DATE:20251003
 DESCRIPTION:German Unity Day - Gesetzlicher Feiertag in Deutschland\\n\\nLe
 	arn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Tag_der_Deutschen_Einheit\\n🇬🇧 
 	https://en.wikipedia.org/wiki/German_Unity_Day
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
+UID:20251101-allerheiligen-de@public-holidays.github.io
+SUMMARY:Allerheiligen
+DTSTAMP:20251025T064514Z
+DTSTART;VALUE=DATE:20251101
+DESCRIPTION:All Saints' Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
+	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Allerheiligen\\n🇬🇧 https://en.wi
+	kipedia.org/wiki/All_Saints%27_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -133,6 +170,18 @@ DTSTART;VALUE=DATE:20260101
 DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLear
 	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Neujahr\\n🇬🇧 https://en.wikipedia
 	.org/wiki/New_Year%27s_Day
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
+UID:20260106-heilige-drei-konige-de@public-holidays.github.io
+SUMMARY:Heilige Drei Könige
+DTSTAMP:20251025T064514Z
+DTSTART;VALUE=DATE:20260106
+DESCRIPTION:Epiphany - Gesetzlicher Feiertag in Deutschland\\n\\nLearn more
+	:\\n🇩🇪 https://de.wikipedia.org/wiki/Erscheinung_des_Herrn\\n🇬🇧 https://en.w
+	ikipedia.org/wiki/Epiphany_(holiday)
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -210,6 +259,18 @@ TRANSP:TRANSPARENT
 DURATION:P1DT
 END:VEVENT
 BEGIN:VEVENT
+UID:20260815-maria-himmelfahrt-de@public-holidays.github.io
+SUMMARY:Mariä Himmelfahrt
+DTSTAMP:20251025T064514Z
+DTSTART;VALUE=DATE:20260815
+DESCRIPTION:Assumption of Mary - Gesetzlicher Feiertag in Deutschland\\n\\n
+	Learn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Mari%C3%A4_Aufnahme_in_den_H
+	immel\\n🇬🇧 https://en.wikipedia.org/wiki/Assumption_of_Mary
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
 UID:20261003-tag-der-deutschen-einheit-de@public-holidays.github.io
 SUMMARY:Tag der Deutschen Einheit
 DTSTAMP:20251025T064514Z
@@ -217,6 +278,18 @@ DTSTART;VALUE=DATE:20261003
 DESCRIPTION:German Unity Day - Gesetzlicher Feiertag in Deutschland\\n\\nLe
 	arn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Tag_der_Deutschen_Einheit\\n🇬🇧 
 	https://en.wikipedia.org/wiki/German_Unity_Day
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261101-allerheiligen-de@public-holidays.github.io
+SUMMARY:Allerheiligen
+DTSTAMP:20251025T064514Z
+DTSTART;VALUE=DATE:20261101
+DESCRIPTION:All Saints' Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
+	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Allerheiligen\\n🇬🇧 https://en.wi
+	kipedia.org/wiki/All_Saints%27_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -253,6 +326,18 @@ DTSTART;VALUE=DATE:20270101
 DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLear
 	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Neujahr\\n🇬🇧 https://en.wikipedia
 	.org/wiki/New_Year%27s_Day
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
+UID:20270106-heilige-drei-konige-de@public-holidays.github.io
+SUMMARY:Heilige Drei Könige
+DTSTAMP:20251025T064514Z
+DTSTART;VALUE=DATE:20270106
+DESCRIPTION:Epiphany - Gesetzlicher Feiertag in Deutschland\\n\\nLearn more
+	:\\n🇩🇪 https://de.wikipedia.org/wiki/Erscheinung_des_Herrn\\n🇬🇧 https://en.w
+	ikipedia.org/wiki/Epiphany_(holiday)
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -330,6 +415,18 @@ TRANSP:TRANSPARENT
 DURATION:P1DT
 END:VEVENT
 BEGIN:VEVENT
+UID:20270815-maria-himmelfahrt-de@public-holidays.github.io
+SUMMARY:Mariä Himmelfahrt
+DTSTAMP:20251025T064514Z
+DTSTART;VALUE=DATE:20270815
+DESCRIPTION:Assumption of Mary - Gesetzlicher Feiertag in Deutschland\\n\\n
+	Learn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Mari%C3%A4_Aufnahme_in_den_H
+	immel\\n🇬🇧 https://en.wikipedia.org/wiki/Assumption_of_Mary
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
 UID:20271003-tag-der-deutschen-einheit-de@public-holidays.github.io
 SUMMARY:Tag der Deutschen Einheit
 DTSTAMP:20251025T064514Z
@@ -337,6 +434,18 @@ DTSTART;VALUE=DATE:20271003
 DESCRIPTION:German Unity Day - Gesetzlicher Feiertag in Deutschland\\n\\nLe
 	arn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Tag_der_Deutschen_Einheit\\n🇬🇧 
 	https://en.wikipedia.org/wiki/German_Unity_Day
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
+UID:20271101-allerheiligen-de@public-holidays.github.io
+SUMMARY:Allerheiligen
+DTSTAMP:20251025T064514Z
+DTSTART;VALUE=DATE:20271101
+DESCRIPTION:All Saints' Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
+	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Allerheiligen\\n🇬🇧 https://en.wi
+	kipedia.org/wiki/All_Saints%27_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -373,6 +482,18 @@ DTSTART;VALUE=DATE:20280101
 DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLear
 	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Neujahr\\n🇬🇧 https://en.wikipedia
 	.org/wiki/New_Year%27s_Day
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
+UID:20280106-heilige-drei-konige-de@public-holidays.github.io
+SUMMARY:Heilige Drei Könige
+DTSTAMP:20251025T064514Z
+DTSTART;VALUE=DATE:20280106
+DESCRIPTION:Epiphany - Gesetzlicher Feiertag in Deutschland\\n\\nLearn more
+	:\\n🇩🇪 https://de.wikipedia.org/wiki/Erscheinung_des_Herrn\\n🇬🇧 https://en.w
+	ikipedia.org/wiki/Epiphany_(holiday)
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -450,6 +571,18 @@ TRANSP:TRANSPARENT
 DURATION:P1DT
 END:VEVENT
 BEGIN:VEVENT
+UID:20280815-maria-himmelfahrt-de@public-holidays.github.io
+SUMMARY:Mariä Himmelfahrt
+DTSTAMP:20251025T064514Z
+DTSTART;VALUE=DATE:20280815
+DESCRIPTION:Assumption of Mary - Gesetzlicher Feiertag in Deutschland\\n\\n
+	Learn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Mari%C3%A4_Aufnahme_in_den_H
+	immel\\n🇬🇧 https://en.wikipedia.org/wiki/Assumption_of_Mary
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
 UID:20281003-tag-der-deutschen-einheit-de@public-holidays.github.io
 SUMMARY:Tag der Deutschen Einheit
 DTSTAMP:20251025T064514Z
@@ -457,6 +590,18 @@ DTSTART;VALUE=DATE:20281003
 DESCRIPTION:German Unity Day - Gesetzlicher Feiertag in Deutschland\\n\\nLe
 	arn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Tag_der_Deutschen_Einheit\\n🇬🇧 
 	https://en.wikipedia.org/wiki/German_Unity_Day
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
+UID:20281101-allerheiligen-de@public-holidays.github.io
+SUMMARY:Allerheiligen
+DTSTAMP:20251025T064514Z
+DTSTART;VALUE=DATE:20281101
+DESCRIPTION:All Saints' Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
+	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Allerheiligen\\n🇬🇧 https://en.wi
+	kipedia.org/wiki/All_Saints%27_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -493,6 +638,18 @@ DTSTART;VALUE=DATE:20290101
 DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLear
 	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Neujahr\\n🇬🇧 https://en.wikipedia
 	.org/wiki/New_Year%27s_Day
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
+UID:20290106-heilige-drei-konige-de@public-holidays.github.io
+SUMMARY:Heilige Drei Könige
+DTSTAMP:20251025T064514Z
+DTSTART;VALUE=DATE:20290106
+DESCRIPTION:Epiphany - Gesetzlicher Feiertag in Deutschland\\n\\nLearn more
+	:\\n🇩🇪 https://de.wikipedia.org/wiki/Erscheinung_des_Herrn\\n🇬🇧 https://en.w
+	ikipedia.org/wiki/Epiphany_(holiday)
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -570,6 +727,18 @@ TRANSP:TRANSPARENT
 DURATION:P1DT
 END:VEVENT
 BEGIN:VEVENT
+UID:20290815-maria-himmelfahrt-de@public-holidays.github.io
+SUMMARY:Mariä Himmelfahrt
+DTSTAMP:20251025T064514Z
+DTSTART;VALUE=DATE:20290815
+DESCRIPTION:Assumption of Mary - Gesetzlicher Feiertag in Deutschland\\n\\n
+	Learn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Mari%C3%A4_Aufnahme_in_den_H
+	immel\\n🇬🇧 https://en.wikipedia.org/wiki/Assumption_of_Mary
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
 UID:20291003-tag-der-deutschen-einheit-de@public-holidays.github.io
 SUMMARY:Tag der Deutschen Einheit
 DTSTAMP:20251025T064514Z
@@ -577,6 +746,18 @@ DTSTART;VALUE=DATE:20291003
 DESCRIPTION:German Unity Day - Gesetzlicher Feiertag in Deutschland\\n\\nLe
 	arn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Tag_der_Deutschen_Einheit\\n🇬🇧 
 	https://en.wikipedia.org/wiki/German_Unity_Day
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+TRANSP:TRANSPARENT
+DURATION:P1DT
+END:VEVENT
+BEGIN:VEVENT
+UID:20291101-allerheiligen-de@public-holidays.github.io
+SUMMARY:Allerheiligen
+DTSTAMP:20251025T064514Z
+DTSTART;VALUE=DATE:20291101
+DESCRIPTION:All Saints' Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
+	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Allerheiligen\\n🇬🇧 https://en.wi
+	kipedia.org/wiki/All_Saints%27_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT

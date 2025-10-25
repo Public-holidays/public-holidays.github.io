@@ -6,7 +6,7 @@
 
 import { IcsGenerator } from './generators/IcsGenerator.js';
 import { austrianHolidays, austrianRegions } from './data/austrianHolidays.js';
-import { getGermanHolidaysForState, germanStates } from './data/germanHolidays.js';
+import { getGermanHolidaysForState, germanCalenderVariants } from './data/germanHolidays.js';
 import { getSchoolHolidays } from './calculators/SchoolHolidayCalculator.js';
 import { AustrianRegion, regionToFilename } from './types/SchoolHoliday.js';
 import { stateToFilename } from './types/Holiday.js';
@@ -61,7 +61,7 @@ async function generateGermanCalendars() {
 
   const currentYear = new Date().getFullYear();
 
-  for (const state of germanStates) {
+  for (const state of germanCalenderVariants) {
     const holidays = getGermanHolidaysForState(state);
     
     await IcsGenerator.generateRollingCalendar(
@@ -77,7 +77,7 @@ async function generateGermanCalendars() {
     );
   }
 
-  console.log(`\n✓ German calendars generated for ${germanStates.length} states`);
+  console.log(`\n✓ German calendars generated for ${germanCalenderVariants.length} states`);
 }
 
 async function generateSchoolHolidays() {

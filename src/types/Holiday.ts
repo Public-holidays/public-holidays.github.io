@@ -32,6 +32,8 @@ export interface CalendarConfig {
 export type GermanState =
   | 'Baden-Württemberg'
   | 'Bayern'
+  | 'Bayern (katholisch)' // Bavaria - Catholic regions with Assumption of Mary
+  | 'Augsburg'  // Augsburg city - includes Augsburg Peace Festival
   | 'Berlin'
   | 'Brandenburg'
   | 'Bremen'
@@ -50,10 +52,12 @@ export type GermanState =
 /**
  * Convert German state name to filename-safe format (lowercase, no umlauts, hyphens)
  */
-export function stateToFilename(state: GermanState): string {
+export function stateToFilename(state: string): string {
   return state.toLowerCase()
     .replace(/ä/g, 'ae')
     .replace(/ö/g, 'oe')
     .replace(/ü/g, 'ue')
-    .replace(/ß/g, 'ss');
+    .replace(/ß/g, 'ss')
+    .replace(/\s+/g, '-')  // Replace spaces with hyphens
+    .replace(/[()]/g, '');  // Remove parentheses
 }
