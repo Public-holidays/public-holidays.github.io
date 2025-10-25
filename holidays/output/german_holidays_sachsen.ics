@@ -8,9 +8,11 @@ X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
 UID:20250101-neujahr-de@public-holidays.github.io
 SUMMARY:Neujahr
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20250101
-DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLear
+	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Neujahr\\n🇬🇧 https://en.wikipedia
+	.org/wiki/New_Year%27s_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -18,9 +20,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20250418-karfreitag-de@public-holidays.github.io
 SUMMARY:Karfreitag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20250418
-DESCRIPTION:Good Friday - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Good Friday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
+	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Karfreitag\\n🇬🇧 https://en.wikipedia
+	.org/wiki/Good_Friday
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -28,9 +32,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20250421-ostermontag-de@public-holidays.github.io
 SUMMARY:Ostermontag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20250421
-DESCRIPTION:Easter Monday - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Easter Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
+	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Ostermontag\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/Easter_Monday
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -38,9 +44,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20250501-tag-der-arbeit-de@public-holidays.github.io
 SUMMARY:Tag der Arbeit
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20250501
-DESCRIPTION:Labour Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Labour Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn mo
+	re:\\n🇩🇪 https://de.wikipedia.org/wiki/Tag_der_Arbeit\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/International_Workers%27_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -48,9 +56,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20250529-christi-himmelfahrt-de@public-holidays.github.io
 SUMMARY:Christi Himmelfahrt
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20250529
-DESCRIPTION:Ascension Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Ascension Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
+	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Christi_Himmelfahrt\\n🇬🇧 https://e
+	n.wikipedia.org/wiki/Feast_of_the_Ascension
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -58,9 +68,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20250609-pfingstmontag-de@public-holidays.github.io
 SUMMARY:Pfingstmontag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20250609
-DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
+	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Pfingstmontag\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/Whit_Monday
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -68,9 +80,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20251003-tag-der-deutschen-einheit-de@public-holidays.github.io
 SUMMARY:Tag der Deutschen Einheit
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20251003
-DESCRIPTION:German Unity Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:German Unity Day - Gesetzlicher Feiertag in Deutschland\\n\\nLe
+	arn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Tag_der_Deutschen_Einheit\\n🇬🇧 
+	https://en.wikipedia.org/wiki/German_Unity_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -78,9 +92,9 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20251031-reformationstag-de@public-holidays.github.io
 SUMMARY:Reformationstag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20251031
-DESCRIPTION:Reformation Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Reformation Day - Gesetzlicher Feiertag in Deutschland
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -88,10 +102,10 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20251119-buss-und-bettag-de@public-holidays.github.io
 SUMMARY:Buß- und Bettag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20251119
-DESCRIPTION:Day of Repentance and Prayer - Gesetzlicher Feiertag in Österre
-	ich
+DESCRIPTION:Day of Repentance and Prayer - Gesetzlicher Feiertag in Deutsch
+	land
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -99,9 +113,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20251225-erster-weihnachtstag-de@public-holidays.github.io
 SUMMARY:Erster Weihnachtstag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20251225
-DESCRIPTION:Christmas Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Christmas Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
+	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Weihnachten\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/Christmas
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -109,9 +125,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20251226-zweiter-weihnachtstag-de@public-holidays.github.io
 SUMMARY:Zweiter Weihnachtstag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20251226
-DESCRIPTION:Boxing Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Boxing Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn mo
+	re:\\n🇩🇪 https://de.wikipedia.org/wiki/Zweiter_Weihnachtsfeiertag\\n🇬🇧 https
+	://en.wikipedia.org/wiki/Boxing_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -119,9 +137,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20260101-neujahr-de@public-holidays.github.io
 SUMMARY:Neujahr
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20260101
-DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLear
+	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Neujahr\\n🇬🇧 https://en.wikipedia
+	.org/wiki/New_Year%27s_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -129,9 +149,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20260403-karfreitag-de@public-holidays.github.io
 SUMMARY:Karfreitag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20260403
-DESCRIPTION:Good Friday - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Good Friday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
+	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Karfreitag\\n🇬🇧 https://en.wikipedia
+	.org/wiki/Good_Friday
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -139,9 +161,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20260406-ostermontag-de@public-holidays.github.io
 SUMMARY:Ostermontag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20260406
-DESCRIPTION:Easter Monday - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Easter Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
+	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Ostermontag\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/Easter_Monday
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -149,9 +173,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20260501-tag-der-arbeit-de@public-holidays.github.io
 SUMMARY:Tag der Arbeit
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20260501
-DESCRIPTION:Labour Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Labour Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn mo
+	re:\\n🇩🇪 https://de.wikipedia.org/wiki/Tag_der_Arbeit\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/International_Workers%27_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -159,9 +185,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20260514-christi-himmelfahrt-de@public-holidays.github.io
 SUMMARY:Christi Himmelfahrt
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20260514
-DESCRIPTION:Ascension Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Ascension Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
+	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Christi_Himmelfahrt\\n🇬🇧 https://e
+	n.wikipedia.org/wiki/Feast_of_the_Ascension
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -169,9 +197,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20260525-pfingstmontag-de@public-holidays.github.io
 SUMMARY:Pfingstmontag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20260525
-DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
+	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Pfingstmontag\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/Whit_Monday
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -179,9 +209,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20261003-tag-der-deutschen-einheit-de@public-holidays.github.io
 SUMMARY:Tag der Deutschen Einheit
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20261003
-DESCRIPTION:German Unity Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:German Unity Day - Gesetzlicher Feiertag in Deutschland\\n\\nLe
+	arn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Tag_der_Deutschen_Einheit\\n🇬🇧 
+	https://en.wikipedia.org/wiki/German_Unity_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -189,9 +221,9 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20261031-reformationstag-de@public-holidays.github.io
 SUMMARY:Reformationstag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20261031
-DESCRIPTION:Reformation Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Reformation Day - Gesetzlicher Feiertag in Deutschland
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -199,10 +231,10 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20261118-buss-und-bettag-de@public-holidays.github.io
 SUMMARY:Buß- und Bettag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20261118
-DESCRIPTION:Day of Repentance and Prayer - Gesetzlicher Feiertag in Österre
-	ich
+DESCRIPTION:Day of Repentance and Prayer - Gesetzlicher Feiertag in Deutsch
+	land
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -210,9 +242,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20261225-erster-weihnachtstag-de@public-holidays.github.io
 SUMMARY:Erster Weihnachtstag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20261225
-DESCRIPTION:Christmas Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Christmas Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
+	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Weihnachten\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/Christmas
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -220,9 +254,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20261226-zweiter-weihnachtstag-de@public-holidays.github.io
 SUMMARY:Zweiter Weihnachtstag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20261226
-DESCRIPTION:Boxing Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Boxing Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn mo
+	re:\\n🇩🇪 https://de.wikipedia.org/wiki/Zweiter_Weihnachtsfeiertag\\n🇬🇧 https
+	://en.wikipedia.org/wiki/Boxing_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -230,9 +266,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270101-neujahr-de@public-holidays.github.io
 SUMMARY:Neujahr
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20270101
-DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLear
+	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Neujahr\\n🇬🇧 https://en.wikipedia
+	.org/wiki/New_Year%27s_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -240,9 +278,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270326-karfreitag-de@public-holidays.github.io
 SUMMARY:Karfreitag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20270326
-DESCRIPTION:Good Friday - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Good Friday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
+	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Karfreitag\\n🇬🇧 https://en.wikipedia
+	.org/wiki/Good_Friday
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -250,9 +290,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270329-ostermontag-de@public-holidays.github.io
 SUMMARY:Ostermontag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20270329
-DESCRIPTION:Easter Monday - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Easter Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
+	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Ostermontag\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/Easter_Monday
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -260,9 +302,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270501-tag-der-arbeit-de@public-holidays.github.io
 SUMMARY:Tag der Arbeit
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20270501
-DESCRIPTION:Labour Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Labour Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn mo
+	re:\\n🇩🇪 https://de.wikipedia.org/wiki/Tag_der_Arbeit\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/International_Workers%27_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -270,9 +314,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270506-christi-himmelfahrt-de@public-holidays.github.io
 SUMMARY:Christi Himmelfahrt
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20270506
-DESCRIPTION:Ascension Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Ascension Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
+	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Christi_Himmelfahrt\\n🇬🇧 https://e
+	n.wikipedia.org/wiki/Feast_of_the_Ascension
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -280,9 +326,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270517-pfingstmontag-de@public-holidays.github.io
 SUMMARY:Pfingstmontag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20270517
-DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
+	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Pfingstmontag\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/Whit_Monday
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -290,9 +338,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20271003-tag-der-deutschen-einheit-de@public-holidays.github.io
 SUMMARY:Tag der Deutschen Einheit
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20271003
-DESCRIPTION:German Unity Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:German Unity Day - Gesetzlicher Feiertag in Deutschland\\n\\nLe
+	arn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Tag_der_Deutschen_Einheit\\n🇬🇧 
+	https://en.wikipedia.org/wiki/German_Unity_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -300,9 +350,9 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20271031-reformationstag-de@public-holidays.github.io
 SUMMARY:Reformationstag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20271031
-DESCRIPTION:Reformation Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Reformation Day - Gesetzlicher Feiertag in Deutschland
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -310,10 +360,10 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20271117-buss-und-bettag-de@public-holidays.github.io
 SUMMARY:Buß- und Bettag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20271117
-DESCRIPTION:Day of Repentance and Prayer - Gesetzlicher Feiertag in Österre
-	ich
+DESCRIPTION:Day of Repentance and Prayer - Gesetzlicher Feiertag in Deutsch
+	land
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -321,9 +371,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20271225-erster-weihnachtstag-de@public-holidays.github.io
 SUMMARY:Erster Weihnachtstag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20271225
-DESCRIPTION:Christmas Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Christmas Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
+	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Weihnachten\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/Christmas
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -331,9 +383,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20271226-zweiter-weihnachtstag-de@public-holidays.github.io
 SUMMARY:Zweiter Weihnachtstag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20271226
-DESCRIPTION:Boxing Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Boxing Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn mo
+	re:\\n🇩🇪 https://de.wikipedia.org/wiki/Zweiter_Weihnachtsfeiertag\\n🇬🇧 https
+	://en.wikipedia.org/wiki/Boxing_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -341,9 +395,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20280101-neujahr-de@public-holidays.github.io
 SUMMARY:Neujahr
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20280101
-DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLear
+	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Neujahr\\n🇬🇧 https://en.wikipedia
+	.org/wiki/New_Year%27s_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -351,9 +407,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20280414-karfreitag-de@public-holidays.github.io
 SUMMARY:Karfreitag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20280414
-DESCRIPTION:Good Friday - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Good Friday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
+	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Karfreitag\\n🇬🇧 https://en.wikipedia
+	.org/wiki/Good_Friday
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -361,9 +419,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20280417-ostermontag-de@public-holidays.github.io
 SUMMARY:Ostermontag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20280417
-DESCRIPTION:Easter Monday - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Easter Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
+	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Ostermontag\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/Easter_Monday
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -371,9 +431,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20280501-tag-der-arbeit-de@public-holidays.github.io
 SUMMARY:Tag der Arbeit
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20280501
-DESCRIPTION:Labour Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Labour Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn mo
+	re:\\n🇩🇪 https://de.wikipedia.org/wiki/Tag_der_Arbeit\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/International_Workers%27_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -381,9 +443,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20280525-christi-himmelfahrt-de@public-holidays.github.io
 SUMMARY:Christi Himmelfahrt
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20280525
-DESCRIPTION:Ascension Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Ascension Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
+	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Christi_Himmelfahrt\\n🇬🇧 https://e
+	n.wikipedia.org/wiki/Feast_of_the_Ascension
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -391,9 +455,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20280605-pfingstmontag-de@public-holidays.github.io
 SUMMARY:Pfingstmontag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20280605
-DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
+	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Pfingstmontag\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/Whit_Monday
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -401,9 +467,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20281003-tag-der-deutschen-einheit-de@public-holidays.github.io
 SUMMARY:Tag der Deutschen Einheit
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20281003
-DESCRIPTION:German Unity Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:German Unity Day - Gesetzlicher Feiertag in Deutschland\\n\\nLe
+	arn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Tag_der_Deutschen_Einheit\\n🇬🇧 
+	https://en.wikipedia.org/wiki/German_Unity_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -411,9 +479,9 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20281031-reformationstag-de@public-holidays.github.io
 SUMMARY:Reformationstag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20281031
-DESCRIPTION:Reformation Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Reformation Day - Gesetzlicher Feiertag in Deutschland
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -421,10 +489,10 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20281122-buss-und-bettag-de@public-holidays.github.io
 SUMMARY:Buß- und Bettag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20281122
-DESCRIPTION:Day of Repentance and Prayer - Gesetzlicher Feiertag in Österre
-	ich
+DESCRIPTION:Day of Repentance and Prayer - Gesetzlicher Feiertag in Deutsch
+	land
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -432,9 +500,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20281225-erster-weihnachtstag-de@public-holidays.github.io
 SUMMARY:Erster Weihnachtstag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20281225
-DESCRIPTION:Christmas Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Christmas Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
+	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Weihnachten\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/Christmas
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -442,9 +512,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20281226-zweiter-weihnachtstag-de@public-holidays.github.io
 SUMMARY:Zweiter Weihnachtstag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20281226
-DESCRIPTION:Boxing Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Boxing Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn mo
+	re:\\n🇩🇪 https://de.wikipedia.org/wiki/Zweiter_Weihnachtsfeiertag\\n🇬🇧 https
+	://en.wikipedia.org/wiki/Boxing_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -452,9 +524,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20290101-neujahr-de@public-holidays.github.io
 SUMMARY:Neujahr
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20290101
-DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLear
+	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Neujahr\\n🇬🇧 https://en.wikipedia
+	.org/wiki/New_Year%27s_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -462,9 +536,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20290330-karfreitag-de@public-holidays.github.io
 SUMMARY:Karfreitag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20290330
-DESCRIPTION:Good Friday - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Good Friday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
+	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Karfreitag\\n🇬🇧 https://en.wikipedia
+	.org/wiki/Good_Friday
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -472,9 +548,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20290402-ostermontag-de@public-holidays.github.io
 SUMMARY:Ostermontag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20290402
-DESCRIPTION:Easter Monday - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Easter Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
+	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Ostermontag\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/Easter_Monday
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -482,9 +560,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20290501-tag-der-arbeit-de@public-holidays.github.io
 SUMMARY:Tag der Arbeit
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20290501
-DESCRIPTION:Labour Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Labour Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn mo
+	re:\\n🇩🇪 https://de.wikipedia.org/wiki/Tag_der_Arbeit\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/International_Workers%27_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -492,9 +572,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20290510-christi-himmelfahrt-de@public-holidays.github.io
 SUMMARY:Christi Himmelfahrt
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20290510
-DESCRIPTION:Ascension Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Ascension Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
+	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Christi_Himmelfahrt\\n🇬🇧 https://e
+	n.wikipedia.org/wiki/Feast_of_the_Ascension
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -502,9 +584,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20290521-pfingstmontag-de@public-holidays.github.io
 SUMMARY:Pfingstmontag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20290521
-DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
+	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Pfingstmontag\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/Whit_Monday
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -512,9 +596,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20291003-tag-der-deutschen-einheit-de@public-holidays.github.io
 SUMMARY:Tag der Deutschen Einheit
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20291003
-DESCRIPTION:German Unity Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:German Unity Day - Gesetzlicher Feiertag in Deutschland\\n\\nLe
+	arn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Tag_der_Deutschen_Einheit\\n🇬🇧 
+	https://en.wikipedia.org/wiki/German_Unity_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -522,9 +608,9 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20291031-reformationstag-de@public-holidays.github.io
 SUMMARY:Reformationstag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20291031
-DESCRIPTION:Reformation Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Reformation Day - Gesetzlicher Feiertag in Deutschland
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -532,10 +618,10 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20291121-buss-und-bettag-de@public-holidays.github.io
 SUMMARY:Buß- und Bettag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20291121
-DESCRIPTION:Day of Repentance and Prayer - Gesetzlicher Feiertag in Österre
-	ich
+DESCRIPTION:Day of Repentance and Prayer - Gesetzlicher Feiertag in Deutsch
+	land
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -543,9 +629,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20291225-erster-weihnachtstag-de@public-holidays.github.io
 SUMMARY:Erster Weihnachtstag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20291225
-DESCRIPTION:Christmas Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Christmas Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
+	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Weihnachten\\n🇬🇧 https://en.wikipe
+	dia.org/wiki/Christmas
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -553,9 +641,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20291226-zweiter-weihnachtstag-de@public-holidays.github.io
 SUMMARY:Zweiter Weihnachtstag
-DTSTAMP:20251025T061123Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20291226
-DESCRIPTION:Boxing Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Boxing Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn mo
+	re:\\n🇩🇪 https://de.wikipedia.org/wiki/Zweiter_Weihnachtsfeiertag\\n🇬🇧 https
+	://en.wikipedia.org/wiki/Boxing_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT

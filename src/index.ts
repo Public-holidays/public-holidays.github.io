@@ -38,7 +38,7 @@ async function generateAustrianCalendars() {
 
   // Generate individual year calendars
   for (let year = currentYear; year <= currentYear + 2; year++) {
-    const holidays = IcsGenerator.generateHolidaysForYear(austrianHolidays, year);
+    const holidays = IcsGenerator.generateHolidaysForYear(austrianHolidays, year, 'Österreich');
     
     await IcsGenerator.generateAndSaveIcs(
       holidays,

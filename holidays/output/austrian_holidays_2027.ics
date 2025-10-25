@@ -8,9 +8,11 @@ X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
 UID:20270101-neujahr-at@public-holidays.github.io
 SUMMARY:Neujahr
-DTSTAMP:20251025T061122Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20270101
-DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Österreich\\n\\nLearn
+	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Neujahr\\n🇬🇧 https://en.wikipedia.
+	org/wiki/New_Year%27s_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -18,9 +20,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270106-heilige-drei-konige-at@public-holidays.github.io
 SUMMARY:Heilige Drei Könige
-DTSTAMP:20251025T061122Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20270106
-DESCRIPTION:Epiphany - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Epiphany - Gesetzlicher Feiertag in Österreich\\n\\nLearn more:
+	\\n🇩🇪 https://de.wikipedia.org/wiki/Erscheinung_des_Herrn\\n🇬🇧 https://en.wi
+	kipedia.org/wiki/Epiphany_(holiday)
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -28,9 +32,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270329-ostermontag-at@public-holidays.github.io
 SUMMARY:Ostermontag
-DTSTAMP:20251025T061122Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20270329
-DESCRIPTION:Easter Monday - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Easter Monday - Gesetzlicher Feiertag in Österreich\\n\\nLearn 
+	more:\\n🇩🇪 https://de.wikipedia.org/wiki/Ostermontag\\n🇬🇧 https://en.wikiped
+	ia.org/wiki/Easter_Monday
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -38,9 +44,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270501-staatsfeiertag-at@public-holidays.github.io
 SUMMARY:Staatsfeiertag
-DTSTAMP:20251025T061122Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20270501
-DESCRIPTION:Labour Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Labour Day - Gesetzlicher Feiertag in Österreich\\n\\nLearn mor
+	e:\\n🇩🇪 https://de.wikipedia.org/wiki/Tag_der_Arbeit\\n🇬🇧 https://en.wikiped
+	ia.org/wiki/International_Workers%27_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -48,9 +56,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270506-christi-himmelfahrt-at@public-holidays.github.io
 SUMMARY:Christi Himmelfahrt
-DTSTAMP:20251025T061122Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20270506
-DESCRIPTION:Ascension Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Ascension Day - Gesetzlicher Feiertag in Österreich\\n\\nLearn 
+	more:\\n🇩🇪 https://de.wikipedia.org/wiki/Christi_Himmelfahrt\\n🇬🇧 https://en
+	.wikipedia.org/wiki/Feast_of_the_Ascension
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -58,9 +68,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270517-pfingstmontag-at@public-holidays.github.io
 SUMMARY:Pfingstmontag
-DTSTAMP:20251025T061122Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20270517
-DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Österreich\\n\\nLearn mo
+	re:\\n🇩🇪 https://de.wikipedia.org/wiki/Pfingstmontag\\n🇬🇧 https://en.wikiped
+	ia.org/wiki/Whit_Monday
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -68,9 +80,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270527-fronleichnam-at@public-holidays.github.io
 SUMMARY:Fronleichnam
-DTSTAMP:20251025T061122Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20270527
-DESCRIPTION:Corpus Christi - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Corpus Christi - Gesetzlicher Feiertag in Österreich\\n\\nLearn
+	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Fronleichnam\\n🇬🇧 https://en.wikip
+	edia.org/wiki/Corpus_Christi_(feast)
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -78,9 +92,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270815-maria-himmelfahrt-at@public-holidays.github.io
 SUMMARY:Mariä Himmelfahrt
-DTSTAMP:20251025T061122Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20270815
-DESCRIPTION:Assumption of Mary - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Assumption of Mary - Gesetzlicher Feiertag in Österreich\\n\\nL
+	earn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Mari%C3%A4_Aufnahme_in_den_Hi
+	mmel\\n🇬🇧 https://en.wikipedia.org/wiki/Assumption_of_Mary
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -88,9 +104,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20271026-nationalfeiertag-at@public-holidays.github.io
 SUMMARY:Nationalfeiertag
-DTSTAMP:20251025T061122Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20271026
-DESCRIPTION:National Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:National Day - Gesetzlicher Feiertag in Österreich\\n\\nLearn m
+	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Nationalfeiertag_(%C3%96sterreich)\
+	\n🇬🇧 https://en.wikipedia.org/wiki/National_Day_(Austria)
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -98,9 +116,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20271101-allerheiligen-at@public-holidays.github.io
 SUMMARY:Allerheiligen
-DTSTAMP:20251025T061122Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20271101
-DESCRIPTION:All Saints' Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:All Saints' Day - Gesetzlicher Feiertag in Österreich\\n\\nLear
+	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Allerheiligen\\n🇬🇧 https://en.wik
+	ipedia.org/wiki/All_Saints%27_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -108,9 +128,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20271208-maria-empfangnis-at@public-holidays.github.io
 SUMMARY:Mariä Empfängnis
-DTSTAMP:20251025T061122Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20271208
-DESCRIPTION:Immaculate Conception - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Immaculate Conception - Gesetzlicher Feiertag in Österreich\\n\
+	\nLearn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Mariä_Empfängnis\\n🇬🇧 https
+	://en.wikipedia.org/wiki/Feast_of_the_Immaculate_Conception
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -118,9 +140,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20271225-christtag-at@public-holidays.github.io
 SUMMARY:Christtag
-DTSTAMP:20251025T061122Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20271225
-DESCRIPTION:Christmas Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:Christmas Day - Gesetzlicher Feiertag in Österreich\\n\\nLearn 
+	more:\\n🇩🇪 https://de.wikipedia.org/wiki/Weihnachten\\n🇬🇧 https://en.wikiped
+	ia.org/wiki/Christmas
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT
@@ -128,9 +152,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20271226-stefanitag-at@public-holidays.github.io
 SUMMARY:Stefanitag
-DTSTAMP:20251025T061122Z
+DTSTAMP:20251025T062429Z
 DTSTART;VALUE=DATE:20271226
-DESCRIPTION:St. Stephen's Day - Gesetzlicher Feiertag in Österreich
+DESCRIPTION:St. Stephen's Day - Gesetzlicher Feiertag in Österreich\\n\\nLe
+	arn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Stephanstag\\n🇬🇧 https://en.wik
+	ipedia.org/wiki/St._Stephen%27s_Day
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 TRANSP:TRANSPARENT
 DURATION:P1DT

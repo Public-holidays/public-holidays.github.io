@@ -24,7 +24,8 @@ export class IcsGenerator {
      */
     static generateHolidaysForYear(
         definitions: HolidayDefinition[],
-        year: number
+        year: number,
+        country: string = 'Österreich'
     ): Holiday[] {
         return definitions.map((def) => {
             let date: Date;
@@ -37,10 +38,23 @@ export class IcsGenerator {
                 throw new Error(`Holiday ${def.nameDE} has neither fixed date nor calculator`);
             }
 
+            // Build description with Wikipedia links
+            let description = `${def.nameEN} - Gesetzlicher Feiertag in ${country}`;
+            
+            if (def.wikipediaDE || def.wikipediaEN) {
+                description += '\\n\\nLearn more:';
+                if (def.wikipediaDE) {
+                    description += `\\n🇩🇪 ${def.wikipediaDE}`;
+                }
+                if (def.wikipediaEN) {
+                    description += `\\n🇬🇧 ${def.wikipediaEN}`;
+                }
+            }
+
             return {
                 date,
                 title: def.nameDE,
-                description: `${def.nameEN} - Gesetzlicher Feiertag in Österreich`,
+                description,
             };
         });
     }
@@ -177,7 +191,7 @@ export class IcsGenerator {
         const allHolidays: Holiday[] = [];
 
         for (let year = startYear; year <= endYear; year++) {
-            const yearHolidays = this.generateHolidaysForYear(definitions, year);
+            const yearHolidays = this.generateHolidaysForYear(definitions, year, 'Deutschland');
             allHolidays.push(...yearHolidays);
         }
 
