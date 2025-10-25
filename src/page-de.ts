@@ -1,5 +1,6 @@
 import { formatDate, switchTab } from './page-common.js';
 import { getGermanHolidaysForVariant, germanCalenderVariants } from './data/germanHolidays.js';
+import { stateToFilename } from './types/Holiday.js';
 import {
     calculateDate
 } from './calculators/HolidayCalculator.js';
@@ -58,6 +59,15 @@ function updateCalendar() {
     renderHolidays(year, bundesland);
 }
 
+function renderDownloadLinks() {
+    const germanHolidaysContainer = document.getElementById('german-holidays-downloads');
+    if (germanHolidaysContainer) {
+        germanHolidaysContainer.innerHTML = germanCalenderVariants.map(variant => 
+            `<a href="../output/german_holidays_${stateToFilename(variant as any)}.ics" class="download-btn">${variant}</a>`
+        ).join('');
+    }
+}
+
 async function init() {
     const yearSelect = document.getElementById('yearSelect') as HTMLSelectElement;
     const bundeslandSelect = document.getElementById('bundeslandSelect') as HTMLSelectElement;
@@ -84,6 +94,9 @@ async function init() {
         option.textContent = variant;
         bundeslandSelect.appendChild(option);
     }
+
+    // Populate download links
+    renderDownloadLinks();
 
     updateCalendar();
 }

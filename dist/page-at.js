@@ -409,6 +409,11 @@
     return holidays;
   }
 
+  // src/types/Holiday.ts
+  function stateToFilename(state) {
+    return state.toLowerCase().replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss").replace(/\s+/g, "-").replace(/[()]/g, "");
+  }
+
   // src/page-at.ts
   function renderPublicHolidays(year) {
     const holidays = austrianHolidays.map((holidayDef) => {
@@ -466,6 +471,26 @@
     renderPublicHolidays(year);
     renderSchoolHolidays(year, bundesland);
   }
+  function renderDownloadLinks() {
+    const publicHolidaysContainer = document.getElementById("public-holidays-downloads");
+    if (publicHolidaysContainer) {
+      const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
+      const years = [currentYear, currentYear + 1, currentYear + 2];
+      const links = [
+        { file: "austrian_holidays.ics", label: "\u{1F4C6} Fortlaufender Kalender (2024-2030)" },
+        ...years.map((year) => ({ file: `austrian_holidays_${year}.ics`, label: year.toString() }))
+      ];
+      publicHolidaysContainer.innerHTML = links.map(
+        (link) => `<a href="../output/${link.file}" class="download-btn">${link.label}</a>`
+      ).join("");
+    }
+    const schoolHolidaysContainer = document.getElementById("school-holidays-downloads");
+    if (schoolHolidaysContainer) {
+      schoolHolidaysContainer.innerHTML = austrianRegions.map(
+        (region) => `<a href="../output/school/school_holidays_${stateToFilename(region)}.ics" class="download-btn">${region}</a>`
+      ).join("");
+    }
+  }
   async function init() {
     const yearSelect = document.getElementById("yearSelect");
     const bundeslandSelect = document.getElementById("bundeslandSelect");
@@ -487,6 +512,7 @@
       option.textContent = region;
       bundeslandSelect.appendChild(option);
     }
+    renderDownloadLinks();
     updateCalendar();
   }
   window.switchTab = switchTab;

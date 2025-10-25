@@ -4,6 +4,7 @@ import { getSchoolHolidays } from './calculators/SchoolHolidayCalculator.js';
 import {
     calculateDate
 } from './calculators/HolidayCalculator.js';
+import {stateToFilename} from "./types/Holiday.js";
 
 
 declare global {
@@ -82,6 +83,32 @@ function updateCalendar() {
     renderSchoolHolidays(year, bundesland);
 }
 
+function renderDownloadLinks() {
+    // Austrian public holidays
+    const publicHolidaysContainer = document.getElementById('public-holidays-downloads');
+    if (publicHolidaysContainer) {
+        const currentYear = new Date().getFullYear();
+        const years = [currentYear, currentYear + 1, currentYear + 2];
+        
+        const links = [
+            { file: 'austrian_holidays.ics', label: '📆 Fortlaufender Kalender (2024-2030)' },
+            ...years.map(year => ({ file: `austrian_holidays_${year}.ics`, label: year.toString() }))
+        ];
+        
+        publicHolidaysContainer.innerHTML = links.map(link => 
+            `<a href="../output/${link.file}" class="download-btn">${link.label}</a>`
+        ).join('');
+    }
+    
+    // School holidays by region
+    const schoolHolidaysContainer = document.getElementById('school-holidays-downloads');
+    if (schoolHolidaysContainer) {
+        schoolHolidaysContainer.innerHTML = austrianRegions.map(region => 
+            `<a href="../output/school/school_holidays_${stateToFilename(region)}.ics" class="download-btn">${region}</a>`
+        ).join('');
+    }
+}
+
 async function init() {
     const yearSelect = document.getElementById('yearSelect') as HTMLSelectElement;
     const bundeslandSelect = document.getElementById('bundeslandSelect') as HTMLSelectElement;
@@ -108,6 +135,9 @@ async function init() {
         option.textContent = region;
         bundeslandSelect.appendChild(option);
     }
+
+    // Populate download links
+    renderDownloadLinks();
 
     updateCalendar();
 }

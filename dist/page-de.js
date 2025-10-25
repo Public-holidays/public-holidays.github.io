@@ -352,6 +352,11 @@
     "Th\xFCringen (katholisch)"
   ];
 
+  // src/types/Holiday.ts
+  function stateToFilename(state) {
+    return state.toLowerCase().replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss").replace(/\s+/g, "-").replace(/[()]/g, "");
+  }
+
   // src/page-de.ts
   function renderHolidays(year, bundesland) {
     const holidays = getGermanHolidaysForVariant(bundesland).map((holidayDef) => {
@@ -390,6 +395,14 @@
     const bundesland = bundeslandSelect.value;
     renderHolidays(year, bundesland);
   }
+  function renderDownloadLinks() {
+    const germanHolidaysContainer = document.getElementById("german-holidays-downloads");
+    if (germanHolidaysContainer) {
+      germanHolidaysContainer.innerHTML = germanCalenderVariants.map(
+        (variant) => `<a href="../output/german_holidays_${stateToFilename(variant)}.ics" class="download-btn">${variant}</a>`
+      ).join("");
+    }
+  }
   async function init() {
     const yearSelect = document.getElementById("yearSelect");
     const bundeslandSelect = document.getElementById("bundeslandSelect");
@@ -411,6 +424,7 @@
       option.textContent = variant;
       bundeslandSelect.appendChild(option);
     }
+    renderDownloadLinks();
     updateCalendar();
   }
   window.switchTab = switchTab;
