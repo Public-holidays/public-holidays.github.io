@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc && npm run bundle",
-    "bundle": "esbuild src/page-at.ts --bundle --outfile=dist/page-at.js && esbuild src/page-de.ts --bundle --outfile=dist/page-de.js",
+    "bundle": "esbuild src/page-at.ts --bundle --outfile=dist/page-at.js && esbuild src/page-de.ts --bundle --outfile=dist/page-de.js && esbuild src/page-ch.ts --bundle --outfile=dist/page-ch.js",
     "generate": "npm run build && node dist/index.js",
     "dev": "tsx src/index.ts",
     "watch": "tsc --watch",
