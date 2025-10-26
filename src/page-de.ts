@@ -1,4 +1,13 @@
-import {formatDate, populateBundeslandSelect, populateYearSelect, REGION_SELECT_ID, switchTab} from './page-common.js';
+import {
+    formatDate,
+    populateBundeslandSelect,
+    populateYearSelect,
+    REGION_SELECT_ID,
+    switchTab,
+    renderHolidayCard,
+    renderDownloadLinksGeneric,
+    YEAR_SELECT_ID
+} from './page-common.js';
 import {
     germanCalenderVariants,
     GermanStatePublicHolidayVariant,
@@ -8,14 +17,6 @@ import {
 import {stateToFilename} from './types/Holiday.js';
 import {calculateDate} from './calculators/HolidayCalculator.js';
 import {germanSchoolHolidays, type SchoolYearRange} from './data/germanSchoolHolidays.js';
-import {renderHolidayCard, renderDownloadLinksGeneric, YEAR_SELECT_ID} from './page-base.js';
-
-declare global {
-    interface Window {
-        switchTab: (event: MouseEvent, tabName: string) => void;
-        updateCalendar: () => void;
-    }
-}
 
 /**
  * Parse date string in DD.MM.YYYY format to Date object

@@ -1,8 +1,7 @@
-import {formatDate, REGION_SELECT_ID} from './page-common.js';
+import {formatDate, REGION_SELECT_ID, initPage, renderHolidayCard, renderDownloadLinksGeneric} from './page-common.js';
 import {getSwissHolidaysForCanton, SwissCanton, swissCantons} from './data/swissHolidays.js';
-import {stateToFilename} from './types/Holiday.js';
-import {calculateDate} from './calculators/HolidayCalculator.js';
-import {initPage, renderHolidayCard, renderDownloadLinksGeneric} from './page-base.js';
+import { stateToFilename } from './types/Holiday.js';
+import { calculateDate } from './calculators/HolidayCalculator.js';
 
 function renderHolidays(year: number, canton: SwissCanton) {
     const holidays = getSwissHolidaysForCanton(canton).map(holidayDef => {

@@ -63,5 +63,130 @@ export function populateBundeslandSelect(bundeslandStrings: readonly string[], b
 }
 
 export const REGION_SELECT_ID = 'bundeslandSelect';
+export const YEAR_SELECT_ID = 'yearSelect';
 
+// Declare Window interface globally
+declare global {
+    interface Window {
+        switchTab: (event: MouseEvent, tabName: string) => void;
+        updateCalendar: () => void;
+    }
+}
+
+/**
+ * Page configuration for country-specific pages
+ */
+export interface PageConfig<TRegion = string> {
+    regionSelectId: string;
+    regions: readonly TRegion[];
+    renderHolidays: (year: number, region: TRegion) => void;
+    renderSchoolHolidays?: (year: number, region: TRegion) => void;
+    renderDownloadLinks: () => void;
+}
+
+/**
+ * Standard initialization for all country pages
+ */
+export function initPage<TRegion = string>(config: PageConfig<TRegion>) {
+    const yearSelect = document.getElementById(YEAR_SELECT_ID) as HTMLSelectElement;
+    const regionSelect = document.getElementById(config.regionSelectId) as HTMLSelectElement;
+
+    if (!yearSelect || !regionSelect) {
+        console.error('Required select elements not found');
+        return;
+    }
+
+    // Populate dropdowns
+    populateYearSelect(yearSelect);
+    populateBundeslandSelect(config.regions as readonly string[], regionSelect);
+
+    // Populate download links
+    config.renderDownloadLinks();
+
+    // Setup update function
+    const updateCalendar = () => {
+        const year = parseInt(yearSelect.value);
+        const region = regionSelect.value as TRegion;
+
+        config.renderHolidays(year, region);
+
+        if (config.renderSchoolHolidays) {
+            config.renderSchoolHolidays(year, region);
+        }
+    };
+
+    // Expose to window
+    window.switchTab = switchTab;
+    window.updateCalendar = updateCalendar;
+
+    // Initial render
+    updateCalendar();
+}
+
+/**
+ * Generic holiday card data interface
+ */
+export interface HolidayCardData {
+    nameDE: string;
+    nameEN: string;
+    date: Date;
+    endDate?: Date; // For multi-day periods (school holidays)
+    wikipediaDE?: string;
+    scope?: string;
+    extra?: string; // For additional info like duration
+}
+
+/**
+ * Generic holiday card renderer
+ */
+export function renderHolidayCard(holiday: HolidayCardData, formatDate: (iso: string, locale?: string) => string, locale: string = 'de-DE'): string {
+    const scope = holiday.scope || 'regional';
+    const wikiLink = holiday.wikipediaDE
+        ? `<a href="${holiday.wikipediaDE}" target="_blank" rel="noopener" class="info-link" title="Mehr erfahren (Wikipedia)">ℹ️</a>`
+        : '';
+
+    // Handle date range for school holidays
+    const isSingleDay = !holiday.endDate || holiday.date.getTime() === holiday.endDate.getTime();
+    const dateDisplay = formatDate(holiday.date.toISOString(), locale);
+
+    const endDateDisplay = !isSingleDay && holiday.endDate
+        ? `<div class="subtitle">bis ${formatDate(holiday.endDate.toISOString(), locale)}</div>`
+        : '';
+
+    return `
+        <div class="holiday-card">
+            <h3>
+                ${holiday.nameDE}
+                ${wikiLink}
+            </h3>
+            <div class="date">${dateDisplay}</div>
+            ${endDateDisplay}
+            <div class="subtitle">${holiday.nameEN}</div>
+            ${holiday.scope ? `<div class="scope-badge ${scope === 'bundesweit' || scope === 'national' ? scope : ''}">${scope}</div>` : ''}
+            ${holiday.extra || ''}
+        </div>
+    `;
+}
+
+/**
+ * Download link configuration interface
+ */
+export interface DownloadLinkConfig {
+    containerId: string;
+    files: Array<{ file: string; label: string }>;
+    basePath?: string;
+}
+
+/**
+ * Generic download link renderer
+ */
+export function renderDownloadLinksGeneric(config: DownloadLinkConfig) {
+    const container = document.getElementById(config.containerId);
+    if (!container) return;
+
+    const basePath = config.basePath || '../output/';
+    container.innerHTML = config.files.map(link =>
+        `<a href="${basePath}${link.file}" class="download-btn">${link.label}</a>`
+    ).join('');
+}
 

@@ -1,10 +1,9 @@
-import {formatDate, getDaysBetween, REGION_SELECT_ID} from './page-common.js';
+import {formatDate, getDaysBetween, REGION_SELECT_ID, initPage, renderHolidayCard, renderDownloadLinksGeneric} from './page-common.js';
 import { austrianHolidays, austrianRegions } from './data/austrianHolidays.js';
 import { getSchoolHolidays } from './calculators/SchoolHolidayCalculator.js';
 import { calculateDate } from './calculators/HolidayCalculator.js';
 import {stateToFilename} from "./types/Holiday.js";
 import {AustrianRegion} from "./types/SchoolHoliday";
-import { initPage, renderHolidayCard, renderDownloadLinksGeneric } from './page-base.js';
 
 function renderPublicHolidays(year: number) {
     const holidays = austrianHolidays.map(holidayDef => {
