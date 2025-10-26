@@ -41,17 +41,15 @@ function renderSchoolHolidays(year: number, bundesland: AustrianRegion) {
 
     container.innerHTML = holidays.map(h => {
         const days = getDaysBetween(h.startDate.toISOString(), h.endDate.toISOString());
-        const isSingleDay = h.startDate.getTime() === h.endDate.getTime();
+        const durationBadge = `<div class="duration">${days} Tag${days > 1 ? 'e' : ''}</div>`;
 
-        return `
-            <div class="holiday-card">
-                <h3>${h.nameDE}</h3>
-                <div class="date">${formatDate(h.startDate.toISOString())}</div>
-                ${!isSingleDay ? `<div class="subtitle">bis ${formatDate(h.endDate.toISOString())}</div>` : ''}
-                <div class="subtitle">${h.nameEN}</div>
-                <div class="duration">${days} Tag${days > 1 ? 'e' : ''}</div>
-            </div>
-        `;
+        return renderHolidayCard({
+            nameDE: h.nameDE,
+            nameEN: h.nameEN,
+            date: h.startDate,
+            endDate: h.endDate,
+            extra: durationBadge
+        }, formatDate);
     }).join('');
 }
 

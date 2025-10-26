@@ -785,16 +785,21 @@
   };
 
   // src/page-base.ts
+  var YEAR_SELECT_ID = "yearSelect";
   function renderHolidayCard(holiday, formatDate2, locale = "de-DE") {
     const scope = holiday.scope || "regional";
     const wikiLink = holiday.wikipediaDE ? `<a href="${holiday.wikipediaDE}" target="_blank" rel="noopener" class="info-link" title="Mehr erfahren (Wikipedia)">\u2139\uFE0F</a>` : "";
+    const isSingleDay = !holiday.endDate || holiday.date.getTime() === holiday.endDate.getTime();
+    const dateDisplay = formatDate2(holiday.date.toISOString(), locale);
+    const endDateDisplay = !isSingleDay && holiday.endDate ? `<div class="subtitle">bis ${formatDate2(holiday.endDate.toISOString(), locale)}</div>` : "";
     return `
         <div class="holiday-card">
             <h3>
                 ${holiday.nameDE}
                 ${wikiLink}
             </h3>
-            <div class="date">${formatDate2(holiday.date.toISOString(), locale)}</div>
+            <div class="date">${dateDisplay}</div>
+            ${endDateDisplay}
             <div class="subtitle">${holiday.nameEN}</div>
             ${holiday.scope ? `<div class="scope-badge ${scope === "bundesweit" || scope === "national" ? scope : ""}">${scope}</div>` : ""}
             ${holiday.extra || ""}
@@ -899,7 +904,7 @@
     }).join("");
   }
   function updateCalendar() {
-    const yearSelect = document.getElementById("yearSelect");
+    const yearSelect = document.getElementById(YEAR_SELECT_ID);
     const bundeslandSelect = document.getElementById(REGION_SELECT_ID);
     const schoolBundeslandSelect = document.getElementById("schoolBundeslandSelect");
     if (!yearSelect || !bundeslandSelect || !schoolBundeslandSelect) return;

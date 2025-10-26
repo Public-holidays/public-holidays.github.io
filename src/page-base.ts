@@ -60,6 +60,7 @@ export interface HolidayCardData {
     nameDE: string;
     nameEN: string;
     date: Date;
+    endDate?: Date; // For multi-day periods (school holidays)
     wikipediaDE?: string;
     scope?: string;
     extra?: string; // For additional info like duration
@@ -71,13 +72,22 @@ export function renderHolidayCard(holiday: HolidayCardData, formatDate: (iso: st
         ? `<a href="${holiday.wikipediaDE}" target="_blank" rel="noopener" class="info-link" title="Mehr erfahren (Wikipedia)">ℹ️</a>`
         : '';
 
+    // Handle date range for school holidays
+    const isSingleDay = !holiday.endDate || holiday.date.getTime() === holiday.endDate.getTime();
+    const dateDisplay = formatDate(holiday.date.toISOString(), locale);
+
+    const endDateDisplay = !isSingleDay && holiday.endDate
+        ? `<div class="subtitle">bis ${formatDate(holiday.endDate.toISOString(), locale)}</div>`
+        : '';
+
     return `
         <div class="holiday-card">
             <h3>
                 ${holiday.nameDE}
                 ${wikiLink}
             </h3>
-            <div class="date">${formatDate(holiday.date.toISOString(), locale)}</div>
+            <div class="date">${dateDisplay}</div>
+            ${endDateDisplay}
             <div class="subtitle">${holiday.nameEN}</div>
             ${holiday.scope ? `<div class="scope-badge ${scope === 'bundesweit' || scope === 'national' ? scope : ''}">${scope}</div>` : ''}
             ${holiday.extra || ''}
