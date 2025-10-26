@@ -1,4 +1,4 @@
-import {formatDate, populateBundeslandSelect, populateYearSelect, switchTab} from './page-common.js';
+import {formatDate, populateBundeslandSelect, populateYearSelect, REGION_SELECT_ID, switchTab} from './page-common.js';
 import {
     germanCalenderVariants,
     GermanStatePublicHolidayVariant,
@@ -41,7 +41,7 @@ function renderHolidays(year: number, bundesland: GermanStatePublicHolidayVarian
     holidayBundeslandSpan.textContent = bundesland;
 
     container.innerHTML = holidays.map(h => {
-        const scope = (h as any).scope || 'regional';
+        const scope = h.scope || 'regional';
         const wikiLink = h.wikipediaDE
             ? `<a href="${h.wikipediaDE}" target="_blank" rel="noopener" class="info-link" title="Mehr erfahren (Wikipedia)">ℹ️</a>`
             : '';
@@ -142,7 +142,7 @@ function renderSchoolHolidays(year: number, bundesland: string) {
 
 function updateCalendar() {
     const yearSelect = document.getElementById('yearSelect') as HTMLSelectElement;
-    const bundeslandSelect = document.getElementById('bundeslandSelect') as HTMLSelectElement;
+    const bundeslandSelect = document.getElementById(REGION_SELECT_ID) as HTMLSelectElement;
     const schoolBundeslandSelect = document.getElementById('schoolBundeslandSelect') as HTMLSelectElement;
     if (!yearSelect || !bundeslandSelect || !schoolBundeslandSelect) return;
 
@@ -158,7 +158,7 @@ function renderDownloadLinks() {
     const germanHolidaysContainer = document.getElementById('german-holidays-downloads');
     if (germanHolidaysContainer) {
         germanHolidaysContainer.innerHTML = germanCalenderVariants.map(variant =>
-            `<a href="../output/german_holidays_${stateToFilename(variant as any)}.ics" class="download-btn">${variant}</a>`
+            `<a href="../output/german_holidays_${stateToFilename(variant)}.ics" class="download-btn">${variant}</a>`
         ).join('');
     }
 
@@ -172,7 +172,7 @@ function renderDownloadLinks() {
 
 async function init() {
     const yearSelect = document.getElementById('yearSelect') as HTMLSelectElement;
-    const bundeslandSelect = document.getElementById('bundeslandSelect') as HTMLSelectElement;
+    const bundeslandSelect = document.getElementById(REGION_SELECT_ID) as HTMLSelectElement;
     const schoolBundeslandSelect = document.getElementById('schoolBundeslandSelect') as HTMLSelectElement;
     if (!yearSelect || !bundeslandSelect || !schoolBundeslandSelect) return;
 

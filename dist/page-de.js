@@ -46,6 +46,7 @@
       bundeslandSelect.appendChild(option);
     }
   }
+  var REGION_SELECT_ID = "bundeslandSelect";
 
   // src/calculators/HolidayCalculator.ts
   function calculateEaster(year) {
@@ -879,7 +880,7 @@
   }
   function updateCalendar() {
     const yearSelect = document.getElementById("yearSelect");
-    const bundeslandSelect = document.getElementById("bundeslandSelect");
+    const bundeslandSelect = document.getElementById(REGION_SELECT_ID);
     const schoolBundeslandSelect = document.getElementById("schoolBundeslandSelect");
     if (!yearSelect || !bundeslandSelect || !schoolBundeslandSelect) return;
     const year = parseInt(yearSelect.value);
@@ -904,7 +905,7 @@
   }
   async function init() {
     const yearSelect = document.getElementById("yearSelect");
-    const bundeslandSelect = document.getElementById("bundeslandSelect");
+    const bundeslandSelect = document.getElementById(REGION_SELECT_ID);
     const schoolBundeslandSelect = document.getElementById("schoolBundeslandSelect");
     if (!yearSelect || !bundeslandSelect || !schoolBundeslandSelect) return;
     populateYearSelect(yearSelect);

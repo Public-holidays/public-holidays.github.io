@@ -1,8 +1,7 @@
-import {formatDate, populateBundeslandSelect, populateYearSelect, switchTab} from './page-common.js';
+import {formatDate, populateBundeslandSelect, populateYearSelect, REGION_SELECT_ID, switchTab} from './page-common.js';
 import {getSwissHolidaysForCanton, SwissCanton, swissCantons} from './data/swissHolidays.js';
 import { stateToFilename } from './types/Holiday.js';
 import { calculateDate } from './calculators/HolidayCalculator.js';
-import {germanCalenderVariants, germanStates} from "./data/germanHolidays";
 
 declare global {
     interface Window {
@@ -28,7 +27,7 @@ function renderHolidays(year: number, canton: SwissCanton) {
     holidayCantonSpan.textContent = canton;
 
     container.innerHTML = holidays.map(h => {
-        const scope = (h as any).scope || 'kantonal';
+        const scope = h.scope || 'kantonal';
         const wikiLink = h.wikipediaDE 
             ? `<a href="${h.wikipediaDE}" target="_blank" rel="noopener" class="info-link" title="Mehr erfahren (Wikipedia)">ℹ️</a>`
             : '';
@@ -56,9 +55,11 @@ function renderDownloadLinks() {
     }
 }
 
+const YEAR_SELECT_ID = 'yearSelect';
+
 function updateCalendar() {
-    const yearSelect = document.getElementById('yearSelect') as HTMLSelectElement;
-    const cantonSelect = document.getElementById('cantonSelect') as HTMLSelectElement;
+    const yearSelect = document.getElementById(YEAR_SELECT_ID) as HTMLSelectElement;
+    const cantonSelect = document.getElementById(REGION_SELECT_ID) as HTMLSelectElement;
     if (!yearSelect || !cantonSelect) return;
 
     const year = parseInt(yearSelect.value);
@@ -68,8 +69,8 @@ function updateCalendar() {
 }
 
 async function init() {
-    const yearSelect = document.getElementById('yearSelect') as HTMLSelectElement;
-    const cantonSelect = document.getElementById('bundeslandSelect') as HTMLSelectElement;
+    const yearSelect = document.getElementById(YEAR_SELECT_ID) as HTMLSelectElement;
+    const cantonSelect = document.getElementById(REGION_SELECT_ID) as HTMLSelectElement;
     if (!yearSelect || !cantonSelect) return;
 
 

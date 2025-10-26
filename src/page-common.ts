@@ -62,3 +62,6 @@ export function populateBundeslandSelect(bundeslandStrings: readonly string[], b
     }
 }
 
+export const REGION_SELECT_ID = 'bundeslandSelect';
+
+

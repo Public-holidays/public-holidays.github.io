@@ -1,10 +1,18 @@
-import {formatDate, getDaysBetween, populateBundeslandSelect, populateYearSelect, switchTab} from './page-common.js';
+import {
+    formatDate,
+    getDaysBetween,
+    populateBundeslandSelect,
+    populateYearSelect,
+    REGION_SELECT_ID,
+    switchTab
+} from './page-common.js';
 import { austrianHolidays, austrianRegions } from './data/austrianHolidays.js';
 import { getSchoolHolidays } from './calculators/SchoolHolidayCalculator.js';
 import {
     calculateDate
 } from './calculators/HolidayCalculator.js';
 import {stateToFilename} from "./types/Holiday.js";
+import {AustrianRegion} from "./types/SchoolHoliday";
 
 
 declare global {
@@ -45,8 +53,8 @@ function renderPublicHolidays(year: number) {
     }).join('');
 }
 
-function renderSchoolHolidays(year: number, bundesland: string) {
-    const holidays = getSchoolHolidays(year, bundesland as any);
+function renderSchoolHolidays(year: number, bundesland: AustrianRegion) {
+    const holidays = getSchoolHolidays(year, bundesland);
     const container = document.getElementById('school-holidays');
     const schoolYearSpan = document.getElementById('school-year');
     const schoolBundeslandSpan = document.getElementById('school-bundesland');
@@ -73,11 +81,11 @@ function renderSchoolHolidays(year: number, bundesland: string) {
 
 function updateCalendar() {
     const yearSelect = document.getElementById('yearSelect') as HTMLSelectElement;
-    const bundeslandSelect = document.getElementById('bundeslandSelect') as HTMLSelectElement;
+    const bundeslandSelect = document.getElementById(REGION_SELECT_ID) as HTMLSelectElement;
     if (!yearSelect || !bundeslandSelect) return;
 
     const year = parseInt(yearSelect.value);
-    const bundesland = bundeslandSelect.value;
+    const bundesland = bundeslandSelect.value as AustrianRegion;
 
     renderPublicHolidays(year);
     renderSchoolHolidays(year, bundesland);
@@ -111,7 +119,7 @@ function renderDownloadLinks() {
 
 async function init() {
     const yearSelect = document.getElementById('yearSelect') as HTMLSelectElement;
-    const bundeslandSelect = document.getElementById('bundeslandSelect') as HTMLSelectElement;
+    const bundeslandSelect = document.getElementById(REGION_SELECT_ID) as HTMLSelectElement;
     if (!yearSelect || !bundeslandSelect) return;
 
     populateYearSelect(yearSelect)

@@ -51,6 +51,7 @@
       bundeslandSelect.appendChild(option);
     }
   }
+  var REGION_SELECT_ID = "bundeslandSelect";
 
   // src/calculators/HolidayCalculator.ts
   function calculateEaster(year) {
@@ -486,7 +487,7 @@
   }
   function updateCalendar() {
     const yearSelect = document.getElementById("yearSelect");
-    const bundeslandSelect = document.getElementById("bundeslandSelect");
+    const bundeslandSelect = document.getElementById(REGION_SELECT_ID);
     if (!yearSelect || !bundeslandSelect) return;
     const year = parseInt(yearSelect.value);
     const bundesland = bundeslandSelect.value;
@@ -515,7 +516,7 @@
   }
   async function init() {
     const yearSelect = document.getElementById("yearSelect");
-    const bundeslandSelect = document.getElementById("bundeslandSelect");
+    const bundeslandSelect = document.getElementById(REGION_SELECT_ID);
     if (!yearSelect || !bundeslandSelect) return;
     populateYearSelect(yearSelect);
     populateBundeslandSelect(austrianRegions, bundeslandSelect);
