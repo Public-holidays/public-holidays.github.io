@@ -14,7 +14,7 @@ export interface HolidayDefinition {
   nameEN: string;
   wikipediaDE?: string;  // German Wikipedia link
   wikipediaEN?: string;  // English Wikipedia link
-  scope?: 'bundesweit' | 'regional';  // Scope for German holidays
+  scope?: 'bundesweit' | 'regional' | 'national';  // Scope for German holidays
   fixed?: {
     month: number;
     day: number;
