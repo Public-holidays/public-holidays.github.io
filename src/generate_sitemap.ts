@@ -227,7 +227,8 @@ Allow: /holidays/output/school/*.ics
 # Allow all HTML pages
 Allow: /holidays/de/
 Allow: /holidays/at/
-Allow: /holidays/*.html
+Allow: /holidays/ch/
+Allow: /*.html
 `;
 
     fs.writeFileSync('robots.txt', robotsContent, 'utf-8');
