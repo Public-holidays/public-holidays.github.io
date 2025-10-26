@@ -2,13 +2,11 @@ import * as fs from 'fs';
 import * as path from 'path';
 import {glob} from 'glob';
 import {BASE_URL} from './index.js';
-import {austrianRegions} from "./data/austrianHolidays.js";
-import {stateToFilename} from "./types/Holiday.js";
-import {germanCalenderVariants} from "./data/germanHolidays.js";
 
 // Configuration
 const HOLIDAYS_DIR = "holidays";
 const OUTPUT_DIR = `${HOLIDAYS_DIR}/output`;
+const SCHOOL_OUTPUT_DIR = `${OUTPUT_DIR}/school`;
 const HOLIDAYS_URL = `${BASE_URL}holidays/`;
 
 function getLastModified(filepath: string): string {
@@ -51,6 +49,18 @@ function addFilePath(filename: string, sitemapLines: string[], urlCount: number)
     return urlCount;
 }
 
+async function getIcsFilesFromDirectory(directory: string, sitemapLines: string[], urlCount: number) {
+    const schoolFiles = await getIcsFiles(directory);
+    for (const filename of schoolFiles) {
+        if (filename.endsWith('.ics')) {
+            addLastModifiedLines(filename, sitemapLines);
+            urlCount++;
+            console.log(`  ✓ ${filename}`);
+        }
+    }
+    return urlCount;
+}
+
 async function generateIcsEntries(): Promise<string[]> {
     console.log();
     console.log("Generating ICS calendar entries...");
@@ -58,38 +68,11 @@ async function generateIcsEntries(): Promise<string[]> {
     const sitemapLines: string[] = [];
     let urlCount = 0;
 
-    // German holidays ICS files
-    const germanBundeslaenderVariant = germanCalenderVariants.map(variant => stateToFilename(variant));
-
-    sitemapLines.push('  <!-- German Holidays ICS Files -->');
-    for (const bundesland of germanBundeslaenderVariant) {
-        urlCount = addFilePath(`german_holidays_${bundesland}.ics`, sitemapLines, urlCount);
-    }
-
     // Austrian holidays ICS files
     sitemapLines.push('  <!-- Austrian Holidays ICS Files -->');
 
-    // Rolling calendar (main one)
-    urlCount = addFilePath('austrian_holidays.ics', sitemapLines, urlCount)
-
-    // Year-specific Austrian calendars
-    const austrianIcsFiles = await getIcsFiles(OUTPUT_DIR);
-    for (const filename of austrianIcsFiles) {
-        if (filename.startsWith('austrian_holidays_') && filename !== 'austrian_holidays.ics') {
-            addLastModifiedLines(filename, sitemapLines);
-            urlCount++;
-            console.log(`  ✓ ${filename}`);
-        }
-    }
-
-    // Austrian school holidays ICS files
-    sitemapLines.push('  <!-- Austrian School Holidays ICS Files -->');
-
-    const austrianBundeslaender = austrianRegions.map(bundesland => stateToFilename(bundesland));
-
-    for (const bundesland of austrianBundeslaender) {
-        urlCount = addFilePath(`school_holidays_${bundesland}.ics`, sitemapLines, urlCount);
-    }
+    urlCount = await getIcsFilesFromDirectory(OUTPUT_DIR, sitemapLines, urlCount);
+    urlCount = await getIcsFilesFromDirectory(SCHOOL_OUTPUT_DIR, sitemapLines, urlCount);
 
     console.log(`  Total ICS files: ${urlCount}`);
 
@@ -122,7 +105,8 @@ async function generateSitemap() {
             hreflang: [
                 { lang: 'de', url: `${BASE_URL}` },
                 { lang: 'de-DE', url: `${HOLIDAYS_URL}de/` },
-                { lang: 'de-AT', url: `${HOLIDAYS_URL}at/` }
+                { lang: 'de-AT', url: `${HOLIDAYS_URL}at/` },
+                { lang: 'de-CH', url: `${HOLIDAYS_URL}ch/` }
             ]
         }
     ];
