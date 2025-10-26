@@ -146,7 +146,15 @@ async function generateSitemap() {
             hreflang: [{ lang: 'de-AT', url: `${HOLIDAYS_URL}at/index.html` }]
         },
         {
-            loc: `${HOLIDAYS_URL}/at/impressum.html`,
+            loc: `${HOLIDAYS_URL}/ch/index.html`,
+            file: null, // In other repo
+            changefreq: 'monthly',
+            priority: '0.9',
+            comment: 'Swiss Holidays',
+            hreflang: [{ lang: 'de-CH', url: `${HOLIDAYS_URL}ch/index.html` }]
+        },
+        {
+            loc: `${HOLIDAYS_URL}/impressum.html`,
             file: null, // In other repo
             changefreq: 'yearly',
             priority: '0.3',
