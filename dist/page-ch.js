@@ -513,7 +513,56 @@
     return state.toLowerCase().replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss").replace(/\s+/g, "-").replace(/[()]/g, "");
   }
 
+  // src/page-base.ts
+  function initPage(config) {
+    const yearSelect = document.getElementById(config.yearSelectId);
+    const regionSelect = document.getElementById(config.regionSelectId);
+    if (!yearSelect || !regionSelect) {
+      console.error("Required select elements not found");
+      return;
+    }
+    populateYearSelect(yearSelect);
+    populateBundeslandSelect(config.regions, regionSelect);
+    config.renderDownloadLinks();
+    const updateCalendar = () => {
+      const year = parseInt(yearSelect.value);
+      const region = regionSelect.value;
+      config.renderHolidays(year, region);
+      if (config.renderSchoolHolidays) {
+        config.renderSchoolHolidays(year, region);
+      }
+    };
+    window.switchTab = switchTab;
+    window.updateCalendar = updateCalendar;
+    updateCalendar();
+  }
+  function renderHolidayCard(holiday, formatDate2, locale = "de-DE") {
+    const scope = holiday.scope || "regional";
+    const wikiLink = holiday.wikipediaDE ? `<a href="${holiday.wikipediaDE}" target="_blank" rel="noopener" class="info-link" title="Mehr erfahren (Wikipedia)">\u2139\uFE0F</a>` : "";
+    return `
+        <div class="holiday-card">
+            <h3>
+                ${holiday.nameDE}
+                ${wikiLink}
+            </h3>
+            <div class="date">${formatDate2(holiday.date.toISOString(), locale)}</div>
+            <div class="subtitle">${holiday.nameEN}</div>
+            ${holiday.scope ? `<div class="scope-badge ${scope === "bundesweit" || scope === "national" ? scope : ""}">${scope}</div>` : ""}
+            ${holiday.extra || ""}
+        </div>
+    `;
+  }
+  function renderDownloadLinksGeneric(config) {
+    const container = document.getElementById(config.containerId);
+    if (!container) return;
+    const basePath = config.basePath || "../output/";
+    container.innerHTML = config.files.map(
+      (link) => `<a href="${basePath}${link.file}" class="download-btn">${link.label}</a>`
+    ).join("");
+  }
+
   // src/page-ch.ts
+  var YEAR_SELECT_ID = "yearSelect";
   function renderHolidays(year, canton) {
     const holidays = getSwissHolidaysForCanton(canton).map((holidayDef) => {
       return {
@@ -527,49 +576,32 @@
     if (!container || !holidayYearSpan || !holidayCantonSpan) return;
     holidayYearSpan.textContent = year.toString();
     holidayCantonSpan.textContent = canton;
-    container.innerHTML = holidays.map((h) => {
-      const scope = h.scope || "kantonal";
-      const wikiLink = h.wikipediaDE ? `<a href="${h.wikipediaDE}" target="_blank" rel="noopener" class="info-link" title="Mehr erfahren (Wikipedia)">\u2139\uFE0F</a>` : "";
-      return `
-            <div class="holiday-card">
-                <h3>
-                    ${h.nameDE}
-                    ${wikiLink}
-                </h3>
-                <div class="date">${formatDate(h.date.toISOString(), "de-CH")}</div>
-                <div class="subtitle">${h.nameEN}</div>
-                <div class="scope-badge ${scope === "national" ? "national" : ""}">${scope}</div>
-            </div>
-        `;
-    }).join("");
+    container.innerHTML = holidays.map(
+      (h) => renderHolidayCard({
+        nameDE: h.nameDE,
+        nameEN: h.nameEN,
+        date: h.date,
+        wikipediaDE: h.wikipediaDE,
+        scope: h.scope || "kantonal"
+      }, formatDate, "de-CH")
+    ).join("");
   }
   function renderDownloadLinks() {
-    const swissHolidaysContainer = document.getElementById("swiss-holidays-downloads");
-    if (swissHolidaysContainer) {
-      swissHolidaysContainer.innerHTML = swissCantons.map(
-        (canton) => `<a href="../output/swiss_holidays_${stateToFilename(canton)}.ics" class="download-btn">${canton}</a>`
-      ).join("");
-    }
+    renderDownloadLinksGeneric({
+      containerId: "swiss-holidays-downloads",
+      files: swissCantons.map((canton) => ({
+        file: `swiss_holidays_${stateToFilename(canton)}.ics`,
+        label: canton
+      }))
+    });
   }
-  var YEAR_SELECT_ID = "yearSelect";
-  function updateCalendar() {
-    const yearSelect = document.getElementById(YEAR_SELECT_ID);
-    const cantonSelect = document.getElementById(REGION_SELECT_ID);
-    if (!yearSelect || !cantonSelect) return;
-    const year = parseInt(yearSelect.value);
-    const canton = cantonSelect.value;
-    renderHolidays(year, canton);
-  }
-  async function init() {
-    const yearSelect = document.getElementById(YEAR_SELECT_ID);
-    const cantonSelect = document.getElementById(REGION_SELECT_ID);
-    if (!yearSelect || !cantonSelect) return;
-    populateYearSelect(yearSelect);
-    populateBundeslandSelect(swissCantons, cantonSelect);
-    renderDownloadLinks();
-    updateCalendar();
-  }
-  window.switchTab = switchTab;
-  window.updateCalendar = updateCalendar;
-  document.addEventListener("DOMContentLoaded", init);
+  document.addEventListener("DOMContentLoaded", () => {
+    initPage({
+      yearSelectId: YEAR_SELECT_ID,
+      regionSelectId: REGION_SELECT_ID,
+      regions: swissCantons,
+      renderHolidays,
+      renderDownloadLinks
+    });
+  });
 })();

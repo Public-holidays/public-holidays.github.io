@@ -784,6 +784,32 @@
     }
   };
 
+  // src/page-base.ts
+  function renderHolidayCard(holiday, formatDate2, locale = "de-DE") {
+    const scope = holiday.scope || "regional";
+    const wikiLink = holiday.wikipediaDE ? `<a href="${holiday.wikipediaDE}" target="_blank" rel="noopener" class="info-link" title="Mehr erfahren (Wikipedia)">\u2139\uFE0F</a>` : "";
+    return `
+        <div class="holiday-card">
+            <h3>
+                ${holiday.nameDE}
+                ${wikiLink}
+            </h3>
+            <div class="date">${formatDate2(holiday.date.toISOString(), locale)}</div>
+            <div class="subtitle">${holiday.nameEN}</div>
+            ${holiday.scope ? `<div class="scope-badge ${scope === "bundesweit" || scope === "national" ? scope : ""}">${scope}</div>` : ""}
+            ${holiday.extra || ""}
+        </div>
+    `;
+  }
+  function renderDownloadLinksGeneric(config) {
+    const container = document.getElementById(config.containerId);
+    if (!container) return;
+    const basePath = config.basePath || "../output/";
+    container.innerHTML = config.files.map(
+      (link) => `<a href="${basePath}${link.file}" class="download-btn">${link.label}</a>`
+    ).join("");
+  }
+
   // src/page-de.ts
   function parseGermanDate(dateStr) {
     const [day, month, year] = dateStr.split(".").map(Number);
@@ -802,21 +828,15 @@
     if (!container || !holidayYearSpan || !holidayBundeslandSpan) return;
     holidayYearSpan.textContent = year.toString();
     holidayBundeslandSpan.textContent = bundesland;
-    container.innerHTML = holidays.map((h) => {
-      const scope = h.scope || "regional";
-      const wikiLink = h.wikipediaDE ? `<a href="${h.wikipediaDE}" target="_blank" rel="noopener" class="info-link" title="Mehr erfahren (Wikipedia)">\u2139\uFE0F</a>` : "";
-      return `
-            <div class="holiday-card">
-                <h3>
-                    ${h.nameDE}
-                    ${wikiLink}
-                </h3>
-                <div class="date">${formatDate(h.date.toISOString(), "de-DE")}</div>
-                <div class="subtitle">${h.nameEN}</div>
-                <div class="scope-badge ${scope === "bundesweit" ? "bundesweit" : ""}">${scope}</div>
-            </div>
-        `;
-    }).join("");
+    container.innerHTML = holidays.map(
+      (h) => renderHolidayCard({
+        nameDE: h.nameDE,
+        nameEN: h.nameEN,
+        date: h.date,
+        wikipediaDE: h.wikipediaDE,
+        scope: h.scope || "regional"
+      }, formatDate, "de-DE")
+    ).join("");
   }
   function getSchoolYearRange(year) {
     const range = `${year}/${year + 1}`;
@@ -890,18 +910,20 @@
     renderSchoolHolidays(year, schoolBundesland);
   }
   function renderDownloadLinks() {
-    const germanHolidaysContainer = document.getElementById("german-holidays-downloads");
-    if (germanHolidaysContainer) {
-      germanHolidaysContainer.innerHTML = germanCalenderVariants.map(
-        (variant) => `<a href="../output/german_holidays_${stateToFilename(variant)}.ics" class="download-btn">${variant}</a>`
-      ).join("");
-    }
-    const germanSchoolHolidaysContainer = document.getElementById("german-school-holidays-downloads");
-    if (germanSchoolHolidaysContainer) {
-      germanSchoolHolidaysContainer.innerHTML = germanStates.map(
-        (state) => `<a href="../output/school/school_holidays_${stateToFilename(state)}.ics" class="download-btn">${state}</a>`
-      ).join("");
-    }
+    renderDownloadLinksGeneric({
+      containerId: "german-holidays-downloads",
+      files: germanCalenderVariants.map((variant) => ({
+        file: `german_holidays_${stateToFilename(variant)}.ics`,
+        label: variant
+      }))
+    });
+    renderDownloadLinksGeneric({
+      containerId: "german-school-holidays-downloads",
+      files: germanStates.map((state) => ({
+        file: `school/school_holidays_${stateToFilename(state)}.ics`,
+        label: state
+      }))
+    });
   }
   async function init() {
     const yearSelect = document.getElementById("yearSelect");

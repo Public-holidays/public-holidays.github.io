@@ -437,7 +437,56 @@
     return state.toLowerCase().replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss").replace(/\s+/g, "-").replace(/[()]/g, "");
   }
 
+  // src/page-base.ts
+  function initPage(config) {
+    const yearSelect = document.getElementById(config.yearSelectId);
+    const regionSelect = document.getElementById(config.regionSelectId);
+    if (!yearSelect || !regionSelect) {
+      console.error("Required select elements not found");
+      return;
+    }
+    populateYearSelect(yearSelect);
+    populateBundeslandSelect(config.regions, regionSelect);
+    config.renderDownloadLinks();
+    const updateCalendar = () => {
+      const year = parseInt(yearSelect.value);
+      const region = regionSelect.value;
+      config.renderHolidays(year, region);
+      if (config.renderSchoolHolidays) {
+        config.renderSchoolHolidays(year, region);
+      }
+    };
+    window.switchTab = switchTab;
+    window.updateCalendar = updateCalendar;
+    updateCalendar();
+  }
+  function renderHolidayCard(holiday, formatDate2, locale = "de-DE") {
+    const scope = holiday.scope || "regional";
+    const wikiLink = holiday.wikipediaDE ? `<a href="${holiday.wikipediaDE}" target="_blank" rel="noopener" class="info-link" title="Mehr erfahren (Wikipedia)">\u2139\uFE0F</a>` : "";
+    return `
+        <div class="holiday-card">
+            <h3>
+                ${holiday.nameDE}
+                ${wikiLink}
+            </h3>
+            <div class="date">${formatDate2(holiday.date.toISOString(), locale)}</div>
+            <div class="subtitle">${holiday.nameEN}</div>
+            ${holiday.scope ? `<div class="scope-badge ${scope === "bundesweit" || scope === "national" ? scope : ""}">${scope}</div>` : ""}
+            ${holiday.extra || ""}
+        </div>
+    `;
+  }
+  function renderDownloadLinksGeneric(config) {
+    const container = document.getElementById(config.containerId);
+    if (!container) return;
+    const basePath = config.basePath || "../output/";
+    container.innerHTML = config.files.map(
+      (link) => `<a href="${basePath}${link.file}" class="download-btn">${link.label}</a>`
+    ).join("");
+  }
+
   // src/page-at.ts
+  var YEAR_SELECT_ID = "yearSelect";
   function renderPublicHolidays(year) {
     const holidays = austrianHolidays.map((holidayDef) => {
       return {
@@ -449,19 +498,14 @@
     const publicYearSpan = document.getElementById("public-year");
     if (!container || !publicYearSpan) return;
     publicYearSpan.textContent = year.toString();
-    container.innerHTML = holidays.map((h) => {
-      const wikiLink = h.wikipediaDE ? `<a href="${h.wikipediaDE}" target="_blank" rel="noopener" class="info-link" title="Mehr erfahren (Wikipedia)">\u2139\uFE0F</a>` : "";
-      return `
-            <div class="holiday-card">
-                <h3>
-                    ${h.nameDE}
-                    ${wikiLink}
-                </h3>
-                <div class="date">${formatDate(h.date.toISOString())}</div>
-                <div class="subtitle">${h.nameEN}</div>
-            </div>
-        `;
-    }).join("");
+    container.innerHTML = holidays.map(
+      (h) => renderHolidayCard({
+        nameDE: h.nameDE,
+        nameEN: h.nameEN,
+        date: h.date,
+        wikipediaDE: h.wikipediaDE
+      }, formatDate)
+    ).join("");
   }
   function renderSchoolHolidays(year, bundesland) {
     const holidays = getSchoolHolidays(year, bundesland);
@@ -485,45 +529,32 @@
         `;
     }).join("");
   }
-  function updateCalendar() {
-    const yearSelect = document.getElementById("yearSelect");
-    const bundeslandSelect = document.getElementById(REGION_SELECT_ID);
-    if (!yearSelect || !bundeslandSelect) return;
-    const year = parseInt(yearSelect.value);
-    const bundesland = bundeslandSelect.value;
-    renderPublicHolidays(year);
-    renderSchoolHolidays(year, bundesland);
-  }
   function renderDownloadLinks() {
-    const publicHolidaysContainer = document.getElementById("public-holidays-downloads");
-    if (publicHolidaysContainer) {
-      const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
-      const years = [currentYear, currentYear + 1, currentYear + 2];
-      const links = [
+    const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
+    const years = [currentYear, currentYear + 1, currentYear + 2];
+    renderDownloadLinksGeneric({
+      containerId: "public-holidays-downloads",
+      files: [
         { file: "austrian_holidays.ics", label: "\u{1F4C6} Fortlaufender Kalender (2024-2030)" },
         ...years.map((year) => ({ file: `austrian_holidays_${year}.ics`, label: year.toString() }))
-      ];
-      publicHolidaysContainer.innerHTML = links.map(
-        (link) => `<a href="../output/${link.file}" class="download-btn">${link.label}</a>`
-      ).join("");
-    }
-    const schoolHolidaysContainer = document.getElementById("school-holidays-downloads");
-    if (schoolHolidaysContainer) {
-      schoolHolidaysContainer.innerHTML = austrianRegions.map(
-        (region) => `<a href="../output/school/school_holidays_${stateToFilename(region)}.ics" class="download-btn">${region}</a>`
-      ).join("");
-    }
+      ]
+    });
+    renderDownloadLinksGeneric({
+      containerId: "school-holidays-downloads",
+      files: austrianRegions.map((region) => ({
+        file: `school/school_holidays_${stateToFilename(region)}.ics`,
+        label: region
+      }))
+    });
   }
-  async function init() {
-    const yearSelect = document.getElementById("yearSelect");
-    const bundeslandSelect = document.getElementById(REGION_SELECT_ID);
-    if (!yearSelect || !bundeslandSelect) return;
-    populateYearSelect(yearSelect);
-    populateBundeslandSelect(austrianRegions, bundeslandSelect);
-    renderDownloadLinks();
-    updateCalendar();
-  }
-  window.switchTab = switchTab;
-  window.updateCalendar = updateCalendar;
-  document.addEventListener("DOMContentLoaded", init);
+  document.addEventListener("DOMContentLoaded", () => {
+    initPage({
+      yearSelectId: YEAR_SELECT_ID,
+      regionSelectId: REGION_SELECT_ID,
+      regions: austrianRegions,
+      renderHolidays: (year) => renderPublicHolidays(year),
+      renderSchoolHolidays: (year, region) => renderSchoolHolidays(year, region),
+      renderDownloadLinks
+    });
+  });
 })();
