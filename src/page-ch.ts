@@ -1,5 +1,5 @@
 import {formatDate, populateBundeslandSelect, populateYearSelect, switchTab} from './page-common.js';
-import { getSwissHolidaysForCanton, swissCantons } from './data/swissHolidays.js';
+import {getSwissHolidaysForCanton, SwissCanton, swissCantons} from './data/swissHolidays.js';
 import { stateToFilename } from './types/Holiday.js';
 import { calculateDate } from './calculators/HolidayCalculator.js';
 import {germanCalenderVariants, germanStates} from "./data/germanHolidays";
@@ -11,8 +11,8 @@ declare global {
     }
 }
 
-function renderHolidays(year: number, canton: string) {
-    const holidays = getSwissHolidaysForCanton(canton as any).map(holidayDef => {
+function renderHolidays(year: number, canton: SwissCanton) {
+    const holidays = getSwissHolidaysForCanton(canton).map(holidayDef => {
         return {
             ...holidayDef,
             date: calculateDate(year, holidayDef)
@@ -62,7 +62,7 @@ function updateCalendar() {
     if (!yearSelect || !cantonSelect) return;
 
     const year = parseInt(yearSelect.value);
-    const canton = cantonSelect.value;
+    const canton = cantonSelect.value as SwissCanton;
 
     renderHolidays(year, canton);
 }
@@ -75,7 +75,7 @@ async function init() {
 
     populateYearSelect(yearSelect);
 
-    populateBundeslandSelect(germanCalenderVariants, cantonSelect);
+    populateBundeslandSelect(swissCantons, cantonSelect);
 
     // Populate download links
     renderDownloadLinks();
