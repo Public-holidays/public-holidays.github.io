@@ -1,9 +1,8 @@
 import {formatDate, getDaysBetween, REGION_SELECT_ID, initPage, renderHolidayCard, renderDownloadLinksGeneric} from './page-common.js';
-import { austrianHolidays, austrianRegions } from './data/austrianHolidays.js';
+import {austrianHolidays, AustrianRegion, austrianRegions} from './data/austrianHolidays.js';
 import { getSchoolHolidays } from './calculators/SchoolHolidayCalculator.js';
 import { calculateDate } from './calculators/HolidayCalculator.js';
 import {stateToFilename} from "./types/Holiday.js";
-import {AustrianRegion} from "./types/SchoolHoliday";
 
 function renderPublicHolidays(year: number) {
     const holidays = austrianHolidays.map(holidayDef => {
@@ -19,12 +18,7 @@ function renderPublicHolidays(year: number) {
 
     publicYearSpan.textContent = year.toString();
     container.innerHTML = holidays.map(h =>
-        renderHolidayCard({
-            nameDE: h.nameDE,
-            nameEN: h.nameEN,
-            date: h.date,
-            wikipediaDE: h.wikipediaDE
-        }, formatDate)
+        renderHolidayCard(h, formatDate)
     ).join('');
 }
 
@@ -40,14 +34,12 @@ function renderSchoolHolidays(year: number, bundesland: AustrianRegion) {
 
     container.innerHTML = holidays.map(h => {
         const days = getDaysBetween(h.startDate.toISOString(), h.endDate.toISOString());
-        const durationBadge = `<div class="duration">${days} Tag${days > 1 ? 'e' : ''}</div>`;
 
         return renderHolidayCard({
             nameDE: h.nameDE,
             nameEN: h.nameEN,
             date: h.startDate,
-            endDate: h.endDate,
-            extra: durationBadge
+            endDate: h.endDate
         }, formatDate);
     }).join('');
 }

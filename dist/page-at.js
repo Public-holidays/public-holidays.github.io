@@ -91,8 +91,7 @@
             ${endDateDisplay}
             <div class="subtitle">${holiday.nameEN}</div>
             ${holiday.scope ? `<div class="scope-badge ${scope === "bundesweit" || scope === "national" ? scope : ""}">${scope}</div>` : ""}
-            ${holiday.extra || ""}
-        </div>
+       </div>
     `;
   }
   function renderDownloadLinksGeneric(config) {
@@ -501,12 +500,7 @@
     if (!container || !publicYearSpan) return;
     publicYearSpan.textContent = year.toString();
     container.innerHTML = holidays.map(
-      (h) => renderHolidayCard({
-        nameDE: h.nameDE,
-        nameEN: h.nameEN,
-        date: h.date,
-        wikipediaDE: h.wikipediaDE
-      }, formatDate)
+      (h) => renderHolidayCard(h, formatDate)
     ).join("");
   }
   function renderSchoolHolidays(year, bundesland) {
@@ -519,13 +513,11 @@
     schoolBundeslandSpan.textContent = bundesland;
     container.innerHTML = holidays.map((h) => {
       const days = getDaysBetween(h.startDate.toISOString(), h.endDate.toISOString());
-      const durationBadge = `<div class="duration">${days} Tag${days > 1 ? "e" : ""}</div>`;
       return renderHolidayCard({
         nameDE: h.nameDE,
         nameEN: h.nameEN,
         date: h.startDate,
-        endDate: h.endDate,
-        extra: durationBadge
+        endDate: h.endDate
       }, formatDate);
     }).join("");
   }

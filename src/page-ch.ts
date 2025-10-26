@@ -20,13 +20,7 @@ function renderHolidays(year: number, canton: SwissCanton) {
     holidayCantonSpan.textContent = canton;
 
     container.innerHTML = holidays.map(h =>
-        renderHolidayCard({
-            nameDE: h.nameDE,
-            nameEN: h.nameEN,
-            date: h.date,
-            wikipediaDE: h.wikipediaDE,
-            scope: h.scope || 'kantonal'
-        }, formatDate, 'de-CH')
+        renderHolidayCard(h, formatDate, 'de-CH')
     ).join('');
 }
 

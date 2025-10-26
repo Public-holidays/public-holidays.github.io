@@ -64,8 +64,7 @@
             ${endDateDisplay}
             <div class="subtitle">${holiday.nameEN}</div>
             ${holiday.scope ? `<div class="scope-badge ${scope === "bundesweit" || scope === "national" ? scope : ""}">${scope}</div>` : ""}
-            ${holiday.extra || ""}
-        </div>
+       </div>
     `;
   }
   function renderDownloadLinksGeneric(config) {
@@ -832,13 +831,7 @@
     holidayYearSpan.textContent = year.toString();
     holidayBundeslandSpan.textContent = bundesland;
     container.innerHTML = holidays.map(
-      (h) => renderHolidayCard({
-        nameDE: h.nameDE,
-        nameEN: h.nameEN,
-        date: h.date,
-        wikipediaDE: h.wikipediaDE,
-        scope: h.scope || "regional"
-      }, formatDate, "de-DE")
+      (h) => renderHolidayCard(h, formatDate, "de-DE")
     ).join("");
   }
   function getSchoolYearRange(year) {

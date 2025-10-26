@@ -5,11 +5,10 @@
  */
 
 import {IcsGenerator} from './generators/IcsGenerator.js';
-import {austrianHolidays, austrianRegions} from './data/austrianHolidays.js';
+import {austrianHolidays, AustrianRegion, austrianRegions} from './data/austrianHolidays.js';
 import {getGermanHolidaysForVariant, germanCalenderVariants, parseGermanDate} from './data/germanHolidays.js';
 import {getSwissHolidaysForCanton, getSwissNationalHolidays, swissCantons} from './data/swissHolidays.js';
 import {getSchoolHolidays} from './calculators/SchoolHolidayCalculator.js';
-import {AustrianRegion} from './types/SchoolHoliday.js';
 import {stateToFilename} from './types/Holiday.js';
 import {germanSchoolHolidays, GermanSchoolHolidayPeriod} from './data/germanSchoolHolidays.js';
 import {germanStates} from './data/germanHolidays.js';

@@ -43,13 +43,7 @@ function renderHolidays(year: number, bundesland: GermanStatePublicHolidayVarian
     holidayBundeslandSpan.textContent = bundesland;
 
     container.innerHTML = holidays.map(h =>
-        renderHolidayCard({
-            nameDE: h.nameDE,
-            nameEN: h.nameEN,
-            date: h.date,
-            wikipediaDE: h.wikipediaDE,
-            scope: (h as any).scope || 'regional'
-        }, formatDate, 'de-DE')
+        renderHolidayCard(h, formatDate, 'de-DE')
     ).join('');
 }
 

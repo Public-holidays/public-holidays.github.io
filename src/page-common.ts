@@ -3,6 +3,9 @@
  * @param dateString ISO date string
  * @param locale Locale to use (default: 'de-AT' for Austrian German)
  */
+
+import { HolidayCardData } from './types/Holiday.js';
+
 export function formatDate(dateString: string, locale: string = 'de-AT'): string {
     const date = new Date(dateString);
     
@@ -123,18 +126,6 @@ export function initPage<TRegion = string>(config: PageConfig<TRegion>) {
     updateCalendar();
 }
 
-/**
- * Generic holiday card data interface
- */
-export interface HolidayCardData {
-    nameDE: string;
-    nameEN: string;
-    date: Date;
-    endDate?: Date; // For multi-day periods (school holidays)
-    wikipediaDE?: string;
-    scope?: string;
-    extra?: string; // For additional info like duration
-}
 
 /**
  * Generic holiday card renderer
@@ -163,8 +154,7 @@ export function renderHolidayCard(holiday: HolidayCardData, formatDate: (iso: st
             ${endDateDisplay}
             <div class="subtitle">${holiday.nameEN}</div>
             ${holiday.scope ? `<div class="scope-badge ${scope === 'bundesweit' || scope === 'national' ? scope : ''}">${scope}</div>` : ''}
-            ${holiday.extra || ''}
-        </div>
+       </div>
     `;
 }
 

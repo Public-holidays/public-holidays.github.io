@@ -3,7 +3,6 @@
  */
 
 import {HolidayDefinition} from '../types/Holiday.js';
-import {AustrianRegion} from '../types/SchoolHoliday.js';
 import {
     NEW_YEARS_DAY,
     EPIPHANY,
@@ -15,6 +14,17 @@ import {
     ASSUMPTION_OF_MARY,
     ALL_SAINTS_DAY,
 } from './commonHolidays.js';
+
+export type AustrianRegion =
+    | 'Burgenland'
+    | 'Kärnten'
+    | 'Niederösterreich'
+    | 'Oberösterreich'
+    | 'Salzburg'
+    | 'Steiermark'
+    | 'Tirol'
+    | 'Vorarlberg'
+    | 'Wien';
 
 // Austria-specific holidays
 const NATIONAL_DAY: HolidayDefinition = {

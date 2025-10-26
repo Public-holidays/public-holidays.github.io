@@ -4,7 +4,8 @@
  */
 
 import { calculateEaster, addDays } from './HolidayCalculator.js';
-import { SchoolHolidayPeriod, PatronSaintDay, AustrianRegion } from '../types/SchoolHoliday.js';
+import { SchoolHolidayPeriod, PatronSaintDay} from '../types/Holiday.js';
+import {AustrianRegion} from "../data/austrianHolidays";
 
 /**
  * Get the first Monday of a given month

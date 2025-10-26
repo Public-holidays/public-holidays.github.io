@@ -1,7 +1,23 @@
+
+/**
+ * Type definitions for school holidays
+ */
+
+export interface SchoolHolidayPeriod {
+    startDate: Date;
+    endDate: Date;
+    nameDE: string;
+    nameEN: string;
+}
+
+export interface PatronSaintDay {
+    date: Date;
+    nameDE: string;
+    nameEN: string;
+}
 /**
  * Type definitions for holidays
  */
-
 export interface Holiday {
   date: Date;
   title: string;
@@ -9,17 +25,29 @@ export interface Holiday {
   isRecurring?: boolean;
 }
 
-export interface HolidayDefinition {
+export interface HolidayDefinitionBase {
   nameDE: string;
   nameEN: string;
+  scope?: 'bundesweit' | 'regional' | 'national' | 'kantonal';
   wikipediaDE?: string;  // German Wikipedia link
+}
+
+export interface HolidayDefinition extends HolidayDefinitionBase {
   wikipediaEN?: string;  // English Wikipedia link
-  scope?: 'bundesweit' | 'regional' | 'national';  // Scope for German holidays
   fixed?: {
     month: number;
     day: number;
   };
   calculator?: (year: number) => Date;
+}
+
+/**
+ * Holiday card data for rendering (extends HolidayDefinition with computed date)
+ * Used by the rendering functions in page-common.ts
+ */
+export interface HolidayCardData extends HolidayDefinitionBase {
+  date: Date;
+  endDate?: Date; // For multi-day periods (school holidays)
 }
 
 export interface CalendarConfig {
@@ -29,6 +57,7 @@ export interface CalendarConfig {
   description?: string;
   country: string;
 }
+
 
 /**
  * Convert German state name to filename-safe format (lowercase, no umlauts, hyphens)
