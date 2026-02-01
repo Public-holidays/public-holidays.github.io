@@ -8,7 +8,7 @@ X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
 UID:20260101-neujahr-ch@public-holidays.github.io
 SUMMARY:Neujahr
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20260101
 DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLear
 	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Neujahr\\n🇬🇧 https://en.wikipedia
@@ -20,7 +20,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20260102-berchtoldstag-ch@public-holidays.github.io
 SUMMARY:Berchtoldstag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20260102
 DESCRIPTION:Berchtold's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
 	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Berchtoldstag\\n🇬🇧 https://en.wi
@@ -32,7 +32,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20260403-karfreitag-ch@public-holidays.github.io
 SUMMARY:Karfreitag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20260403
 DESCRIPTION:Good Friday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
 	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Karfreitag\\n🇬🇧 https://en.wikipedia
@@ -44,7 +44,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20260406-ostermontag-ch@public-holidays.github.io
 SUMMARY:Ostermontag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20260406
 DESCRIPTION:Easter Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
 	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Ostermontag\\n🇬🇧 https://en.wikipe
@@ -56,7 +56,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20260514-christi-himmelfahrt-ch@public-holidays.github.io
 SUMMARY:Christi Himmelfahrt
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20260514
 DESCRIPTION:Ascension Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
 	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Christi_Himmelfahrt\\n🇬🇧 https://e
@@ -68,7 +68,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20260525-pfingstmontag-ch@public-holidays.github.io
 SUMMARY:Pfingstmontag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20260525
 DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
 	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Pfingstmontag\\n🇬🇧 https://en.wikipe
@@ -80,7 +80,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20260604-fronleichnam-ch@public-holidays.github.io
 SUMMARY:Fronleichnam
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20260604
 DESCRIPTION:Corpus Christi - Gesetzlicher Feiertag in Deutschland\\n\\nLear
 	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Fronleichnam\\n🇬🇧 https://en.wiki
@@ -92,7 +92,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20260801-bundesfeiertag-ch@public-holidays.github.io
 SUMMARY:Bundesfeiertag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20260801
 DESCRIPTION:Swiss National Day - Gesetzlicher Feiertag in Deutschland\\n\\n
 	Learn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Bundesfeiertag\\n🇬🇧 https://e
@@ -104,7 +104,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20260815-maria-himmelfahrt-ch@public-holidays.github.io
 SUMMARY:Mariä Himmelfahrt
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20260815
 DESCRIPTION:Assumption of Mary - Gesetzlicher Feiertag in Deutschland\\n\\n
 	Learn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Mari%C3%A4_Aufnahme_in_den_H
@@ -116,7 +116,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20261101-allerheiligen-ch@public-holidays.github.io
 SUMMARY:Allerheiligen
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20261101
 DESCRIPTION:All Saints' Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
 	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Allerheiligen\\n🇬🇧 https://en.wi
@@ -128,7 +128,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20261208-maria-empfangnis-ch@public-holidays.github.io
 SUMMARY:Mariä Empfängnis
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20261208
 DESCRIPTION:Immaculate Conception - Gesetzlicher Feiertag in Deutschland\\n
 	\\nLearn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Mari%C3%A4_Empf%C3%A4ngni
@@ -140,7 +140,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20261225-erster-weihnachtstag-ch@public-holidays.github.io
 SUMMARY:Erster Weihnachtstag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20261225
 DESCRIPTION:Christmas Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
 	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Weihnachten\\n🇬🇧 https://en.wikipe
@@ -152,7 +152,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20261226-zweiter-weihnachtstag-ch@public-holidays.github.io
 SUMMARY:Zweiter Weihnachtstag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20261226
 DESCRIPTION:Boxing Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn mo
 	re:\\n🇩🇪 https://de.wikipedia.org/wiki/Zweiter_Weihnachtsfeiertag\\n🇬🇧 https
@@ -164,7 +164,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270101-neujahr-ch@public-holidays.github.io
 SUMMARY:Neujahr
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20270101
 DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLear
 	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Neujahr\\n🇬🇧 https://en.wikipedia
@@ -176,7 +176,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270102-berchtoldstag-ch@public-holidays.github.io
 SUMMARY:Berchtoldstag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20270102
 DESCRIPTION:Berchtold's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
 	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Berchtoldstag\\n🇬🇧 https://en.wi
@@ -188,7 +188,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270326-karfreitag-ch@public-holidays.github.io
 SUMMARY:Karfreitag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20270326
 DESCRIPTION:Good Friday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
 	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Karfreitag\\n🇬🇧 https://en.wikipedia
@@ -200,7 +200,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270329-ostermontag-ch@public-holidays.github.io
 SUMMARY:Ostermontag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20270329
 DESCRIPTION:Easter Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
 	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Ostermontag\\n🇬🇧 https://en.wikipe
@@ -212,7 +212,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270506-christi-himmelfahrt-ch@public-holidays.github.io
 SUMMARY:Christi Himmelfahrt
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20270506
 DESCRIPTION:Ascension Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
 	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Christi_Himmelfahrt\\n🇬🇧 https://e
@@ -224,7 +224,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270517-pfingstmontag-ch@public-holidays.github.io
 SUMMARY:Pfingstmontag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20270517
 DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
 	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Pfingstmontag\\n🇬🇧 https://en.wikipe
@@ -236,7 +236,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270527-fronleichnam-ch@public-holidays.github.io
 SUMMARY:Fronleichnam
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20270527
 DESCRIPTION:Corpus Christi - Gesetzlicher Feiertag in Deutschland\\n\\nLear
 	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Fronleichnam\\n🇬🇧 https://en.wiki
@@ -248,7 +248,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270801-bundesfeiertag-ch@public-holidays.github.io
 SUMMARY:Bundesfeiertag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20270801
 DESCRIPTION:Swiss National Day - Gesetzlicher Feiertag in Deutschland\\n\\n
 	Learn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Bundesfeiertag\\n🇬🇧 https://e
@@ -260,7 +260,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270815-maria-himmelfahrt-ch@public-holidays.github.io
 SUMMARY:Mariä Himmelfahrt
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20270815
 DESCRIPTION:Assumption of Mary - Gesetzlicher Feiertag in Deutschland\\n\\n
 	Learn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Mari%C3%A4_Aufnahme_in_den_H
@@ -272,7 +272,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20271101-allerheiligen-ch@public-holidays.github.io
 SUMMARY:Allerheiligen
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20271101
 DESCRIPTION:All Saints' Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
 	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Allerheiligen\\n🇬🇧 https://en.wi
@@ -284,7 +284,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20271208-maria-empfangnis-ch@public-holidays.github.io
 SUMMARY:Mariä Empfängnis
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20271208
 DESCRIPTION:Immaculate Conception - Gesetzlicher Feiertag in Deutschland\\n
 	\\nLearn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Mari%C3%A4_Empf%C3%A4ngni
@@ -296,7 +296,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20271225-erster-weihnachtstag-ch@public-holidays.github.io
 SUMMARY:Erster Weihnachtstag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20271225
 DESCRIPTION:Christmas Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
 	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Weihnachten\\n🇬🇧 https://en.wikipe
@@ -308,7 +308,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20271226-zweiter-weihnachtstag-ch@public-holidays.github.io
 SUMMARY:Zweiter Weihnachtstag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20271226
 DESCRIPTION:Boxing Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn mo
 	re:\\n🇩🇪 https://de.wikipedia.org/wiki/Zweiter_Weihnachtsfeiertag\\n🇬🇧 https
@@ -320,7 +320,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20280101-neujahr-ch@public-holidays.github.io
 SUMMARY:Neujahr
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20280101
 DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLear
 	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Neujahr\\n🇬🇧 https://en.wikipedia
@@ -332,7 +332,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20280102-berchtoldstag-ch@public-holidays.github.io
 SUMMARY:Berchtoldstag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20280102
 DESCRIPTION:Berchtold's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
 	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Berchtoldstag\\n🇬🇧 https://en.wi
@@ -344,7 +344,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20280414-karfreitag-ch@public-holidays.github.io
 SUMMARY:Karfreitag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20280414
 DESCRIPTION:Good Friday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
 	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Karfreitag\\n🇬🇧 https://en.wikipedia
@@ -356,7 +356,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20280417-ostermontag-ch@public-holidays.github.io
 SUMMARY:Ostermontag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20280417
 DESCRIPTION:Easter Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
 	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Ostermontag\\n🇬🇧 https://en.wikipe
@@ -368,7 +368,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20280525-christi-himmelfahrt-ch@public-holidays.github.io
 SUMMARY:Christi Himmelfahrt
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20280525
 DESCRIPTION:Ascension Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
 	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Christi_Himmelfahrt\\n🇬🇧 https://e
@@ -380,7 +380,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20280605-pfingstmontag-ch@public-holidays.github.io
 SUMMARY:Pfingstmontag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20280605
 DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
 	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Pfingstmontag\\n🇬🇧 https://en.wikipe
@@ -392,7 +392,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20280615-fronleichnam-ch@public-holidays.github.io
 SUMMARY:Fronleichnam
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20280615
 DESCRIPTION:Corpus Christi - Gesetzlicher Feiertag in Deutschland\\n\\nLear
 	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Fronleichnam\\n🇬🇧 https://en.wiki
@@ -404,7 +404,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20280801-bundesfeiertag-ch@public-holidays.github.io
 SUMMARY:Bundesfeiertag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20280801
 DESCRIPTION:Swiss National Day - Gesetzlicher Feiertag in Deutschland\\n\\n
 	Learn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Bundesfeiertag\\n🇬🇧 https://e
@@ -416,7 +416,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20280815-maria-himmelfahrt-ch@public-holidays.github.io
 SUMMARY:Mariä Himmelfahrt
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20280815
 DESCRIPTION:Assumption of Mary - Gesetzlicher Feiertag in Deutschland\\n\\n
 	Learn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Mari%C3%A4_Aufnahme_in_den_H
@@ -428,7 +428,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20281101-allerheiligen-ch@public-holidays.github.io
 SUMMARY:Allerheiligen
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20281101
 DESCRIPTION:All Saints' Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
 	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Allerheiligen\\n🇬🇧 https://en.wi
@@ -440,7 +440,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20281208-maria-empfangnis-ch@public-holidays.github.io
 SUMMARY:Mariä Empfängnis
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20281208
 DESCRIPTION:Immaculate Conception - Gesetzlicher Feiertag in Deutschland\\n
 	\\nLearn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Mari%C3%A4_Empf%C3%A4ngni
@@ -452,7 +452,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20281225-erster-weihnachtstag-ch@public-holidays.github.io
 SUMMARY:Erster Weihnachtstag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20281225
 DESCRIPTION:Christmas Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
 	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Weihnachten\\n🇬🇧 https://en.wikipe
@@ -464,7 +464,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20281226-zweiter-weihnachtstag-ch@public-holidays.github.io
 SUMMARY:Zweiter Weihnachtstag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20281226
 DESCRIPTION:Boxing Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn mo
 	re:\\n🇩🇪 https://de.wikipedia.org/wiki/Zweiter_Weihnachtsfeiertag\\n🇬🇧 https
@@ -476,7 +476,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20290101-neujahr-ch@public-holidays.github.io
 SUMMARY:Neujahr
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20290101
 DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLear
 	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Neujahr\\n🇬🇧 https://en.wikipedia
@@ -488,7 +488,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20290102-berchtoldstag-ch@public-holidays.github.io
 SUMMARY:Berchtoldstag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20290102
 DESCRIPTION:Berchtold's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
 	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Berchtoldstag\\n🇬🇧 https://en.wi
@@ -500,7 +500,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20290330-karfreitag-ch@public-holidays.github.io
 SUMMARY:Karfreitag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20290330
 DESCRIPTION:Good Friday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
 	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Karfreitag\\n🇬🇧 https://en.wikipedia
@@ -512,7 +512,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20290402-ostermontag-ch@public-holidays.github.io
 SUMMARY:Ostermontag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20290402
 DESCRIPTION:Easter Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
 	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Ostermontag\\n🇬🇧 https://en.wikipe
@@ -524,7 +524,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20290510-christi-himmelfahrt-ch@public-holidays.github.io
 SUMMARY:Christi Himmelfahrt
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20290510
 DESCRIPTION:Ascension Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
 	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Christi_Himmelfahrt\\n🇬🇧 https://e
@@ -536,7 +536,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20290521-pfingstmontag-ch@public-holidays.github.io
 SUMMARY:Pfingstmontag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20290521
 DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
 	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Pfingstmontag\\n🇬🇧 https://en.wikipe
@@ -548,7 +548,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20290531-fronleichnam-ch@public-holidays.github.io
 SUMMARY:Fronleichnam
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20290531
 DESCRIPTION:Corpus Christi - Gesetzlicher Feiertag in Deutschland\\n\\nLear
 	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Fronleichnam\\n🇬🇧 https://en.wiki
@@ -560,7 +560,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20290801-bundesfeiertag-ch@public-holidays.github.io
 SUMMARY:Bundesfeiertag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20290801
 DESCRIPTION:Swiss National Day - Gesetzlicher Feiertag in Deutschland\\n\\n
 	Learn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Bundesfeiertag\\n🇬🇧 https://e
@@ -572,7 +572,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20290815-maria-himmelfahrt-ch@public-holidays.github.io
 SUMMARY:Mariä Himmelfahrt
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20290815
 DESCRIPTION:Assumption of Mary - Gesetzlicher Feiertag in Deutschland\\n\\n
 	Learn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Mari%C3%A4_Aufnahme_in_den_H
@@ -584,7 +584,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20291101-allerheiligen-ch@public-holidays.github.io
 SUMMARY:Allerheiligen
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20291101
 DESCRIPTION:All Saints' Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
 	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Allerheiligen\\n🇬🇧 https://en.wi
@@ -596,7 +596,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20291208-maria-empfangnis-ch@public-holidays.github.io
 SUMMARY:Mariä Empfängnis
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20291208
 DESCRIPTION:Immaculate Conception - Gesetzlicher Feiertag in Deutschland\\n
 	\\nLearn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Mari%C3%A4_Empf%C3%A4ngni
@@ -608,7 +608,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20291225-erster-weihnachtstag-ch@public-holidays.github.io
 SUMMARY:Erster Weihnachtstag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20291225
 DESCRIPTION:Christmas Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
 	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Weihnachten\\n🇬🇧 https://en.wikipe
@@ -620,7 +620,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20291226-zweiter-weihnachtstag-ch@public-holidays.github.io
 SUMMARY:Zweiter Weihnachtstag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20291226
 DESCRIPTION:Boxing Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn mo
 	re:\\n🇩🇪 https://de.wikipedia.org/wiki/Zweiter_Weihnachtsfeiertag\\n🇬🇧 https
@@ -632,7 +632,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20300101-neujahr-ch@public-holidays.github.io
 SUMMARY:Neujahr
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20300101
 DESCRIPTION:New Year's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLear
 	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Neujahr\\n🇬🇧 https://en.wikipedia
@@ -644,7 +644,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20300102-berchtoldstag-ch@public-holidays.github.io
 SUMMARY:Berchtoldstag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20300102
 DESCRIPTION:Berchtold's Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
 	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Berchtoldstag\\n🇬🇧 https://en.wi
@@ -656,7 +656,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20300419-karfreitag-ch@public-holidays.github.io
 SUMMARY:Karfreitag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20300419
 DESCRIPTION:Good Friday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
 	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Karfreitag\\n🇬🇧 https://en.wikipedia
@@ -668,7 +668,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20300422-ostermontag-ch@public-holidays.github.io
 SUMMARY:Ostermontag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20300422
 DESCRIPTION:Easter Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
 	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Ostermontag\\n🇬🇧 https://en.wikipe
@@ -680,7 +680,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20300530-christi-himmelfahrt-ch@public-holidays.github.io
 SUMMARY:Christi Himmelfahrt
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20300530
 DESCRIPTION:Ascension Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
 	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Christi_Himmelfahrt\\n🇬🇧 https://e
@@ -692,7 +692,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20300610-pfingstmontag-ch@public-holidays.github.io
 SUMMARY:Pfingstmontag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20300610
 DESCRIPTION:Whit Monday - Gesetzlicher Feiertag in Deutschland\\n\\nLearn m
 	ore:\\n🇩🇪 https://de.wikipedia.org/wiki/Pfingstmontag\\n🇬🇧 https://en.wikipe
@@ -704,7 +704,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20300620-fronleichnam-ch@public-holidays.github.io
 SUMMARY:Fronleichnam
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20300620
 DESCRIPTION:Corpus Christi - Gesetzlicher Feiertag in Deutschland\\n\\nLear
 	n more:\\n🇩🇪 https://de.wikipedia.org/wiki/Fronleichnam\\n🇬🇧 https://en.wiki
@@ -716,7 +716,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20300801-bundesfeiertag-ch@public-holidays.github.io
 SUMMARY:Bundesfeiertag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20300801
 DESCRIPTION:Swiss National Day - Gesetzlicher Feiertag in Deutschland\\n\\n
 	Learn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Bundesfeiertag\\n🇬🇧 https://e
@@ -728,7 +728,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20300815-maria-himmelfahrt-ch@public-holidays.github.io
 SUMMARY:Mariä Himmelfahrt
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20300815
 DESCRIPTION:Assumption of Mary - Gesetzlicher Feiertag in Deutschland\\n\\n
 	Learn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Mari%C3%A4_Aufnahme_in_den_H
@@ -740,7 +740,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20301101-allerheiligen-ch@public-holidays.github.io
 SUMMARY:Allerheiligen
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20301101
 DESCRIPTION:All Saints' Day - Gesetzlicher Feiertag in Deutschland\\n\\nLea
 	rn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Allerheiligen\\n🇬🇧 https://en.wi
@@ -752,7 +752,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20301208-maria-empfangnis-ch@public-holidays.github.io
 SUMMARY:Mariä Empfängnis
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20301208
 DESCRIPTION:Immaculate Conception - Gesetzlicher Feiertag in Deutschland\\n
 	\\nLearn more:\\n🇩🇪 https://de.wikipedia.org/wiki/Mari%C3%A4_Empf%C3%A4ngni
@@ -764,7 +764,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20301225-erster-weihnachtstag-ch@public-holidays.github.io
 SUMMARY:Erster Weihnachtstag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20301225
 DESCRIPTION:Christmas Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn
 	 more:\\n🇩🇪 https://de.wikipedia.org/wiki/Weihnachten\\n🇬🇧 https://en.wikipe
@@ -776,7 +776,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20301226-zweiter-weihnachtstag-ch@public-holidays.github.io
 SUMMARY:Zweiter Weihnachtstag
-DTSTAMP:20260101T014830Z
+DTSTAMP:20260201T021146Z
 DTSTART;VALUE=DATE:20301226
 DESCRIPTION:Boxing Day - Gesetzlicher Feiertag in Deutschland\\n\\nLearn mo
 	re:\\n🇩🇪 https://de.wikipedia.org/wiki/Zweiter_Weihnachtsfeiertag\\n🇬🇧 https
