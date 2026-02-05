@@ -84,27 +84,37 @@ export function calculateChristmasBreak(year: number): SchoolHolidayPeriod {
  * - Burgenland, Kärnten, Salzburg, Tirol, Vorarlberg: second Monday in February
  * - Oberösterreich, Steiermark: third Monday in February
  * Duration: Monday to Saturday (one week)
+ *
+ * Special cases for 2026/2027 school year (year 2026):
+ * - Salzburg, Tirol, Vorarlberg: third Monday in February
+ * https://www.ris.bka.gv.at/Dokumente/BgblAuth/BGBLA_2025_II_297/BGBLA_2025_II_297.html
+ * https://www.ris.bka.gv.at/Dokumente/BgblAuth/BGBLA_2025_II_343/BGBLA_2025_II_343.html
+ * https://www.ris.bka.gv.at/Dokumente/BgblAuth/BGBLA_2025_II_322/BGBLA_2025_II_322.html
  */
 export function calculateSemesterBreak(year: number, region: AustrianRegion): SchoolHolidayPeriod {
   const group1: AustrianRegion[] = ['Niederösterreich', 'Wien'];
   const group2: AustrianRegion[] = ['Burgenland', 'Kärnten', 'Salzburg', 'Tirol', 'Vorarlberg'];
   const group3: AustrianRegion[] = ['Oberösterreich', 'Steiermark'];
-  
+
+  // Special cases for 2026/2027 school year
+  const specialCase2026_2027: AustrianRegion[] = ['Salzburg', 'Tirol', 'Vorarlberg'];
+  const isSpecialCase = year === 2027 && specialCase2026_2027.includes(region);
+
   let startDate: Date;
-  
+
   if (group1.includes(region)) {
     startDate = getNthMondayOfMonth(year, 2, 1);
-  } else if (group2.includes(region)) {
+  } else if (group2.includes(region) && !isSpecialCase) {
     startDate = getNthMondayOfMonth(year, 2, 2);
-  } else if (group3.includes(region)) {
+  } else if (group3.includes(region) || isSpecialCase) {
     startDate = getNthMondayOfMonth(year, 2, 3);
   } else {
     throw new Error(`Unknown region: ${region}`);
   }
-  
+
   // Monday to Saturday (6 days, but 5 days added to Monday = Saturday)
   const endDate = addDays(startDate, 5);
-  
+
   return {
     startDate,
     endDate,
