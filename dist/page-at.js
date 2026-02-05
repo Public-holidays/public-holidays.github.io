@@ -314,12 +314,14 @@
     const group1 = ["Nieder\xF6sterreich", "Wien"];
     const group2 = ["Burgenland", "K\xE4rnten", "Salzburg", "Tirol", "Vorarlberg"];
     const group3 = ["Ober\xF6sterreich", "Steiermark"];
+    const specialCase2026_2027 = ["Salzburg", "Tirol", "Vorarlberg"];
+    const isSpecialCase = year === 2027 && specialCase2026_2027.includes(region);
     let startDate;
     if (group1.includes(region)) {
       startDate = getNthMondayOfMonth(year, 2, 1);
-    } else if (group2.includes(region)) {
+    } else if (group2.includes(region) && !isSpecialCase) {
       startDate = getNthMondayOfMonth(year, 2, 2);
-    } else if (group3.includes(region)) {
+    } else if (group3.includes(region) || isSpecialCase) {
       startDate = getNthMondayOfMonth(year, 2, 3);
     } else {
       throw new Error(`Unknown region: ${region}`);
